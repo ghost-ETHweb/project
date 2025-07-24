@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Building, ParkingCircle, Utensils, PersonStanding, Elevator, EscalatorUp } from "lucide-react"
+import { ParkingCircle, Utensils, PersonStanding, ArrowUpDown, ArrowUpRightSquare } from "lucide-react"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Input } from "@/components/ui/input"
@@ -16,8 +16,8 @@ const mapData = [
 
 const legendItems = [
     { icon: PersonStanding, text: "Restrooms", color: "text-blue-500" },
-    { icon: Elevator, text: "Elevators", color: "text-green-500" },
-    { icon: EscalatorUp, text: "Escalators", color: "text-purple-500" },
+    { icon: ArrowUpDown, text: "Elevators", color: "text-green-500" },
+    { icon: ArrowUpRightSquare, text: "Escalators", color: "text-purple-500" },
     { icon: ParkingCircle, text: "Parking", color: "text-gray-500" },
     { icon: Utensils, text: "Food Court", color: "text-orange-500" },
 ]

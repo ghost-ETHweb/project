@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import { useSearchParams } from 'next/navigation'
 import { ParkingCircle, Utensils, PersonStanding, ArrowUpDown, ArrowUpRightSquare } from "lucide-react"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -24,6 +25,10 @@ const legendItems = [
 
 export function InteractiveMallMap() {
   const [searchQuery, setSearchQuery] = useState("")
+  const searchParams = useSearchParams()
+  const floorParam = searchParams.get('floor')
+  
+  const defaultFloor = floorParam ? `floor-${floorParam}` : "floor-1";
 
   return (
     <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
@@ -36,7 +41,7 @@ export function InteractiveMallMap() {
         </p>
       </div>
 
-      <Tabs defaultValue="floor-1" className="mt-8 w-full">
+      <Tabs defaultValue={defaultFloor} className="mt-8 w-full">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <TabsList>
             {mapData.map(({ floor }) => (

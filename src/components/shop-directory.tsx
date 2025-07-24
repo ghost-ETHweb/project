@@ -26,6 +26,7 @@ import {
   DialogTitle,
   DialogDescription,
   DialogTrigger,
+  DialogClose,
 } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
@@ -174,9 +175,11 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
                         </div>
                      </div>
                      <p className="text-sm text-muted-foreground flex-grow">{shop.description}</p>
-                     <Button asChild className="mt-6 w-full">
-                       <Link href="/map">Перейти на карту</Link>
-                     </Button>
+                     <DialogClose asChild>
+                       <Button asChild className="mt-6 w-full">
+                         <Link href={`/map?floor=${shop.floor}`}>Перейти на карту</Link>
+                       </Button>
+                     </DialogClose>
                   </div>
                   <div className="relative">
                      <Carousel className="w-full h-full">

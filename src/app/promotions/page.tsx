@@ -36,7 +36,7 @@ export default function PromotionsPage() {
             <CardContent className="flex-grow flex flex-col justify-end">
               <div className="text-sm text-muted-foreground space-y-2">
                 <p><strong>Магазин:</strong> {promo.shop}</p>
-                <p><strong>Категория:</strong> <Badge variant="secondary">{promo.category}</Badge></p>
+                <div className="flex items-center gap-2"><strong>Категория:</strong> <Badge variant="secondary">{promo.category}</Badge></div>
                 <p><strong>Действует до:</strong> {new Date(promo.endDate).toLocaleDateString('ru-RU')}</p>
               </div>
             </CardContent>

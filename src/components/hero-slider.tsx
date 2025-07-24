@@ -49,6 +49,30 @@ const sliderItems = [
       { href: "/events", label: "Предстоящие события" },
     ],
   },
+  {
+    type: "image",
+    title: "Новая коллекция уже здесь",
+    description: "Познакомьтесь с последними новинками сезона.",
+    image: {
+      src: "https://placehold.co/1600x600.png",
+      hint: "new collection",
+    },
+    buttons: [
+      { href: "/shops", label: "В магазины" },
+    ],
+  },
+  {
+    type: "image",
+    title: "Гастрономический фестиваль",
+    description: "Насладитесь лучшими блюдами от наших ресторанов.",
+    image: {
+      src: "https://placehold.co/1600x600.png",
+      hint: "food festival",
+    },
+    buttons: [
+      { href: "#restaurants", label: "Узнать больше", variant: "accent" },
+    ],
+  },
 ]
 
 export default function HeroSlider() {

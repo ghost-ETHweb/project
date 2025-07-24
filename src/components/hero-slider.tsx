@@ -19,7 +19,7 @@ const sliderItems = [
     title: "Грандиозная летняя распродажа",
     description: "Скидки до 70% на ваши любимые бренды. Не пропустите!",
     image: {
-      src: "https://placehold.co/1600x800.png",
+      src: "https://placehold.co/1600x600.png",
       hint: "fashion sale",
     },
     buttons: [
@@ -32,7 +32,7 @@ const sliderItems = [
     title: "Открылся новый флагманский магазин",
     description: "Откройте для себя последние тренды на грандиозном открытии Aura.",
     image: {
-      src: "https://placehold.co/1600x800.png",
+      src: "https://placehold.co/1600x600.png",
       hint: "luxury store",
     },
     buttons: [
@@ -53,13 +53,13 @@ const sliderItems = [
 
 export default function HeroSlider() {
   return (
-    <section className="relative h-[60vh] min-h-[400px] w-full md:h-[80vh]">
+    <section className="w-full">
       <Carousel
-        className="h-full w-full"
+        className="w-full"
         plugins={[Autoplay({ delay: 5000, stopOnInteraction: true })]}
         opts={{ loop: true }}
       >
-        <CarouselContent className="h-full">
+        <CarouselContent className="h-[500px]">
           {sliderItems.map((item, index) => (
             <CarouselItem key={index} className="relative h-full w-full">
               <div className="absolute inset-0 z-10 bg-black/50" />
@@ -112,10 +112,8 @@ export default function HeroSlider() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="absolute bottom-6 left-1/2 z-30 -translate-x-1/2 transform">
-            <CarouselPrevious className="relative left-[-15px] border-white text-white hover:bg-white/20 hover:text-white" />
-            <CarouselNext className="relative right-[-15px] border-white text-white hover:bg-white/20 hover:text-white" />
-        </div>
+        <CarouselPrevious className="absolute left-4 z-30 border-white text-white hover:bg-white/20 hover:text-white" />
+        <CarouselNext className="absolute right-4 z-30 border-white text-white hover:bg-white/20 hover:text-white" />
       </Carousel>
     </section>
   )

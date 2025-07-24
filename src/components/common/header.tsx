@@ -8,10 +8,10 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 const navLinks = [
-  { href: "/shops", label: "Shops" },
-  { href: "/map", label: "Mall Map" },
-  { href: "/partners", label: "For Partners" },
-  { href: "/contacts", label: "Contacts" },
+  { href: "/shops", label: "Магазины" },
+  { href: "/map", label: "Карта ТЦ" },
+  { href: "/partners", label: "Партнерам" },
+  { href: "/contacts", label: "Контакты" },
 ]
 
 export function Header() {
@@ -23,7 +23,7 @@ export function Header() {
         <Link href="/" className="flex items-center gap-2">
           <ShoppingBag className="h-6 w-6 text-primary" />
           <span className="font-headline text-lg font-semibold text-primary">
-            Gallery Navigator
+            Галерея Навигатор
           </span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
@@ -40,14 +40,14 @@ export function Header() {
         <div className="hidden items-center gap-2 md:flex">
           <Button variant="ghost" size="icon">
             <Search className="h-5 w-5" />
-            <span className="sr-only">Search</span>
+            <span className="sr-only">Поиск</span>
           </Button>
           <Button variant="ghost" size="icon">
             <Heart className="h-5 w-5" />
-            <span className="sr-only">Favorites</span>
+            <span className="sr-only">Избранное</span>
           </Button>
           <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="#promotions">Promotions</Link>
+            <Link href="#promotions">Акции</Link>
           </Button>
         </div>
         <div className="flex items-center md:hidden">
@@ -55,7 +55,7 @@ export function Header() {
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
-                <span className="sr-only">Open menu</span>
+                <span className="sr-only">Открыть меню</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-full max-w-xs sm:max-w-sm">
@@ -64,13 +64,13 @@ export function Header() {
                   <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
                     <ShoppingBag className="h-6 w-6 text-primary" />
                     <span className="font-headline text-lg font-semibold text-primary">
-                      Gallery Navigator
+                      Галерея Навигатор
                     </span>
                   </Link>
                    <SheetTrigger asChild>
                     <Button variant="ghost" size="icon">
                       <X className="h-6 w-6" />
-                      <span className="sr-only">Close menu</span>
+                      <span className="sr-only">Закрыть меню</span>
                     </Button>
                   </SheetTrigger>
                 </div>
@@ -88,16 +88,16 @@ export function Header() {
                 </nav>
                 <div className="mt-auto flex flex-col gap-4">
                   <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                    <Link href="#promotions" onClick={() => setIsMenuOpen(false)}>Promotions</Link>
+                    <Link href="#promotions" onClick={() => setIsMenuOpen(false)}>Акции</Link>
                   </Button>
                   <div className="flex justify-center gap-4">
                     <Button variant="ghost" size="icon">
                       <Search className="h-6 w-6" />
-                      <span className="sr-only">Search</span>
+                      <span className="sr-only">Поиск</span>
                     </Button>
                     <Button variant="ghost" size="icon">
                       <Heart className="h-6 w-6" />
-                      <span className="sr-only">Favorites</span>
+                      <span className="sr-only">Избранное</span>
                     </Button>
                   </div>
                 </div>

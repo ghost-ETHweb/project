@@ -31,18 +31,18 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Search } from "lucide-react"
 
 const shopsData = [
-  { id: 1, name: "Aura Fashion", category: "Clothing", floor: 1, logo: "https://placehold.co/100x100.png", hint: "fashion logo", description: "High-end fashion for modern women.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: ["20% off new arrivals"] },
-  { id: 2, name: "Sole Mates", category: "Shoes", floor: 2, logo: "https://placehold.co/100x100.png", hint: "shoe logo", description: "The latest trends in footwear.", images: ["https://placehold.co/600x400.png"], promotions: ["Buy one, get one 50% off"] },
-  { id: 3, name: "TechVerse", category: "Electronics", floor: 1, logo: "https://placehold.co/100x100.png", hint: "tech logo", description: "Gadgets and accessories for your digital life.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: [] },
-  { id: 4, name: "Glamour Zone", category: "Beauty", floor: 2, logo: "https://placehold.co/100x100.png", hint: "beauty logo", description: "Cosmetics, skincare, and fragrances.", images: ["https://placehold.co/600x400.png"], promotions: ["Free gift with purchase over $50"] },
-  { id: 5, name: "Book Nook", category: "Books", floor: 3, logo: "https://placehold.co/100x100.png", hint: "bookstore logo", description: "A cozy corner for book lovers.", images: ["https://placehold.co/600x400.png"], promotions: [] },
-  { id: 6, name: "Zenith Watches", category: "Jewelry", floor: 1, logo: "https://placehold.co/100x100.png", hint: "watch logo", description: "Luxury timepieces and fine jewelry.", images: ["https://placehold.co/600x400.png"], promotions: ["Complimentary cleaning service"] },
-  { id: 7, "name": "Vogue Apparel", "category": "Clothing", "floor": 2, "logo": "https://placehold.co/100x100.png", hint: "clothing logo", "description": "Trendy and affordable fashion for all.", "images": ["https://placehold.co/600x400.png"], "promotions": ["Student Discount 15% off"] },
-  { id: 8, "name": "Step Up", "category": "Shoes", "floor": 1, "logo": "https://placehold.co/100x100.png", hint: "sneaker logo", "description": "Athletic and casual shoes for the whole family.", "images": ["https://placehold.co/600x400.png"], "promotions": [] }
+  { id: 1, name: "Aura Fashion", category: "Одежда", floor: 1, logo: "https://placehold.co/100x100.png", hint: "fashion logo", description: "Высокая мода для современных женщин.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: ["Скидка 20% на новые поступления"] },
+  { id: 2, name: "Sole Mates", category: "Обувь", floor: 2, logo: "https://placehold.co/100x100.png", hint: "shoe logo", description: "Последние тенденции в мире обуви.", images: ["https://placehold.co/600x400.png"], promotions: ["Купи одну пару, получи вторую со скидкой 50%"] },
+  { id: 3, name: "TechVerse", category: "Электроника", floor: 1, logo: "https://placehold.co/100x100.png", hint: "tech logo", description: "Гаджеты и аксессуары для вашей цифровой жизни.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: [] },
+  { id: 4, name: "Glamour Zone", category: "Красота", floor: 2, logo: "https://placehold.co/100x100.png", hint: "beauty logo", description: "Косметика, уход за кожей и парфюмерия.", images: ["https://placehold.co/600x400.png"], promotions: ["Подарок при покупке от 50$"] },
+  { id: 5, name: "Book Nook", category: "Книги", floor: 3, logo: "https://placehold.co/100x100.png", hint: "bookstore logo", description: "Уютный уголок для любителей книг.", images: ["https://placehold.co/600x400.png"], promotions: [] },
+  { id: 6, name: "Zenith Watches", category: "Ювелирные изделия", floor: 1, logo: "https://placehold.co/100x100.png", hint: "watch logo", description: "Роскошные часы и изысканные украшения.", images: ["https://placehold.co/600x400.png"], promotions: ["Бесплатная чистка в подарок"] },
+  { id: 7, "name": "Vogue Apparel", "category": "Одежда", "floor": 2, "logo": "https://placehold.co/100x100.png", hint: "clothing logo", "description": "Модная и доступная одежда для всех.", "images": ["https://placehold.co/600x400.png"], "promotions": ["Скидка 15% для студентов"] },
+  { id: 8, "name": "Step Up", "category": "Обувь", "floor": 1, "logo": "https://placehold.co/100x100.png", hint: "sneaker logo", "description": "Спортивная и повседневная обувь для всей семьи.", "images": ["https://placehold.co/600x400.png"], "promotions": [] }
 ];
 
-const categories = ["All", ...new Set(shopsData.map((s) => s.category))];
-const floors = ["All", ...new Set(shopsData.map((s) => s.floor.toString()))].sort();
+const categories = ["Все", ...Array.from(new Set(shopsData.map((s) => s.category)))];
+const floors = ["Все", ...Array.from(new Set(shopsData.map((s) => s.floor.toString())))].sort();
 
 interface ShopDirectoryProps {
   isPaginated?: boolean;
@@ -50,8 +50,8 @@ interface ShopDirectoryProps {
 
 export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [category, setCategory] = useState("All");
-  const [floor, setFloor] = useState("All");
+  const [category, setCategory] = useState("Все");
+  const [floor, setFloor] = useState("Все");
   const [sort, setSort] = useState("asc");
   const [currentPage, setCurrentPage] = useState(1);
   const shopsPerPage = 6;
@@ -61,8 +61,8 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
       .filter((shop) =>
         shop.name.toLowerCase().includes(searchQuery.toLowerCase())
       )
-      .filter((shop) => category === "All" || shop.category === category)
-      .filter((shop) => floor === "All" || shop.floor.toString() === floor);
+      .filter((shop) => category === "Все" || shop.category === category)
+      .filter((shop) => floor === "Все" || shop.floor.toString() === floor);
 
     if (sort === "asc") {
       filtered.sort((a, b) => a.name.localeCompare(b.name));
@@ -86,7 +86,7 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
         <div className="relative w-full sm:flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 transform text-muted-foreground" size={20} />
           <Input
-            placeholder="Search by shop name..."
+            placeholder="Поиск по названию магазина..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="pl-10"
@@ -95,7 +95,7 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
         <div className="flex flex-col gap-4 sm:flex-row sm:gap-2">
           <Select value={category} onValueChange={setCategory}>
             <SelectTrigger className="w-full sm:w-[180px]">
-              <SelectValue placeholder="Category" />
+              <SelectValue placeholder="Категория" />
             </SelectTrigger>
             <SelectContent>
               {categories.map((c) => (
@@ -105,23 +105,23 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
           </Select>
           <Select value={floor} onValueChange={setFloor}>
             <SelectTrigger className="w-full sm:w-[120px]">
-              <SelectValue placeholder="Floor" />
+              <SelectValue placeholder="Этаж" />
             </SelectTrigger>
             <SelectContent>
               {floors.map((f) => (
                 <SelectItem key={f} value={f}>
-                  {f === "All" ? "All Floors" : `Floor ${f}`}
+                  {f === "Все" ? "Все этажи" : `Этаж ${f}`}
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
           <Select value={sort} onValueChange={setSort}>
             <SelectTrigger className="w-full sm:w-[120px]">
-              <SelectValue placeholder="Sort" />
+              <SelectValue placeholder="Сортировка" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="asc">A-Z</SelectItem>
-              <SelectItem value="desc">Z-A</SelectItem>
+              <SelectItem value="asc">А-Я</SelectItem>
+              <SelectItem value="desc">Я-А</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -136,7 +136,7 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
                   <CardHeader className="flex flex-row items-center gap-4">
                     <Image
                       src={shop.logo}
-                      alt={`${shop.name} logo`}
+                      alt={`Логотип ${shop.name}`}
                       width={64}
                       height={64}
                       className="rounded-lg border"
@@ -148,21 +148,21 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <Badge variant="secondary">Floor {shop.floor}</Badge>
+                    <Badge variant="secondary">Этаж {shop.floor}</Badge>
                   </CardContent>
                 </Card>
               </DialogTrigger>
               <DialogContent className="sm:max-w-[625px]">
                 <DialogHeader>
                   <DialogTitle className="font-headline text-2xl">{shop.name}</DialogTitle>
-                  <DialogDescription>{shop.category} - Floor {shop.floor}</DialogDescription>
+                  <DialogDescription>{shop.category} - Этаж {shop.floor}</DialogDescription>
                 </DialogHeader>
                 <div className="py-4">
                   <Carousel className="w-full">
                     <CarouselContent>
                       {shop.images.map((img, i) => (
                         <CarouselItem key={i}>
-                          <Image src={img} alt={`${shop.name} view ${i+1}`} width={600} height={400} className="rounded-lg object-cover" />
+                          <Image src={img} alt={`Фото ${shop.name} ${i+1}`} width={600} height={400} className="rounded-lg object-cover" />
                         </CarouselItem>
                       ))}
                     </CarouselContent>
@@ -172,7 +172,7 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
                   <p className="mt-4 text-sm text-muted-foreground">{shop.description}</p>
                   {shop.promotions.length > 0 && (
                     <div className="mt-4">
-                      <h4 className="font-headline font-semibold">Current Promotions</h4>
+                      <h4 className="font-headline font-semibold">Текущие акции</h4>
                       <ul className="mt-2 list-inside list-disc space-y-1">
                         {shop.promotions.map((promo, i) => <li key={i} className="text-sm"><Badge className="bg-accent/20 text-accent-foreground hover:bg-accent/30">{promo}</Badge></li>)}
                       </ul>
@@ -185,15 +185,15 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-muted p-12 text-center">
-            <p className="text-muted-foreground">No shops found matching your criteria.</p>
+            <p className="text-muted-foreground">Магазины, соответствующие вашим критериям, не найдены.</p>
         </div>
       )}
 
       {isPaginated && totalPages > 1 && (
         <div className="mt-8 flex justify-center gap-2">
-          <Button onClick={() => setCurrentPage(p => Math.max(1, p - 1))} disabled={currentPage === 1}>Previous</Button>
-          <span className="flex items-center px-4 text-sm">Page {currentPage} of {totalPages}</span>
-          <Button onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages}>Next</Button>
+          <Button onClick={() => setCurrentPage(p => Math.max(1, p - 1))} disabled={currentPage === 1}>Назад</Button>
+          <span className="flex items-center px-4 text-sm">Страница {currentPage} из {totalPages}</span>
+          <Button onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages}>Вперед</Button>
         </div>
       )}
     </div>

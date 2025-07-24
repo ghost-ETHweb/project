@@ -15,11 +15,11 @@ const mapData = [
 ]
 
 const legendItems = [
-    { icon: PersonStanding, text: "Restrooms", color: "text-blue-500" },
-    { icon: ArrowUpDown, text: "Elevators", color: "text-green-500" },
-    { icon: ArrowUpRightSquare, text: "Escalators", color: "text-purple-500" },
-    { icon: ParkingCircle, text: "Parking", color: "text-gray-500" },
-    { icon: Utensils, text: "Food Court", color: "text-orange-500" },
+    { icon: PersonStanding, text: "Туалеты", color: "text-blue-500" },
+    { icon: ArrowUpDown, text: "Лифты", color: "text-green-500" },
+    { icon: ArrowUpRightSquare, text: "Эскалаторы", color: "text-purple-500" },
+    { icon: ParkingCircle, text: "Парковка", color: "text-gray-500" },
+    { icon: Utensils, text: "Ресторанный дворик", color: "text-orange-500" },
 ]
 
 export function InteractiveMallMap() {
@@ -29,10 +29,10 @@ export function InteractiveMallMap() {
     <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
       <div className="text-center">
         <h1 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-          Interactive Mall Map
+          Интерактивная карта ТЦ
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-          Find your way around with ease. Select a floor to begin.
+          Находите дорогу с легкостью. Выберите этаж, чтобы начать.
         </p>
       </div>
 
@@ -41,13 +41,13 @@ export function InteractiveMallMap() {
             <TabsList>
             {mapData.map(({ floor }) => (
                 <TabsTrigger key={floor} value={`floor-${floor}`}>
-                Floor {floor}
+                Этаж {floor}
                 </TabsTrigger>
             ))}
             </TabsList>
             <div className="w-full sm:w-auto sm:max-w-xs">
                 <Input
-                    placeholder="Search by shop name..."
+                    placeholder="Поиск по названию магазина..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
@@ -61,7 +61,7 @@ export function InteractiveMallMap() {
                 <div className="relative aspect-[3/2] w-full overflow-hidden rounded-lg border">
                   <Image
                     src={image}
-                    alt={`Map of floor ${floor}`}
+                    alt={`Карта этажа ${floor}`}
                     fill
                     className="object-contain"
                     data-ai-hint={hint}
@@ -75,7 +75,7 @@ export function InteractiveMallMap() {
       </Tabs>
        <Card className="mt-8">
         <CardContent className="p-6">
-            <h3 className="font-headline text-lg font-semibold mb-4">Map Legend</h3>
+            <h3 className="font-headline text-lg font-semibold mb-4">Легенда карты</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 text-sm">
                 {legendItems.map((item, index) => (
                     <div key={index} className="flex items-center gap-2">

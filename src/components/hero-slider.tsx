@@ -16,37 +16,37 @@ import { Button } from "@/components/ui/button"
 const sliderItems = [
   {
     type: "image",
-    title: "Summer Sale Spectacular",
-    description: "Up to 70% off on your favorite brands. Don't miss out!",
+    title: "Грандиозная летняя распродажа",
+    description: "Скидки до 70% на ваши любимые бренды. Не пропустите!",
     image: {
       src: "https://placehold.co/1600x800.png",
       hint: "fashion sale",
     },
     buttons: [
-      { href: "/shops", label: "View Shops" },
-      { href: "#promotions", label: "Promotions", variant: "accent" },
+      { href: "/shops", label: "Смотреть магазины" },
+      { href: "#promotions", label: "Акции", variant: "accent" },
     ],
   },
   {
     type: "image",
-    title: "New Flagship Store Now Open",
-    description: "Discover the latest trends at the grand opening of Aura.",
+    title: "Открылся новый флагманский магазин",
+    description: "Откройте для себя последние тренды на грандиозном открытии Aura.",
     image: {
       src: "https://placehold.co/1600x800.png",
       hint: "luxury store",
     },
     buttons: [
-      { href: "/shops/aura", label: "Explore Store" },
-      { href: "/map", label: "Mall Map", variant: "secondary" },
+      { href: "/shops/aura", label: "Перейти в магазин" },
+      { href: "/map", label: "Карта ТЦ", variant: "secondary" },
     ],
   },
   {
     type: "video",
-    title: "A Day at the Gallery",
-    description: "Experience the vibrant atmosphere of our mall.",
+    title: "День в Галерее",
+    description: "Ощутите яркую атмосферу нашего торгового центра.",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=0&loop=1&playlist=dQw4w9WgXcQ",
     buttons: [
-      { href: "/events", label: "Upcoming Events" },
+      { href: "/events", label: "Предстоящие события" },
     ],
   },
 ]

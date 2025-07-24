@@ -7,7 +7,7 @@ export default function Home() {
       <HeroSlider />
       <section id="shops" className="container mx-auto px-4 py-12 sm:py-16 md:py-24">
         <h2 className="mb-8 text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-          Discover Our Stores
+          Откройте для себя наши магазины
         </h2>
         <ShopDirectory isPaginated={false} />
       </section>

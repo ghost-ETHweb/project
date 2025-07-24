@@ -10,41 +10,41 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-2">
               <ShoppingBag className="h-8 w-8 text-primary" />
               <span className="font-headline text-xl font-semibold text-primary">
-                Gallery Navigator
+                Галерея Навигатор
               </span>
             </Link>
             <p className="text-sm">
-              The premier destination for shopping, dining, and entertainment. Experience world-class brands and unforgettable moments.
+              Лучшее место для шопинга, ужинов и развлечений. Откройте для себя мировые бренды и незабываемые моменты.
             </p>
           </div>
           <div>
             <h3 className="font-headline text-sm font-semibold uppercase tracking-wider text-foreground">
-              Explore
+              Навигация
             </h3>
             <ul className="mt-4 space-y-2">
-              <li><Link href="/shops" className="text-sm hover:text-primary">Shops</Link></li>
-              <li><Link href="/map" className="text-sm hover:text-primary">Services</Link></li>
-              <li><Link href="#promotions" className="text-sm hover:text-primary">Promotions</Link></li>
-              <li><Link href="#events" className="text-sm hover:text-primary">Events</Link></li>
+              <li><Link href="/shops" className="text-sm hover:text-primary">Магазины</Link></li>
+              <li><Link href="/map" className="text-sm hover:text-primary">Услуги</Link></li>
+              <li><Link href="#promotions" className="text-sm hover:text-primary">Акции</Link></li>
+              <li><Link href="#events" className="text-sm hover:text-primary">События</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="font-headline text-sm font-semibold uppercase tracking-wider text-foreground">
-              Information
+              Информация
             </h3>
             <ul className="mt-4 space-y-2">
-              <li><Link href="/partners" className="text-sm hover:text-primary">For Partners</Link></li>
-              <li><Link href="/contacts" className="text-sm hover:text-primary">Contacts</Link></li>
-              <li><Link href="/about" className="text-sm hover:text-primary">About Us</Link></li>
+              <li><Link href="/partners" className="text-sm hover:text-primary">Для партнеров</Link></li>
+              <li><Link href="/contacts" className="text-sm hover:text-primary">Контакты</Link></li>
+              <li><Link href="/about" className="text-sm hover:text-primary">О нас</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="font-headline text-sm font-semibold uppercase tracking-wider text-foreground">
-              Contact Us
+              Свяжитесь с нами
             </h3>
             <ul className="mt-4 space-y-2 text-sm">
-              <li>123 Shopping Ave, Commerce City, 12345</li>
-              <li>Phone: (123) 456-7890</li>
+              <li>Торговый проспект, 123, Коммерц-Сити, 12345</li>
+              <li>Телефон: (123) 456-7890</li>
               <li>Email: info@gallerynav.com</li>
             </ul>
             <div className="mt-6 flex space-x-4">
@@ -55,9 +55,9 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-border pt-8 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} Gallery Navigator. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Галерея Навигатор. Все права защищены.</p>
           <p className="mt-1">
-            <Link href="/privacy" className="hover:text-primary">Privacy Policy</Link> | <Link href="/terms" className="hover:text-primary">Terms of Use</Link>
+            <Link href="/privacy" className="hover:text-primary">Политика конфиденциальности</Link> | <Link href="/terms" className="hover:text-primary">Условия использования</Link>
           </p>
         </div>
       </div>

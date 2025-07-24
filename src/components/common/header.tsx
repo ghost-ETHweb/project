@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, Search, Heart, X, ShoppingBag } from "lucide-react"
+import { Menu, X, ShoppingBag } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -38,14 +38,6 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden items-center gap-2 md:flex">
-          <Button variant="ghost" size="icon">
-            <Search className="h-5 w-5" />
-            <span className="sr-only">Поиск</span>
-          </Button>
-          <Button variant="ghost" size="icon">
-            <Heart className="h-5 w-5" />
-            <span className="sr-only">Избранное</span>
-          </Button>
           <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
             <Link href="#promotions">Акции</Link>
           </Button>
@@ -90,16 +82,6 @@ export function Header() {
                   <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
                     <Link href="#promotions" onClick={() => setIsMenuOpen(false)}>Акции</Link>
                   </Button>
-                  <div className="flex justify-center gap-4">
-                    <Button variant="ghost" size="icon">
-                      <Search className="h-6 w-6" />
-                      <span className="sr-only">Поиск</span>
-                    </Button>
-                    <Button variant="ghost" size="icon">
-                      <Heart className="h-6 w-6" />
-                      <span className="sr-only">Избранное</span>
-                    </Button>
-                  </div>
                 </div>
               </div>
             </SheetContent>

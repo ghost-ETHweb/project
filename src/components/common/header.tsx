@@ -10,6 +10,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 const navLinks = [
   { href: "/shops", label: "Магазины" },
   { href: "/map", label: "Карта ТЦ" },
+  { href: "/promotions", label: "Акции" },
   { href: "/partners", label: "Партнерам" },
   { href: "/contacts", label: "Контакты" },
 ]
@@ -37,11 +38,6 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="hidden items-center gap-2 md:flex">
-          <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="#promotions">Акции</Link>
-          </Button>
-        </div>
         <div className="flex items-center md:hidden">
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
@@ -78,11 +74,6 @@ export function Header() {
                     </Link>
                   ))}
                 </nav>
-                <div className="mt-auto flex flex-col gap-4">
-                  <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                    <Link href="#promotions" onClick={() => setIsMenuOpen(false)}>Акции</Link>
-                  </Button>
-                </div>
               </div>
             </SheetContent>
           </Sheet>

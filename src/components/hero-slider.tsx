@@ -24,7 +24,7 @@ const sliderItems = [
     },
     buttons: [
       { href: "/shops", label: "Смотреть магазины" },
-      { href: "#promotions", label: "Акции", variant: "accent" },
+      { href: "/promotions", label: "Акции", variant: "accent" },
     ],
   },
   {

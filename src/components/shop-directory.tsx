@@ -28,17 +28,17 @@ import {
 } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Search } from "lucide-react"
+import { Search, MapPin, Tag } from "lucide-react"
 
 const shopsData = [
-  { id: 1, name: "Aura Fashion", category: "Одежда", floor: 1, logo: "https://placehold.co/100x100.png", hint: "fashion logo", description: "Высокая мода для современных женщин.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: ["Скидка 20% на новые поступления"] },
-  { id: 2, name: "Sole Mates", category: "Обувь", floor: 2, logo: "https://placehold.co/100x100.png", hint: "shoe logo", description: "Последние тенденции в мире обуви.", images: ["https://placehold.co/600x400.png"], promotions: ["Купи одну пару, получи вторую со скидкой 50%"] },
-  { id: 3, name: "TechVerse", category: "Электроника", floor: 1, logo: "https://placehold.co/100x100.png", hint: "tech logo", description: "Гаджеты и аксессуары для вашей цифровой жизни.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: [] },
-  { id: 4, name: "Glamour Zone", category: "Красота", floor: 2, logo: "https://placehold.co/100x100.png", hint: "beauty logo", description: "Косметика, уход за кожей и парфюмерия.", images: ["https://placehold.co/600x400.png"], promotions: ["Подарок при покупке от 50$"] },
-  { id: 5, name: "Book Nook", category: "Книги", floor: 3, logo: "https://placehold.co/100x100.png", hint: "bookstore logo", description: "Уютный уголок для любителей книг.", images: ["https://placehold.co/600x400.png"], promotions: [] },
-  { id: 6, name: "Zenith Watches", category: "Ювелирные изделия", floor: 1, logo: "https://placehold.co/100x100.png", hint: "watch logo", description: "Роскошные часы и изысканные украшения.", images: ["https://placehold.co/600x400.png"], promotions: ["Бесплатная чистка в подарок"] },
-  { id: 7, "name": "Vogue Apparel", "category": "Одежда", "floor": 2, "logo": "https://placehold.co/100x100.png", hint: "clothing logo", "description": "Модная и доступная одежда для всех.", "images": ["https://placehold.co/600x400.png"], "promotions": ["Скидка 15% для студентов"] },
-  { id: 8, "name": "Step Up", "category": "Обувь", "floor": 1, "logo": "https://placehold.co/100x100.png", hint: "sneaker logo", "description": "Спортивная и повседневная обувь для всей семьи.", "images": ["https://placehold.co/600x400.png"], "promotions": [] }
+  { id: 1, name: "Aura Fashion", category: "Одежда", floor: 1, logo: "https://placehold.co/100x100.png", hint: "fashion logo", description: "Высокая мода для современных женщин. Откройте для себя эксклюзивные коллекции от ведущих мировых дизайнеров. Мы предлагаем платья, костюмы, верхнюю одежду и аксессуары, которые подчеркнут ваш уникальный стиль.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: ["Скидка 20% на новые поступления"] },
+  { id: 2, name: "Sole Mates", category: "Обувь", floor: 2, logo: "https://placehold.co/100x100.png", hint: "shoe logo", description: "Последние тенденции в мире обуви для мужчин и женщин. От классических моделей до спортивных кроссовок – у нас есть все, чтобы вы чувствовали себя комфортно и уверенно.", images: ["https://placehold.co/600x400.png"], promotions: ["Купи одну пару, получи вторую со скидкой 50%"] },
+  { id: 3, name: "TechVerse", category: "Электроника", floor: 1, logo: "https://placehold.co/100x100.png", hint: "tech logo", description: "Гаджеты и аксессуары для вашей цифровой жизни. Новейшие смартфоны, ноутбуки, наушники и умные устройства от ведущих брендов. Наши консультанты помогут вам сделать правильный выбор.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: [] },
+  { id: 4, name: "Glamour Zone", category: "Красота", floor: 2, logo: "https://placehold.co/100x100.png", hint: "beauty logo", description: "Все для вашей красоты: косметика, уход за кожей и парфюмерия от люксовых и нишевых брендов. Профессиональные визажисты всегда готовы дать вам совет.", images: ["https://placehold.co/600x400.png"], promotions: ["Подарок при покупке от 50$"] },
+  { id: 5, name: "Book Nook", category: "Книги", floor: 3, logo: "https://placehold.co/100x100.png", hint: "bookstore logo", description: "Уютный уголок для любителей книг. У нас вы найдете бестселлеры, классику, детскую литературу и редкие издания. Наслаждайтесь чтением в нашей комфортной зоне отдыха.", images: ["https://placehold.co/600x400.png"], promotions: [] },
+  { id: 6, name: "Zenith Watches", category: "Ювелирные изделия", floor: 1, logo: "https://placehold.co/100x100.png", hint: "watch logo", description: "Роскошные часы и изысканные украшения для особых моментов. Мы являемся официальным дилером всемирно известных часовых и ювелирных мануфактур.", images: ["https://placehold.co/600x400.png"], promotions: ["Бесплатная чистка в подарок"] },
+  { id: 7, "name": "Vogue Apparel", "category": "Одежда", "floor": 2, "logo": "https://placehold.co/100x100.png", hint: "clothing logo", "description": "Модная и доступная одежда для всех. Мы следим за последними трендами и еженедельно обновляем наши коллекции, чтобы вы всегда выглядели стильно.", "images": ["https://placehold.co/600x400.png"], "promotions": ["Скидка 15% для студентов"] },
+  { id: 8, "name": "Step Up", "category": "Обувь", "floor": 1, "logo": "https://placehold.co/100x100.png", hint: "sneaker logo", "description": "Спортивная и повседневная обувь для всей семьи. У нас вы найдете идеальную пару для бега, тренировок или просто для активного отдыха.", "images": ["https://placehold.co/600x400.png"], "promotions": [] }
 ];
 
 const categories = ["Все", ...Array.from(new Set(shopsData.map((s) => s.category)))];
@@ -152,32 +152,50 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
                   </CardContent>
                 </Card>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[625px]">
-                <DialogHeader>
-                  <DialogTitle className="font-headline text-2xl">{shop.name}</DialogTitle>
-                  <DialogDescription>{shop.category} - Этаж {shop.floor}</DialogDescription>
-                </DialogHeader>
-                <div className="py-4">
-                  <Carousel className="w-full">
-                    <CarouselContent>
-                      {shop.images.map((img, i) => (
-                        <CarouselItem key={i}>
-                          <Image src={img} alt={`Фото ${shop.name} ${i+1}`} width={600} height={400} className="rounded-lg object-cover" />
-                        </CarouselItem>
-                      ))}
-                    </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
-                  </Carousel>
-                  <p className="mt-4 text-sm text-muted-foreground">{shop.description}</p>
-                  {shop.promotions.length > 0 && (
-                    <div className="mt-4">
-                      <h4 className="font-headline font-semibold">Текущие акции</h4>
-                      <ul className="mt-2 list-inside list-disc space-y-1">
-                        {shop.promotions.map((promo, i) => <li key={i} className="text-sm"><Badge className="bg-accent/20 text-accent-foreground hover:bg-accent/30">{promo}</Badge></li>)}
-                      </ul>
-                    </div>
-                  )}
+              <DialogContent className="sm:max-w-4xl p-0">
+                <div className="grid grid-cols-1 md:grid-cols-2">
+                  <div className="p-8 flex flex-col">
+                     <div className="flex items-start gap-4 mb-6">
+                        <Image
+                          src={shop.logo}
+                          alt={`Логотип ${shop.name}`}
+                          width={80}
+                          height={80}
+                          className="rounded-xl border-2"
+                          data-ai-hint={shop.hint}
+                        />
+                        <div>
+                          <DialogTitle className="font-headline text-3xl mb-1">{shop.name}</DialogTitle>
+                          <div className="flex items-center gap-4 text-muted-foreground">
+                            <span>{shop.category}</span>
+                            <span className="flex items-center gap-1"><MapPin size={14} /> Этаж {shop.floor}</span>
+                          </div>
+                        </div>
+                     </div>
+                     <p className="text-sm text-muted-foreground flex-grow">{shop.description}</p>
+                     <Button className="mt-6 w-full">Перейти на карту</Button>
+                  </div>
+                  <div className="relative">
+                     <Carousel className="w-full h-full">
+                        <CarouselContent>
+                          {shop.images.map((img, i) => (
+                            <CarouselItem key={i}>
+                              <Image src={img} alt={`Фото ${shop.name} ${i+1}`} width={800} height={600} className="object-cover h-full w-full md:rounded-r-lg" />
+                            </CarouselItem>
+                          ))}
+                        </CarouselContent>
+                        <CarouselPrevious className="left-4" />
+                        <CarouselNext className="right-4" />
+                      </Carousel>
+                      {shop.promotions.length > 0 && (
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
+                          <h4 className="font-headline font-semibold text-lg flex items-center gap-2"><Tag size={20}/> Текущие акции</h4>
+                          <ul className="mt-2 space-y-1">
+                            {shop.promotions.map((promo, i) => <li key={i} className="text-sm backdrop-blur-sm bg-white/10 rounded-full px-3 py-1 inline-block mr-2 mt-2">{promo}</li>)}
+                          </ul>
+                        </div>
+                      )}
+                  </div>
                 </div>
               </DialogContent>
             </Dialog>

@@ -52,7 +52,7 @@ export function InteractiveMallMap() {
             </TabsList>
             <div className="w-full sm:w-auto sm:max-w-xs">
                 <Input
-                    placeholder="Поиск по названию магазина..."
+                    placeholder="Поиск по названию"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />

@@ -136,8 +136,8 @@ export default function HeroSlider() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="absolute left-4 z-30 translate-y-[-50%] top-1/2 border-white text-white hover:bg-white/20 hover:text-white" />
-        <CarouselNext className="absolute right-4 z-30 translate-y-[-50%] top-1/2 border-white text-white hover:bg-white/20 hover:text-white" />
+        <CarouselPrevious className="absolute left-4 z-30 translate-y-[-50%] top-1/2 border-white text-white hover:bg-white/20 hover:text-white opacity-100" />
+        <CarouselNext className="absolute right-4 z-30 translate-y-[-50%] top-1/2 border-white text-white hover:bg-white/20 hover:text-white opacity-100" />
       </Carousel>
     </section>
   )

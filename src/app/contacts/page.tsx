@@ -10,7 +10,7 @@ export default function ContactsPage() {
             Свяжитесь с нами
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Мы здесь, чтобы помочь. Если у вас есть вопросы о наших магазинах, услугах или мероприятиях, не стесняйтесь обращаться.
+            Есть вопросы о магазинах, услугах или мероприятиях? Мы готовы помочь.
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export default function ContactsPage() {
             <CardContent className="text-muted-foreground">
               <p><strong>Понедельник - Суббота:</strong> 10:00 - 21:00</p>
               <p><strong>Воскресенье:</strong> 11:00 - 19:00</p>
-              <p>Часы работы могут меняться в праздничные дни и для отдельных магазинов.</p>
+              <p>Часы работы могут меняться в праздничные дни.</p>
             </CardContent>
           </Card>
         </div>

@@ -58,6 +58,13 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="shops" className="container mx-auto px-4 py-12 sm:py-16 md:py-24 border-t">
+        <h2 className="mb-8 text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+          Откройте для себя наши магазины
+        </h2>
+        <ShopDirectory isPaginated={false} />
+      </section>
+
       <section id="events" className="container mx-auto px-4 py-12 sm:py-16 md:py-24">
         <div className="text-center mb-12">
             <h2 className="mb-4 text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
@@ -98,13 +105,6 @@ export default function Home() {
                 <Link href="/events">Смотреть все события <ArrowRight className="ml-2" /></Link>
             </Button>
         </div>
-      </section>
-
-      <section id="shops" className="container mx-auto px-4 py-12 sm:py-16 md:py-24 border-t">
-        <h2 className="mb-8 text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-          Откройте для себя наши магазины
-        </h2>
-        <ShopDirectory isPaginated={false} />
       </section>
 
        <section id="partners" className="py-12 sm:py-16 md:py-24 bg-secondary">

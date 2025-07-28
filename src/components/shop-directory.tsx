@@ -130,26 +130,22 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
       </div>
 
       {paginatedShops.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {paginatedShops.map((shop) => (
             <Dialog key={shop.id}>
               <DialogTrigger asChild>
-                <Card className="cursor-pointer overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1">
-                  <CardHeader className="flex flex-row items-center gap-4">
+                <Card className="cursor-pointer overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 flex flex-col text-center">
+                  <CardContent className="p-6 flex-grow flex flex-col items-center justify-center">
                     <Image
                       src={shop.logo}
                       alt={`Логотип ${shop.name}`}
-                      width={64}
-                      height={64}
-                      className="rounded-lg border"
+                      width={80}
+                      height={80}
+                      className="rounded-full border-2 mb-4"
                       data-ai-hint={shop.hint}
                     />
-                    <div className="flex-1">
-                      <CardTitle className="font-headline text-lg">{shop.name}</CardTitle>
-                      <CardDescription>{shop.category}</CardDescription>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
+                    <CardTitle className="font-headline text-xl mb-1">{shop.name}</CardTitle>
+                    <CardDescription className="mb-4">{shop.category}</CardDescription>
                     <Badge variant="secondary">Этаж {shop.floor}</Badge>
                   </CardContent>
                 </Card>

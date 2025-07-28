@@ -134,22 +134,23 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
           {paginatedShops.map((shop) => (
             <Dialog key={shop.id}>
               <DialogTrigger asChild>
-                <Card className="group relative cursor-pointer overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1">
-                  <Image
-                    src={shop.images[0]}
-                    alt={shop.name}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
-                  <div className="relative flex h-full flex-col justify-end p-4 text-white">
-                    <CardTitle className="font-headline text-2xl drop-shadow-md">
-                      {shop.name}
-                    </CardTitle>
-                    <div className="mt-2 flex items-center justify-between opacity-80">
-                       <p className="text-sm">{shop.category}</p>
-                       <Badge variant="secondary" className="bg-white/20 text-white backdrop-blur-sm border-0">Этаж {shop.floor}</Badge>
+                <Card className="group cursor-pointer overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 bg-secondary border-0 p-2">
+                  <div className="bg-card p-4 aspect-square flex items-center justify-center">
+                    <div className="relative w-full h-full">
+                         <Image
+                            src={shop.logo}
+                            alt={`${shop.name} logo`}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-contain"
+                            data-ai-hint={shop.hint}
+                        />
                     </div>
+                  </div>
+                  <div className="p-4 text-left">
+                    <h3 className="font-headline text-lg font-semibold text-foreground underline-offset-4 hover:underline">{shop.name}</h3>
+                    <p className="text-sm text-muted-foreground mt-1">{shop.category}</p>
+                    <Button variant="outline" size="sm" className="mt-4 pointer-events-none">Этаж {shop.floor}</Button>
                   </div>
                 </Card>
               </DialogTrigger>

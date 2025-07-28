@@ -33,14 +33,14 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Search, MapPin, Tag } from "lucide-react"
 
 const shopsData = [
-  { id: 1, name: "Aura Fashion", category: "Одежда", floor: 1, logo: "https://placehold.co/100x100.png", hint: "fashion logo", description: "Высокая мода для современных женщин. Откройте для себя эксклюзивные коллекции от ведущих мировых дизайнеров. Мы предлагаем платья, костюмы, верхнюю одежду и аксессуары, которые подчеркнут ваш уникальный стиль.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: ["Скидка 20% на новые поступления"] },
-  { id: 2, name: "Sole Mates", category: "Обувь", floor: 2, logo: "https://placehold.co/100x100.png", hint: "shoe logo", description: "Последние тенденции в мире обуви для мужчин и женщин. От классических моделей до спортивных кроссовок – у нас есть все, чтобы вы чувствовали себя комфортно и уверенно.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png", "https://placehold.co/600x400.png", "https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: ["Купи одну пару, получи вторую со скидкой 50%"] },
-  { id: 3, name: "TechVerse", category: "Электроника", floor: 1, logo: "https://placehold.co/100x100.png", hint: "tech logo", description: "Гаджеты и аксессуары для вашей цифровой жизни. Новейшие смартфоны, ноутбуки, наушники и умные устройства от ведущих брендов. Наши консультанты помогут вам сделать правильный выбор.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: [] },
-  { id: 4, name: "Glamour Zone", category: "Красота", floor: 2, logo: "https://placehold.co/100x100.png", hint: "beauty logo", description: "Все для вашей красоты: косметика, уход за кожей и парфюмерия от люксовых и нишевых брендов. Профессиональные визажисты всегда готовы дать вам совет.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: ["Подарок при покупке от 50$"] },
-  { id: 5, name: "Book Nook", category: "Книги", floor: 3, logo: "https://placehold.co/100x100.png", hint: "bookstore logo", description: "Уютный уголок для любителей книг. У нас вы найдете бестселлеры, классику, детскую литературу и редкие издания. Наслаждайтесь чтением в нашей комфортной зоне отдыха.", images: ["https://placehold.co/600x400.png"], promotions: [] },
-  { id: 6, name: "Zenith Watches", category: "Ювелирные изделия", floor: 1, logo: "https://placehold.co/100x100.png", hint: "watch logo", description: "Роскошные часы и изысканные украшения для особых моментов. Мы являемся официальным дилером всемирно известных часовых и ювелирных мануфактур.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png", "https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: ["Бесплатная чистка в подарок"] },
-  { id: 7, "name": "Vogue Apparel", "category": "Одежда", "floor": 2, "logo": "https://placehold.co/100x100.png", hint: "clothing logo", "description": "Модная и доступная одежда для всех. Мы следим за последними трендами и еженедельно обновляем наши коллекции, чтобы вы всегда выглядели стильно.", "images": ["https://placehold.co/600x400.png"], "promotions": ["Скидка 15% для студентов"] },
-  { id: 8, "name": "Step Up", "category": "Обувь", "floor": 1, "logo": "https://placehold.co/100x100.png", hint: "sneaker logo", "description": "Спортивная и повседневная обувь для всей семьи. У нас вы найдете идеальную пару для бега, тренировок или просто для активного отдыха.", "images": ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], "promotions": [] }
+  { id: 1, name: "Aura Fashion", category: "Одежда", floor: 1, logo: "https://placehold.co/200x100.png", hint: "fashion logo", description: "Высокая мода для современных женщин. Откройте для себя эксклюзивные коллекции от ведущих мировых дизайнеров. Мы предлагаем платья, костюмы, верхнюю одежду и аксессуары, которые подчеркнут ваш уникальный стиль.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: ["Скидка 20% на новые поступления"] },
+  { id: 2, name: "Sole Mates", category: "Обувь", floor: 2, logo: "https://placehold.co/200x100.png", hint: "shoe logo", description: "Последние тенденции в мире обуви для мужчин и женщин. От классических моделей до спортивных кроссовок – у нас есть все, чтобы вы чувствовали себя комфортно и уверенно.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png", "https://placehold.co/600x400.png", "https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: ["Купи одну пару, получи вторую со скидкой 50%"] },
+  { id: 3, name: "TechVerse", category: "Электроника", floor: 1, logo: "https://placehold.co/200x100.png", hint: "tech logo", description: "Гаджеты и аксессуары для вашей цифровой жизни. Новейшие смартфоны, ноутбуки, наушники и умные устройства от ведущих брендов. Наши консультанты помогут вам сделать правильный выбор.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: [] },
+  { id: 4, name: "Glamour Zone", category: "Красота", floor: 2, logo: "https://placehold.co/200x100.png", hint: "beauty logo", description: "Все для вашей красоты: косметика, уход за кожей и парфюмерия от люксовых и нишевых брендов. Профессиональные визажисты всегда готовы дать вам совет.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: ["Подарок при покупке от 50$"] },
+  { id: 5, name: "Book Nook", category: "Книги", floor: 3, logo: "https://placehold.co/200x100.png", hint: "bookstore logo", description: "Уютный уголок для любителей книг. У нас вы найдете бестселлеры, классику, детскую литературу и редкие издания. Наслаждайтесь чтением в нашей комфортной зоне отдыха.", images: ["https://placehold.co/600x400.png"], promotions: [] },
+  { id: 6, name: "Zenith Watches", category: "Ювелирные изделия", floor: 1, logo: "https://placehold.co/200x100.png", hint: "watch logo", description: "Роскошные часы и изысканные украшения для особых моментов. Мы являемся официальным дилером всемирно известных часовых и ювелирных мануфактур.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png", "https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: ["Бесплатная чистка в подарок"] },
+  { id: 7, "name": "Vogue Apparel", "category": "Одежда", "floor": 2, "logo": "https://placehold.co/200x100.png", hint: "clothing logo", "description": "Модная и доступная одежда для всех. Мы следим за последними трендами и еженедельно обновляем наши коллекции, чтобы вы всегда выглядели стильно.", "images": ["https://placehold.co/600x400.png"], "promotions": ["Скидка 15% для студентов"] },
+  { id: 8, "name": "Step Up", "category": "Обувь", "floor": 1, "logo": "https://placehold.co/200x100.png", hint: "sneaker logo", "description": "Спортивная и повседневная обувь для всей семьи. У нас вы найдете идеальную пару для бега, тренировок или просто для активного отдыха.", "images": ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], "promotions": [] }
 ];
 
 const categories = ["Все", ...Array.from(new Set(shopsData.map((s) => s.category)))];
@@ -130,23 +130,27 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
       </div>
 
       {paginatedShops.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {paginatedShops.map((shop) => (
             <Dialog key={shop.id}>
               <DialogTrigger asChild>
-                <Card className="cursor-pointer overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 flex flex-col text-center">
-                  <CardContent className="p-6 flex-grow flex flex-col items-center justify-center">
-                    <Image
+                <Card className="cursor-pointer overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 flex flex-col group">
+                  <div className="relative bg-muted/50 aspect-video flex items-center justify-center p-4">
+                     <Image
                       src={shop.logo}
                       alt={`Логотип ${shop.name}`}
-                      width={80}
-                      height={80}
-                      className="rounded-full border-2 mb-4"
+                      width={150}
+                      height={75}
+                      className="object-contain"
                       data-ai-hint={shop.hint}
                     />
-                    <CardTitle className="font-headline text-xl mb-1">{shop.name}</CardTitle>
-                    <CardDescription className="mb-4">{shop.category}</CardDescription>
-                    <Badge variant="secondary">Этаж {shop.floor}</Badge>
+                  </div>
+                  <CardContent className="p-4 flex-grow flex flex-col justify-between">
+                    <div>
+                        <CardTitle className="font-headline text-lg mb-1 group-hover:text-primary">{shop.name}</CardTitle>
+                        <CardDescription>{shop.category}</CardDescription>
+                    </div>
+                    <Badge variant="outline" className="mt-4 w-fit">Этаж {shop.floor}</Badge>
                   </CardContent>
                 </Card>
               </DialogTrigger>
@@ -159,7 +163,7 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
                           alt={`Логотип ${shop.name}`}
                           width={80}
                           height={80}
-                          className="rounded-xl border-2"
+                          className="rounded-xl border-2 object-contain p-1"
                           data-ai-hint={shop.hint}
                         />
                         <div>

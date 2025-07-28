@@ -62,12 +62,6 @@ export function Header() {
                         Галерея Навигатор
                         </span>
                     </Link>
-                    <SheetTrigger asChild>
-                        <Button variant="ghost" size="icon">
-                        <X className="h-6 w-6" />
-                        <span className="sr-only">Закрыть меню</span>
-                        </Button>
-                    </SheetTrigger>
                     </div>
                     <nav className="flex flex-1 flex-col gap-4">
                     {navLinks.map((link) => (

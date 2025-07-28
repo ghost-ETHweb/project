@@ -151,12 +151,12 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
                             </div>
                           </div>
                         </CardHeader>
-                        <CardContent className="flex flex-col p-4">
-                          <div>
+                        <CardContent className="flex flex-col p-4 flex-grow">
+                          <div className="flex-grow">
                             <h3 className="font-headline text-lg font-semibold text-foreground">{shop.name}</h3>
                             <p className="text-sm text-muted-foreground mt-1">{shop.category}</p>
                           </div>
-                           <Button variant="outline" size="sm" className="mt-auto w-fit pointer-events-none">Этаж {shop.floor}</Button>
+                           <Button variant="outline" size="sm" className="w-fit pointer-events-none">Этаж {shop.floor}</Button>
                         </CardContent>
                       </Card>
                     </div>

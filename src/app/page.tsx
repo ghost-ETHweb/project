@@ -5,25 +5,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, Clock, MapPin, ArrowRight } from "lucide-react"
+import { Calendar, MapPin, ArrowRight, Briefcase } from "lucide-react"
 
 const featuredEvents = [
     { 
         id: 1, 
-        title: "Джазовый вечер", 
-        description: "Насладитесь живой джазовой музыкой в центральном атриуме.", 
-        date: "2024-09-05", 
-        time: "19:00 - 21:00", 
-        location: "Центральный атриум",
-        image: { src: "https://placehold.co/600x400.png", hint: "jazz music" },
-        category: "Музыка",
+        title: "Открытие нового магазина", 
+        description: "Откройте для себя последние тренды в новом флагмане Aura.", 
+        date: "2024-09-01", 
+        location: "Aura Fashion, 1 этаж",
+        image: { src: "https://placehold.co/600x400.png", hint: "luxury store opening" },
+        category: "Магазины",
     },
     { 
         id: 2, 
         title: "Мастер-класс по рисованию", 
         description: "Приводите своих детей на увлекательный мастер-класс.", 
         date: "2024-09-14", 
-        time: "12:00 - 14:00", 
         location: "Детская зона",
         image: { src: "https://placehold.co/600x400.png", hint: "kids painting" },
         category: "Для детей",
@@ -107,6 +105,21 @@ export default function Home() {
           Откройте для себя наши магазины
         </h2>
         <ShopDirectory isPaginated={false} />
+      </section>
+
+       <section id="partners" className="py-12 sm:py-16 md:py-24 bg-secondary">
+        <div className="container mx-auto text-center">
+            <Briefcase className="mx-auto h-12 w-12 text-primary" />
+            <h2 className="mt-4 mb-4 text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+                Станьте нашим партнером
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+                Присоединяйтесь к нам и развивайте свой бизнес. Мы предлагаем выгодные условия аренды и высокий трафик посетителей.
+            </p>
+            <Button asChild size="lg" className="mt-8">
+                <Link href="/partners">Заполнить форму <ArrowRight className="ml-2" /></Link>
+            </Button>
+        </div>
       </section>
     </div>
   );

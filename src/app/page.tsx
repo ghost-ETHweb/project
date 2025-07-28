@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, MapPin, ArrowRight, Briefcase } from "lucide-react"
+import { Calendar, MapPin, ArrowRight, Briefcase, Tag } from "lucide-react"
 
 const featuredEvents = [
     { 
@@ -27,6 +27,12 @@ const featuredEvents = [
         category: "Для детей",
     },
 ];
+
+const featuredPromotions = [
+    { id: 1, title: "Грандиозная летняя распродажа", description: "Скидки до 70% на ваши любимые бренды.", shop: "Aura Fashion" },
+    { id: 2, title: "Купи одну, получи вторую со скидкой 50%", description: "Обновите свою коллекцию обуви.", shop: "Sole Mates" },
+];
+
 
 export default function Home() {
   return (
@@ -106,8 +112,46 @@ export default function Home() {
             </Button>
         </div>
       </section>
+      
+      <section id="promotions" className="bg-secondary px-4 py-12 sm:py-16 md:py-24">
+        <div className="container mx-auto">
+            <div className="text-center mb-12">
+                <h2 className="mb-4 text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+                Акции и предложения
+                </h2>
+                <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+                    Воспользуйтесь эксклюзивными скидками и специальными предложениями.
+                </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                {featuredPromotions.map((promo) => (
+                     <Card key={promo.id}>
+                         <CardHeader>
+                           <div className="flex items-start gap-3">
+                              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary flex-shrink-0 mt-1">
+                                <Tag size={20} />
+                              </div>
+                              <div>
+                                <CardTitle className="font-headline text-xl">{promo.title}</CardTitle>
+                                <CardDescription className="pt-1 !mt-0">{promo.description}</CardDescription>
+                              </div>
+                           </div>
+                         </CardHeader>
+                         <CardContent>
+                           <p className="text-sm text-muted-foreground"><strong>Магазин:</strong> {promo.shop}</p>
+                         </CardContent>
+                     </Card>
+                ))}
+            </div>
+            <div className="text-center">
+                <Button asChild size="lg" variant="outline">
+                    <Link href="/promotions">Смотреть все акции <ArrowRight className="ml-2" /></Link>
+                </Button>
+            </div>
+        </div>
+      </section>
 
-       <section id="partners" className="py-12 sm:py-16 md:py-24 bg-secondary">
+       <section id="partners" className="py-12 sm:py-16 md:py-24">
         <div className="container mx-auto text-center">
             <Briefcase className="mx-auto h-12 w-12 text-primary" />
             <h2 className="mt-4 mb-4 text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">

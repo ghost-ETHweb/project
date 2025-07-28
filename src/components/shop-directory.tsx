@@ -162,32 +162,40 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
                   </DialogTrigger>
 
                   {/* Back of the card */}
+                  <DialogTrigger asChild>
                   <div className="absolute h-full w-full backface-hidden rotate-y-180">
-                    <Card className="flex h-full flex-col overflow-hidden rounded-lg bg-primary text-primary-foreground shadow-xl">
-                      <CardHeader>
-                        <CardTitle className="font-headline text-xl">Акции в {shop.name}</CardTitle>
-                      </CardHeader>
-                      <CardContent className="flex flex-grow flex-col justify-center items-center text-center">
-                        {shop.promotions.length > 0 ? (
-                          <ul className="space-y-2">
-                            {shop.promotions.map((promo, i) => (
-                              <li key={i} className="flex items-center gap-2">
-                                <Tag className="h-4 w-4 flex-shrink-0" />
-                                <span>{promo}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        ) : (
-                          <p>На данный момент активных акций нет.</p>
-                        )}
-                      </CardContent>
-                      <div className="p-4 border-t border-primary-foreground/20 text-center">
-                        <DialogTrigger asChild>
-                          <Button variant="secondary">Подробнее о магазине</Button>
-                        </DialogTrigger>
+                    <Card className="relative flex h-full flex-col overflow-hidden rounded-lg bg-primary text-primary-foreground shadow-xl">
+                      <Image
+                        src={shop.logo}
+                        alt={`${shop.name} logo`}
+                        fill
+                        className="object-contain scale-125 opacity-10 blur-lg"
+                      />
+                      <div className="relative z-10 flex flex-col h-full">
+                        <CardHeader>
+                          <CardTitle className="font-headline text-xl">Акции в {shop.name}</CardTitle>
+                        </CardHeader>
+                        <CardContent className="flex flex-grow flex-col justify-center items-center text-center">
+                          {shop.promotions.length > 0 ? (
+                            <ul className="space-y-2">
+                              {shop.promotions.map((promo, i) => (
+                                <li key={i} className="flex items-center gap-2">
+                                  <Tag className="h-4 w-4 flex-shrink-0" />
+                                  <span>{promo}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <p>На данный момент активных акций нет.</p>
+                          )}
+                        </CardContent>
+                        <div className="p-4 border-t border-primary-foreground/20 text-center">
+                            <Button variant="secondary">Подробнее о магазине</Button>
+                        </div>
                       </div>
                     </Card>
                   </div>
+                  </DialogTrigger>
                 </div>
               </div>
               <DialogContent className="sm:max-w-4xl p-0">

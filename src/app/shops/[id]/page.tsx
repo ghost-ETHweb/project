@@ -7,7 +7,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, MapPin, Tag } from "lucide-react";
+import { ArrowLeft, MapPin, Tag, Clock, Phone } from "lucide-react";
 
 export function generateStaticParams() {
   return shopsData.map((shop) => ({
@@ -64,6 +64,23 @@ export default function ShopDetailPage({ params }: { params: { id: string } }) {
           </div>
           <p className="text-muted-foreground mb-6 flex-grow">{shop.description}</p>
           
+          <div className="space-y-4 mb-6">
+              <div className="flex items-center gap-3 text-sm">
+                <Clock className="h-5 w-5 text-muted-foreground" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Часы работы</h3>
+                  <p className="text-muted-foreground">{shop.workingHours}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 text-sm">
+                <Phone className="h-5 w-5 text-muted-foreground" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Телефон</h3>
+                  <p className="text-muted-foreground">{shop.phone}</p>
+                </div>
+              </div>
+          </div>
+
           {shop.promotions.length > 0 && (
             <Card className="mb-6 bg-secondary">
               <CardHeader>

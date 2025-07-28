@@ -30,7 +30,7 @@ import {
 } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Search, MapPin, Tag } from "lucide-react"
+import { Search, MapPin, Tag, MousePointerClick } from "lucide-react"
 
 const shopsData = [
   { id: 1, name: "Aura Fashion", category: "Одежда", floor: 1, logo: "https://placehold.co/200x100.png", hint: "fashion logo", description: "Высокая мода для современных женщин. Откройте для себя эксклюзивные коллекции от ведущих мировых дизайнеров. Мы предлагаем платья, костюмы, верхнюю одежду и аксессуары, которые подчеркнут ваш уникальный стиль.", images: ["https://placehold.co/600x400.png", "https://placehold.co/600x400.png", "https://placehold.co/600x400.png"], promotions: ["Скидка 20% на новые поступления"] },
@@ -130,15 +130,14 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
       </div>
 
       {paginatedShops.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
           {paginatedShops.map((shop) => (
             <Dialog key={shop.id}>
               <div className="group perspective-1000">
                 <div className="relative h-[380px] w-full transform-style-3d transition-transform duration-700 group-hover:rotate-y-180">
                   {/* Front of the card */}
-                  <DialogTrigger asChild>
-                    <div className="absolute h-full w-full backface-hidden">
-                      <Card className="flex h-full flex-col cursor-pointer overflow-hidden rounded-lg bg-secondary shadow-sm">
+                    <div className="absolute h-full w-full backface-hidden cursor-pointer">
+                      <Card className="flex h-full flex-col overflow-hidden rounded-lg bg-secondary shadow-sm transition-all duration-300 hover:scale-[1.03] hover:shadow-lg">
                         <CardHeader className="p-0">
                           <div className="relative aspect-video w-full">
                             <Image
@@ -148,21 +147,23 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
                               className="object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                            <div className="absolute top-2 right-2 flex items-center gap-1 rounded-full bg-black/40 px-2 py-1 text-xs text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                                <MousePointerClick size={12} />
+                                <span>Акции</span>
+                            </div>
                           </div>
                         </CardHeader>
                         <CardContent className="flex flex-grow flex-col justify-between p-4">
                           <div>
-                            <h3 className="font-headline text-lg font-semibold text-foreground group-hover:text-primary">{shop.name}</h3>
+                            <h3 className="font-headline text-lg font-semibold text-foreground">{shop.name}</h3>
                             <p className="text-sm text-muted-foreground mt-1">{shop.category}</p>
                           </div>
                           <Button variant="outline" size="sm" className="mt-4 w-fit pointer-events-none">Этаж {shop.floor}</Button>
                         </CardContent>
                       </Card>
                     </div>
-                  </DialogTrigger>
 
                   {/* Back of the card */}
-                  <DialogTrigger asChild>
                   <div className="absolute h-full w-full backface-hidden rotate-y-180">
                     <Card className="relative flex h-full flex-col overflow-hidden rounded-lg bg-primary text-primary-foreground shadow-xl">
                       <Image
@@ -190,12 +191,13 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
                           )}
                         </CardContent>
                         <div className="p-4 border-t border-primary-foreground/20 text-center">
-                            <Button variant="secondary">Подробнее о магазине</Button>
+                            <DialogTrigger asChild>
+                                <Button variant="secondary">Подробнее о магазине</Button>
+                            </DialogTrigger>
                         </div>
                       </div>
                     </Card>
                   </div>
-                  </DialogTrigger>
                 </div>
               </div>
               <DialogContent className="sm:max-w-4xl p-0">

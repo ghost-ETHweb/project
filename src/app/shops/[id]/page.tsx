@@ -45,6 +45,22 @@ export default function ShopDetailPage({ params }: { params: { id: string } }) {
                 <CarouselPrevious className="left-4" />
                 <CarouselNext className="right-4" />
             </Carousel>
+             <div className="space-y-4 mt-8">
+              <div className="flex items-center gap-3 text-sm">
+                <Clock className="h-5 w-5 text-muted-foreground" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Часы работы</h3>
+                  <p className="text-muted-foreground">{shop.workingHours}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 text-sm">
+                <Phone className="h-5 w-5 text-muted-foreground" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Телефон</h3>
+                  <p className="text-muted-foreground">{shop.phone}</p>
+                </div>
+              </div>
+          </div>
         </div>
         <div className="flex flex-col">
           <div className="flex items-start gap-4 mb-4">
@@ -66,23 +82,6 @@ export default function ShopDetailPage({ params }: { params: { id: string } }) {
           </div>
           <p className="text-muted-foreground mb-6 flex-grow">{shop.description}</p>
           
-          <div className="space-y-4 mb-6">
-              <div className="flex items-center gap-3 text-sm">
-                <Clock className="h-5 w-5 text-muted-foreground" />
-                <div>
-                  <h3 className="font-semibold text-foreground">Часы работы</h3>
-                  <p className="text-muted-foreground">{shop.workingHours}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 text-sm">
-                <Phone className="h-5 w-5 text-muted-foreground" />
-                <div>
-                  <h3 className="font-semibold text-foreground">Телефон</h3>
-                  <p className="text-muted-foreground">{shop.phone}</p>
-                </div>
-              </div>
-          </div>
-
           {shop.promotions.length > 0 && (
             <Card className="mb-6 bg-secondary">
               <CardHeader>

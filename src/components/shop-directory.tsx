@@ -134,7 +134,7 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
           {paginatedShops.map((shop) => (
             <Dialog key={shop.id}>
               <DialogTrigger asChild>
-                <Card className="group cursor-pointer overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 bg-secondary border-0 p-2">
+                <Card className="group cursor-pointer overflow-hidden rounded-lg bg-secondary shadow-sm transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 hover:scale-105">
                   <div className="bg-card p-4 aspect-square flex items-center justify-center">
                     <div className="relative w-full h-full">
                          <Image
@@ -148,7 +148,7 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
                     </div>
                   </div>
                   <div className="p-4 text-left">
-                    <h3 className="font-headline text-lg font-semibold text-foreground underline-offset-4 hover:underline">{shop.name}</h3>
+                    <h3 className="font-headline text-lg font-semibold text-foreground underline-offset-4 group-hover:text-primary group-hover:underline">{shop.name}</h3>
                     <p className="text-sm text-muted-foreground mt-1">{shop.category}</p>
                     <Button variant="outline" size="sm" className="mt-4 pointer-events-none">Этаж {shop.floor}</Button>
                   </div>

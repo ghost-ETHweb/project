@@ -23,9 +23,9 @@ export function Footer() {
             </h3>
             <ul className="mt-4 space-y-2">
               <li><Link href="/shops" className="text-sm hover:text-primary">Магазины</Link></li>
-              <li><Link href="/map" className="text-sm hover:text-primary">Услуги</Link></li>
+              <li><Link href="/map" className="text-sm hover:text-primary">Карта ТЦ</Link></li>
               <li><Link href="/promotions" className="text-sm hover:text-primary">Акции</Link></li>
-              <li><Link href="#events" className="text-sm hover:text-primary">События</Link></li>
+              <li><Link href="/events" className="text-sm hover:text-primary">События</Link></li>
             </ul>
           </div>
           <div>
@@ -33,9 +33,9 @@ export function Footer() {
               Информация
             </h3>
             <ul className="mt-4 space-y-2">
+               <li><Link href="/about" className="text-sm hover:text-primary">О нас</Link></li>
               <li><Link href="/partners" className="text-sm hover:text-primary">Для партнеров</Link></li>
               <li><Link href="/contacts" className="text-sm hover:text-primary">Контакты</Link></li>
-              <li><Link href="/about" className="text-sm hover:text-primary">О нас</Link></li>
             </ul>
           </div>
           <div>

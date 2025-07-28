@@ -11,6 +11,8 @@ const navLinks = [
   { href: "/shops", label: "Магазины" },
   { href: "/map", label: "Карта ТЦ" },
   { href: "/promotions", label: "Акции" },
+  { href: "/events", label: "События" },
+  { href: "/about", label: "О нас" },
   { href: "/partners", label: "Партнерам" },
   { href: "/contacts", label: "Контакты" },
 ]

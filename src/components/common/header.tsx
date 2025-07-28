@@ -6,6 +6,7 @@ import { Menu, X, ShoppingBag } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { ThemeToggle } from "../theme-toggle"
 
 const navLinks = [
   { href: "/shops", label: "Магазины" },
@@ -40,45 +41,53 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center md:hidden">
-          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Открыть меню</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="w-full max-w-xs sm:max-w-sm">
-              <div className="flex h-full flex-col">
-                <div className="mb-6 flex items-center justify-between">
-                  <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
-                    <ShoppingBag className="h-6 w-6 text-primary" />
-                    <span className="font-headline text-lg font-semibold text-primary">
-                      Галерея Навигатор
-                    </span>
-                  </Link>
-                   <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon">
-                      <X className="h-6 w-6" />
-                      <span className="sr-only">Закрыть меню</span>
-                    </Button>
-                  </SheetTrigger>
-                </div>
-                <nav className="flex flex-1 flex-col gap-4">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="rounded-lg p-2 text-lg font-medium text-foreground transition-colors hover:bg-muted"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {link.label}
+        <div className="flex items-center gap-2">
+            <div className="hidden md:block">
+                <ThemeToggle />
+            </div>
+            <div className="flex items-center md:hidden">
+            <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+                <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                    <Menu className="h-6 w-6" />
+                    <span className="sr-only">Открыть меню</span>
+                </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="w-full max-w-xs sm:max-w-sm">
+                <div className="flex h-full flex-col">
+                    <div className="mb-6 flex items-center justify-between">
+                    <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
+                        <ShoppingBag className="h-6 w-6 text-primary" />
+                        <span className="font-headline text-lg font-semibold text-primary">
+                        Галерея Навигатор
+                        </span>
                     </Link>
-                  ))}
-                </nav>
-              </div>
-            </SheetContent>
-          </Sheet>
+                    <SheetTrigger asChild>
+                        <Button variant="ghost" size="icon">
+                        <X className="h-6 w-6" />
+                        <span className="sr-only">Закрыть меню</span>
+                        </Button>
+                    </SheetTrigger>
+                    </div>
+                    <nav className="flex flex-1 flex-col gap-4">
+                    {navLinks.map((link) => (
+                        <Link
+                        key={link.href}
+                        href={link.href}
+                        className="rounded-lg p-2 text-lg font-medium text-foreground transition-colors hover:bg-muted"
+                        onClick={() => setIsMenuOpen(false)}
+                        >
+                        {link.label}
+                        </Link>
+                    ))}
+                    </nav>
+                    <div className="mt-auto pt-4 border-t">
+                        <ThemeToggle />
+                    </div>
+                </div>
+                </SheetContent>
+            </Sheet>
+            </div>
         </div>
       </div>
     </header>

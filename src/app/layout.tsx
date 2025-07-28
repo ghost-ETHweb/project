@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { Header } from '@/components/common/header';
 import { Footer } from '@/components/common/footer';
 import { Toaster } from '@/components/ui/toaster';
+import { ThemeProvider } from '@/components/theme-provider';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -40,12 +41,19 @@ export default function RootLayout({
           openSans.variable
         )}
       >
-        <div className="relative flex min-h-screen flex-col">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
-        <Toaster />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="relative flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

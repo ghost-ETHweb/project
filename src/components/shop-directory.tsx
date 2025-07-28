@@ -8,7 +8,6 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-  CardDescription,
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import {
@@ -28,7 +27,6 @@ import {
   DialogTrigger,
   DialogClose,
 } from "@/components/ui/dialog"
-import { Badge } from "@/components/ui/badge"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { Search, MapPin, Tag, MousePointerClick } from "lucide-react"
 
@@ -149,16 +147,16 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                             <div className="absolute top-2 right-2 flex items-center gap-1 rounded-full bg-black/40 px-2 py-1 text-xs text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                                 <MousePointerClick size={12} />
-                                <span>Акции</span>
+                                <span>Наведите на акции</span>
                             </div>
                           </div>
                         </CardHeader>
-                        <CardContent className="flex flex-grow flex-col justify-between p-4">
+                        <CardContent className="flex flex-col p-4">
                           <div>
                             <h3 className="font-headline text-lg font-semibold text-foreground">{shop.name}</h3>
                             <p className="text-sm text-muted-foreground mt-1">{shop.category}</p>
                           </div>
-                          <Button variant="outline" size="sm" className="mt-4 w-fit pointer-events-none">Этаж {shop.floor}</Button>
+                           <Button variant="outline" size="sm" className="mt-auto w-fit pointer-events-none">Этаж {shop.floor}</Button>
                         </CardContent>
                       </Card>
                     </div>
@@ -171,6 +169,7 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
                         alt={`${shop.name} logo`}
                         fill
                         className="object-contain scale-125 opacity-10 blur-lg"
+                        data-ai-hint={shop.hint}
                       />
                       <div className="relative z-10 flex flex-col h-full">
                         <CardHeader>

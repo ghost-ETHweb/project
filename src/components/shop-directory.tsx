@@ -133,74 +133,110 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {paginatedShops.map((shop) => (
             <Dialog key={shop.id}>
-              <DialogTrigger asChild>
-                <Card className="group cursor-pointer overflow-hidden rounded-lg bg-secondary shadow-sm transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 hover:scale-105">
-                  <div className="bg-card p-4 aspect-square flex items-center justify-center">
-                    <div className="relative w-full h-full">
-                         <Image
-                            src={shop.logo}
-                            alt={`${shop.name} logo`}
-                            fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            className="object-contain"
-                            data-ai-hint={shop.hint}
-                        />
+              <div className="group perspective-1000">
+                <div className="relative h-[380px] w-full transform-style-3d transition-transform duration-700 group-hover:rotate-y-180">
+                  {/* Front of the card */}
+                  <DialogTrigger asChild>
+                    <div className="absolute h-full w-full backface-hidden">
+                      <Card className="flex h-full flex-col cursor-pointer overflow-hidden rounded-lg bg-secondary shadow-sm">
+                        <CardHeader className="p-0">
+                          <div className="relative aspect-video w-full">
+                            <Image
+                              src={shop.images[0]}
+                              alt={shop.name}
+                              fill
+                              className="object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                          </div>
+                        </CardHeader>
+                        <CardContent className="flex flex-grow flex-col justify-between p-4">
+                          <div>
+                            <h3 className="font-headline text-lg font-semibold text-foreground group-hover:text-primary">{shop.name}</h3>
+                            <p className="text-sm text-muted-foreground mt-1">{shop.category}</p>
+                          </div>
+                          <Button variant="outline" size="sm" className="mt-4 w-fit pointer-events-none">Этаж {shop.floor}</Button>
+                        </CardContent>
+                      </Card>
                     </div>
+                  </DialogTrigger>
+
+                  {/* Back of the card */}
+                  <div className="absolute h-full w-full backface-hidden rotate-y-180">
+                    <Card className="flex h-full flex-col overflow-hidden rounded-lg bg-primary text-primary-foreground shadow-xl">
+                      <CardHeader>
+                        <CardTitle className="font-headline text-xl">Акции в {shop.name}</CardTitle>
+                      </CardHeader>
+                      <CardContent className="flex flex-grow flex-col justify-center items-center text-center">
+                        {shop.promotions.length > 0 ? (
+                          <ul className="space-y-2">
+                            {shop.promotions.map((promo, i) => (
+                              <li key={i} className="flex items-center gap-2">
+                                <Tag className="h-4 w-4 flex-shrink-0" />
+                                <span>{promo}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p>На данный момент активных акций нет.</p>
+                        )}
+                      </CardContent>
+                      <div className="p-4 border-t border-primary-foreground/20 text-center">
+                        <DialogTrigger asChild>
+                          <Button variant="secondary">Подробнее о магазине</Button>
+                        </DialogTrigger>
+                      </div>
+                    </Card>
                   </div>
-                  <div className="p-4 text-left">
-                    <h3 className="font-headline text-lg font-semibold text-foreground underline-offset-4 group-hover:text-primary group-hover:underline">{shop.name}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">{shop.category}</p>
-                    <Button variant="outline" size="sm" className="mt-4 pointer-events-none">Этаж {shop.floor}</Button>
-                  </div>
-                </Card>
-              </DialogTrigger>
+                </div>
+              </div>
               <DialogContent className="sm:max-w-4xl p-0">
                 <div className="grid grid-cols-1 md:grid-cols-2">
                   <div className="p-8 flex flex-col">
-                     <div className="flex items-start gap-4 mb-6">
-                        <Image
-                          src={shop.logo}
-                          alt={`Логотип ${shop.name}`}
-                          width={80}
-                          height={80}
-                          className="rounded-xl border-2 object-contain p-1"
-                          data-ai-hint={shop.hint}
-                        />
-                        <div>
-                          <DialogTitle className="font-headline text-3xl mb-1">{shop.name}</DialogTitle>
-                          <div className="flex items-center gap-4 text-muted-foreground">
-                            <span>{shop.category}</span>
-                            <span className="flex items-center gap-1"><MapPin size={14} /> Этаж {shop.floor}</span>
-                          </div>
+                    <div className="flex items-start gap-4 mb-6">
+                      <Image
+                        src={shop.logo}
+                        alt={`Логотип ${shop.name}`}
+                        width={80}
+                        height={80}
+                        className="rounded-xl border-2 object-contain p-1"
+                        data-ai-hint={shop.hint}
+                      />
+                      <div>
+                        <DialogTitle className="font-headline text-3xl mb-1">{shop.name}</DialogTitle>
+                        <div className="flex items-center gap-4 text-muted-foreground">
+                          <span>{shop.category}</span>
+                          <span className="flex items-center gap-1"><MapPin size={14} /> Этаж {shop.floor}</span>
                         </div>
-                     </div>
-                     <p className="text-sm text-muted-foreground flex-grow">{shop.description}</p>
-                     <DialogClose asChild>
-                       <Button asChild className="mt-6 w-full">
-                         <Link href={`/map?floor=${shop.floor}`}>Перейти на карту</Link>
-                       </Button>
-                     </DialogClose>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground flex-grow">{shop.description}</p>
+                    <DialogClose asChild>
+                      <Button asChild className="mt-6 w-full">
+                        <Link href={`/map?floor=${shop.floor}`}>Перейти на карту</Link>
+                      </Button>
+                    </DialogClose>
                   </div>
                   <div className="relative">
-                     <Carousel className="w-full h-full">
-                        <CarouselContent>
-                          {shop.images.map((img, i) => (
-                            <CarouselItem key={i}>
-                              <Image src={img} alt={`Фото ${shop.name} ${i+1}`} width={800} height={600} className="object-cover h-full w-full md:rounded-r-lg" />
-                            </CarouselItem>
-                          ))}
-                        </CarouselContent>
-                        <CarouselPrevious className="left-4" />
-                        <CarouselNext className="right-4" />
-                      </Carousel>
-                      {shop.promotions.length > 0 && (
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
-                          <h4 className="font-headline font-semibold text-lg flex items-center gap-2"><Tag size={20}/> Текущие акции</h4>
-                          <ul className="mt-2 space-y-1">
-                            {shop.promotions.map((promo, i) => <li key={i} className="text-sm backdrop-blur-sm bg-white/10 rounded-full px-3 py-1 inline-block mr-2 mt-2">{promo}</li>)}
-                          </ul>
-                        </div>
-                      )}
+                    <Carousel className="w-full h-full">
+                      <CarouselContent>
+                        {shop.images.map((img, i) => (
+                          <CarouselItem key={i}>
+                            <Image src={img} alt={`Фото ${shop.name} ${i + 1}`} width={800} height={600} className="object-cover h-full w-full md:rounded-r-lg" />
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      <CarouselPrevious className="left-4" />
+                      <CarouselNext className="right-4" />
+                    </Carousel>
+                    {shop.promotions.length > 0 && (
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
+                        <h4 className="font-headline font-semibold text-lg flex items-center gap-2"><Tag size={20} /> Текущие акции</h4>
+                        <ul className="mt-2 space-y-1">
+                          {shop.promotions.map((promo, i) => <li key={i} className="text-sm backdrop-blur-sm bg-white/10 rounded-full px-3 py-1 inline-block mr-2 mt-2">{promo}</li>)}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </div>
               </DialogContent>

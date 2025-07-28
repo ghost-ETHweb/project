@@ -130,28 +130,27 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
       </div>
 
       {paginatedShops.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {paginatedShops.map((shop) => (
             <Dialog key={shop.id}>
               <DialogTrigger asChild>
-                <Card className="cursor-pointer overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 flex flex-col group">
-                  <div className="relative bg-muted/50 aspect-video flex items-center justify-center p-4">
-                     <Image
-                      src={shop.logo}
-                      alt={`Логотип ${shop.name}`}
-                      width={150}
-                      height={75}
-                      className="object-contain"
-                      data-ai-hint={shop.hint}
-                    />
-                  </div>
-                  <CardContent className="p-4 flex-grow flex flex-col justify-between">
-                    <div>
-                        <CardTitle className="font-headline text-lg mb-1 group-hover:text-primary">{shop.name}</CardTitle>
-                        <CardDescription>{shop.category}</CardDescription>
+                <Card className="group relative cursor-pointer overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1">
+                  <Image
+                    src={shop.images[0]}
+                    alt={shop.name}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+                  <div className="relative flex h-full flex-col justify-end p-4 text-white">
+                    <CardTitle className="font-headline text-2xl drop-shadow-md">
+                      {shop.name}
+                    </CardTitle>
+                    <div className="mt-2 flex items-center justify-between opacity-80">
+                       <p className="text-sm">{shop.category}</p>
+                       <Badge variant="secondary" className="bg-white/20 text-white backdrop-blur-sm border-0">Этаж {shop.floor}</Badge>
                     </div>
-                    <Badge variant="outline" className="mt-4 w-fit">Этаж {shop.floor}</Badge>
-                  </CardContent>
+                  </div>
                 </Card>
               </DialogTrigger>
               <DialogContent className="sm:max-w-4xl p-0">
@@ -208,7 +207,7 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
           ))}
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-muted p-12 text-center">
+        <div className="flex h-64 flex-col items-center justify-center rounded-lg border-2 border-dashed border-muted p-12 text-center">
             <p className="text-muted-foreground">Магазины, соответствующие вашим критериям, не найдены.</p>
         </div>
       )}

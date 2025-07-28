@@ -30,13 +30,15 @@ export default function ShopDetailPage({ params }: { params: { id: string } }) {
           Назад к списку магазинов
         </Link>
       </Button>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        <div className="relative">
-            <Carousel className="w-full h-full rounded-lg overflow-hidden border">
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+        <div>
+            <Carousel className="w-full rounded-lg overflow-hidden border">
                 <CarouselContent>
                 {shop.images.map((img, i) => (
                     <CarouselItem key={i}>
-                        <Image src={img} alt={`Фото ${shop.name} ${i + 1}`} width={800} height={600} className="object-cover h-full w-full" />
+                        <div className="aspect-video relative">
+                         <Image src={img} alt={`Фото ${shop.name} ${i + 1}`} fill className="object-cover" />
+                        </div>
                     </CarouselItem>
                 ))}
                 </CarouselContent>

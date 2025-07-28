@@ -39,7 +39,7 @@ export default function Home() {
     <div className="flex flex-col">
       <HeroSlider />
 
-      <section id="about" className="py-12 sm:py-16 md:py-24 bg-secondary">
+      <section id="about" className="py-12 sm:py-16 md:py-24 bg-background">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="relative aspect-video w-full overflow-hidden rounded-lg">
                 <Image
@@ -64,52 +64,56 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="shops" className="container mx-auto px-4 py-12 sm:py-16 md:py-24 border-t">
-        <h2 className="mb-8 text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-          Откройте для себя наши магазины
-        </h2>
-        <ShopDirectory isPaginated={false} />
+      <section id="shops" className="bg-secondary px-4 py-12 sm:py-16 md:py-24">
+        <div className="container mx-auto">
+            <h2 className="mb-8 text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+            Откройте для себя наши магазины
+            </h2>
+            <ShopDirectory isPaginated={false} />
+        </div>
       </section>
 
-      <section id="events" className="container mx-auto px-4 py-12 sm:py-16 md:py-24">
-        <div className="text-center mb-12">
-            <h2 className="mb-4 text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Ближайшие события
-            </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                Не пропустите самые интересные мероприятия в нашем ТЦ.
-            </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {featuredEvents.map((event) => (
-                 <Card key={event.id} className="overflow-hidden">
-                    <div className="relative h-48 w-full">
-                        <Image src={event.image.src} alt={event.title} fill className="object-cover" data-ai-hint={event.image.hint} />
-                    </div>
-                     <CardHeader>
-                        <div className="flex justify-between items-start">
-                             <CardTitle className="font-headline text-xl">{event.title}</CardTitle>
-                             <Badge variant="secondary">{event.category}</Badge>
+      <section id="events" className="bg-background px-4 py-12 sm:py-16 md:py-24">
+        <div className="container mx-auto">
+            <div className="text-center mb-12">
+                <h2 className="mb-4 text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+                Ближайшие события
+                </h2>
+                <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+                    Не пропустите самые интересные мероприятия в нашем ТЦ.
+                </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                {featuredEvents.map((event) => (
+                    <Card key={event.id} className="overflow-hidden">
+                        <div className="relative h-48 w-full">
+                            <Image src={event.image.src} alt={event.title} fill className="object-cover" data-ai-hint={event.image.hint} />
                         </div>
-                       <CardDescription className="pt-1 !mt-0">{event.description}</CardDescription>
-                     </CardHeader>
-                     <CardContent className="text-sm text-muted-foreground space-y-2">
-                       <div className="flex items-center gap-2">
-                         <Calendar size={16}/>
-                         <span>{new Date(event.date).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' })}</span>
-                       </div>
+                        <CardHeader>
+                            <div className="flex justify-between items-start">
+                                <CardTitle className="font-headline text-xl">{event.title}</CardTitle>
+                                <Badge variant="secondary">{event.category}</Badge>
+                            </div>
+                        <CardDescription className="pt-1 !mt-0">{event.description}</CardDescription>
+                        </CardHeader>
+                        <CardContent className="text-sm text-muted-foreground space-y-2">
                         <div className="flex items-center gap-2">
-                         <MapPin size={16}/>
-                         <span>{event.location}</span>
-                       </div>
-                     </CardContent>
-                 </Card>
-            ))}
-        </div>
-        <div className="text-center">
-            <Button asChild size="lg" variant="outline">
-                <Link href="/events">Смотреть все события <ArrowRight className="ml-2" /></Link>
-            </Button>
+                            <Calendar size={16}/>
+                            <span>{new Date(event.date).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' })}</span>
+                        </div>
+                            <div className="flex items-center gap-2">
+                            <MapPin size={16}/>
+                            <span>{event.location}</span>
+                        </div>
+                        </CardContent>
+                    </Card>
+                ))}
+            </div>
+            <div className="text-center">
+                <Button asChild size="lg" variant="outline">
+                    <Link href="/events">Смотреть все события <ArrowRight className="ml-2" /></Link>
+                </Button>
+            </div>
         </div>
       </section>
       
@@ -151,7 +155,7 @@ export default function Home() {
         </div>
       </section>
 
-       <section id="partners" className="py-12 sm:py-16 md:py-24">
+       <section id="partners" className="bg-background py-12 sm:py-16 md:py-24">
         <div className="container mx-auto text-center">
             <Briefcase className="mx-auto h-12 w-12 text-primary" />
             <h2 className="mt-4 mb-4 text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">

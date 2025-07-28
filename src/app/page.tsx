@@ -1,11 +1,108 @@
 import HeroSlider from "@/components/hero-slider";
 import { ShopDirectory } from "@/components/shop-directory";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Calendar, Clock, MapPin, ArrowRight } from "lucide-react"
+
+const featuredEvents = [
+    { 
+        id: 1, 
+        title: "Джазовый вечер", 
+        description: "Насладитесь живой джазовой музыкой в центральном атриуме.", 
+        date: "2024-09-05", 
+        time: "19:00 - 21:00", 
+        location: "Центральный атриум",
+        image: { src: "https://placehold.co/600x400.png", hint: "jazz music" },
+        category: "Музыка",
+    },
+    { 
+        id: 2, 
+        title: "Мастер-класс по рисованию", 
+        description: "Приводите своих детей на увлекательный мастер-класс.", 
+        date: "2024-09-14", 
+        time: "12:00 - 14:00", 
+        location: "Детская зона",
+        image: { src: "https://placehold.co/600x400.png", hint: "kids painting" },
+        category: "Для детей",
+    },
+];
 
 export default function Home() {
   return (
     <div className="flex flex-col">
       <HeroSlider />
-      <section id="shops" className="container mx-auto px-4 py-12 sm:py-16 md:py-24">
+
+      <section id="about" className="py-12 sm:py-16 md:py-24 bg-secondary">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+                <Image
+                    src="https://placehold.co/600x400.png"
+                    alt="Интерьер торгового центра"
+                    fill
+                    className="object-cover"
+                    data-ai-hint="mall interior"
+                />
+            </div>
+            <div className="text-center md:text-left">
+                <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                    Добро пожаловать в «Галерею Навигатор»
+                </h2>
+                <p className="mt-4 max-w-xl mx-auto md:mx-0 text-muted-foreground">
+                    Ваше премиальное место для шопинга, встреч и незабываемых впечатлений в самом сердце города.
+                </p>
+                <Button asChild className="mt-6">
+                    <Link href="/about">Узнать больше <ArrowRight className="ml-2" /></Link>
+                </Button>
+            </div>
+        </div>
+      </section>
+
+      <section id="events" className="container mx-auto px-4 py-12 sm:py-16 md:py-24">
+        <div className="text-center mb-12">
+            <h2 className="mb-4 text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+            Ближайшие события
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+                Не пропустите самые интересные мероприятия в нашем ТЦ.
+            </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {featuredEvents.map((event) => (
+                 <Card key={event.id} className="overflow-hidden">
+                    <div className="relative h-48 w-full">
+                        <Image src={event.image.src} alt={event.title} fill className="object-cover" data-ai-hint={event.image.hint} />
+                    </div>
+                     <CardHeader>
+                        <div className="flex justify-between items-start">
+                             <CardTitle className="font-headline text-xl">{event.title}</CardTitle>
+                             <Badge variant="secondary">{event.category}</Badge>
+                        </div>
+                       <CardDescription className="pt-1 !mt-0">{event.description}</CardDescription>
+                     </CardHeader>
+                     <CardContent className="text-sm text-muted-foreground space-y-2">
+                       <div className="flex items-center gap-2">
+                         <Calendar size={16}/>
+                         <span>{new Date(event.date).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' })}</span>
+                       </div>
+                        <div className="flex items-center gap-2">
+                         <MapPin size={16}/>
+                         <span>{event.location}</span>
+                       </div>
+                     </CardContent>
+                 </Card>
+            ))}
+        </div>
+        <div className="text-center">
+            <Button asChild size="lg" variant="outline">
+                <Link href="/events">Смотреть все события <ArrowRight className="ml-2" /></Link>
+            </Button>
+        </div>
+      </section>
+
+      <section id="shops" className="container mx-auto px-4 py-12 sm:py-16 md:py-24 border-t">
         <h2 className="mb-8 text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
           Откройте для себя наши магазины
         </h2>

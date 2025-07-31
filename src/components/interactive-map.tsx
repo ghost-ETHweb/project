@@ -12,19 +12,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const mapData = [
   { floor: 1, type: "svg" },
-  { floor: 2, type: "empty" },
 ]
 
 const legendCategories = [
     { icon: Shirt, text: "Одежда", color: "text-green-500" },
     { icon: Footprints, text: "Обувь", color: "text-pink-500" },
-    { icon: Utensils, text: "Кафе", color: "text-purple-400" },
+    { icon: Utensils, text: "Кафе/рестораны", color: "text-purple-400" },
     { icon: BookOpen, text: "Книги", color: "text-blue-500" },
     { icon: Gem, text: "Ювелирные изделия", color: "text-yellow-500" },
-    { icon: Baby, text: "Все для детей", color: "text-purple-600" },
-    { icon: Home, text: "Все для дома и уюта", color: "text-indigo-600" },
-    { icon: Wrench, text: "Инструмент", color: "text-red-500" },
-    { icon: Gift, text: "Подарки, Цветы", color: "text-lime-500" },
+    { icon: Baby, text: "Детский магазин", color: "text-purple-600" },
+    { icon: Home, text: "Все для дома", color: "text-indigo-600" },
+    { icon: Wrench, text: "Инструменты", color: "text-red-500" },
+    { icon: Gift, text: "Все для праздника", color: "text-lime-500" },
     { icon: ShoppingBasket, text: "Эконом-магазин", color: "text-teal-500" },
     { icon: CookingPot, text: "Бытовая техника", color: "text-orange-500" },
     { icon: Sparkles, text: "Нижнее белье", color: "text-emerald-500" },
@@ -50,6 +49,7 @@ const Floor1SvgMap = () => (
         <rect width="1200" height="800" fill="hsl(var(--background))" />
         
         <g id="shops-and-walkways">
+            {/* Left Column */}
             <rect x="50" y="50" width="200" height="125" className="shop-shape" />
             <text x="150" y="112.5" className="shop-text">1</text>
 
@@ -65,6 +65,7 @@ const Floor1SvgMap = () => (
             <rect x="50" y="550" width="200" height="125" className="shop-shape" />
             <text x="150" y="612.5" className="shop-text">5</text>
         
+            {/* Second Column */}
             <rect x="290" y="50" width="160" height="125" className="shop-shape" />
             <text x="370" y="112.5" className="shop-text">6</text>
 
@@ -73,10 +74,14 @@ const Floor1SvgMap = () => (
 
             <rect x="290" y="300" width="160" height="125" className="shop-shape" />
             <text x="370" y="362.5" className="shop-text">8</text>
+            
+            <rect x="290" y="425" width="80" height="250" className="shop-shape" />
+            <text x="330" y="550" className="shop-text">21</text>
 
-            <rect x="290" y="550" width="160" height="125" className="shop-shape" />
-            <text x="370" y="612.5" className="shop-text">9</text>
+            <rect x="370" y="550" width="80" height="125" className="shop-shape" />
+            <text x="410" y="612.5" className="shop-text">9</text>
 
+            {/* Third/Fourth Column (Merged) */}
             <path d="M 490 50 L 650 50 L 650 210 L 490 210 Z" className="shop-shape" />
             <text x="570" y="130" className="shop-text">10</text>
             
@@ -86,9 +91,10 @@ const Floor1SvgMap = () => (
             <path d="M 490 370 L 650 370 L 650 530 L 490 530 Z" className="shop-shape" />
             <text x="570" y="450" className="shop-text">12</text>
 
-            <path d="M 490 530 L 650 530 L 650 690 L 490 690 Z" className="shop-shape" />
-            <text x="570" y="610" className="shop-text">13</text>
+            <path d="M 490 530 L 810 530 L 810 690 L 490 690 Z" className="shop-shape" />
+            <text x="650" y="610" className="shop-text">13</text>
             
+            {/* Fifth/Sixth Column */}
             <path d="M 650 50 L 810 50 L 810 210 L 650 210 Z" className="shop-shape" />
             <text x="730" y="130" className="shop-text">17</text>
 
@@ -101,26 +107,18 @@ const Floor1SvgMap = () => (
             <path d="M 730 370 L 810 370 L 810 530 L 730 530 Z" className="shop-shape" />
             <text x="770" y="450" className="shop-text">20</text>
 
-            <path d="M 650 530 L 810 530 L 810 690 L 650 690 Z" className="shop-shape" />
-            <text x="730" y="610" className="shop-text">14</text>
-            
-            <rect x="810" y="530" width="160" height="160" className="shop-shape" />
-            <text x="890" y="610" className="shop-text">15</text>
-            
+            {/* Right Column */}
             <rect x="850" y="50" width="300" height="200" className="shop-shape" />
             <text x="1000" y="150" className="shop-text">22</text>
             
-            <rect x="950" y="250" width="200" height="440" className="shop-shape" />
-            <text x="1050" y="470" className="shop-text">23</text>
+            <rect x="850" y="250" width="100" height="440" className="shop-shape" />
+            <text x="900" y="470" className="shop-text">16</text>
 
-            <rect x="950" y="530" width="200" height="160" className="shop-shape" />
-            <text x="1050" y="610" className="shop-text">24</text>
-
-            <rect x="290" y="425" width="80" height="125" className="shop-shape" />
-            <text x="330" y="487.5" className="shop-text">21</text>
+            <rect x="950" y="250" width="200" height="200" className="shop-shape" />
+            <text x="1050" y="350" className="shop-text">23</text>
             
-            <rect x="850" y="250" width="100" height="280" className="shop-shape" />
-            <text x="900" y="390" className="shop-text">16</text>
+            <rect x="950" y="450" width="200" height="240" className="shop-shape" />
+            <text x="1050" y="570" className="shop-text">14</text>
         </g>
     </svg>
 )
@@ -152,27 +150,12 @@ export function InteractiveMallMap() {
             </div>
         </div>
         
-        {mapData.map(({ floor, type, image, hint }) => (
+        {mapData.map(({ floor, type }) => (
           <TabsContent key={floor} value={`floor-${floor}`} className="mt-4">
             <Card>
               <CardContent className="p-2 md:p-4">
                 <div className="relative aspect-[1200/800] w-full overflow-hidden rounded-lg border">
-                  {type === 'svg' ? (
-                    <Floor1SvgMap />
-                  ) : type === 'empty' ? (
-                     <div className="flex items-center justify-center h-full bg-muted">
-                        <p className="text-muted-foreground">Карта для этого этажа недоступна</p>
-                    </div>
-                  ) : image ? (
-                    <Image
-                      src={image}
-                      alt={`Карта этажа ${floor}`}
-                      fill
-                      className="object-contain"
-                      data-ai-hint={hint}
-                    />
-                  ) : null}
-                  {/* Future: Add absolutely positioned shop markers here */}
+                  {type === 'svg' && <Floor1SvgMap /> }
                 </div>
               </CardContent>
             </Card>

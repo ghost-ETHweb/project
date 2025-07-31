@@ -63,16 +63,18 @@ const Floor1SvgMap = () => (
             <text x="150" y="85" className="shop-text">1</text>
         </g>
         
-        <g id="shops-top-center">
-             <path d="M450 50 H 650 V 150 H 450 Z" className="shop-shape" />
-             <text x="550" y="100" className="shop-text">6</text>
-             <path d="M650 50 H 850 V 150 H 650 Z" className="shop-shape" />
-             <text x="750" y="100" className="shop-text">7</text>
+        <g id="shops-center-left">
+            <path d="M450 260 H 650 V 330 H 450 Z" className="shop-shape" />
+            <text x="550" y="295" className="shop-text">8</text>
+            <path d="M450 190 H 650 V 260 H 450 Z" className="shop-shape" />
+            <text x="550" y="225" className="shop-text">7</text>
+            <path d="M450 120 H 650 V 190 H 450 Z" className="shop-shape" />
+            <text x="550" y="155" className="shop-text">6</text>
+            <path d="M450 50 H 650 V 120 H 450 Z" className="shop-shape" />
+            <text x="550" y="85" className="shop-text">5</text>
         </g>
 
         <g id="shops-center">
-            <path d="M450 150 L 450 400 L 700 400 L 700 150 Z" className="shop-shape" />
-            <text x="575" y="275" className="shop-text">8</text>
             <path d="M450 400 L 450 650 L 700 650 L 700 400 Z" className="shop-shape" />
             <text x="575" y="525" className="shop-text">9</text>
         </g>

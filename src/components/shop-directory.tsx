@@ -1,7 +1,7 @@
 
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import {
@@ -31,6 +31,8 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
   const [sort, setSort] = useState("asc");
   const [currentPage, setCurrentPage] = useState(1);
   const shopsPerPage = 6;
+  const directoryRef = useRef<HTMLDivElement>(null);
+
 
   const filteredShops = useMemo(() => {
     let filtered = shopsData
@@ -47,6 +49,11 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
     }
     return filtered;
   }, [searchQuery, category, floor, sort]);
+  
+  useEffect(() => {
+    // Reset to page 1 when filters change
+    setCurrentPage(1);
+  }, [searchQuery, category, floor, sort]);
 
   const paginatedShops = useMemo(() => {
     if (!isPaginated) return filteredShops;
@@ -55,9 +62,16 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
   }, [filteredShops, currentPage, isPaginated]);
 
   const totalPages = Math.ceil(filteredShops.length / shopsPerPage);
+  
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    if (directoryRef.current) {
+        directoryRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
   return (
-    <div>
+    <div ref={directoryRef}>
       <div className="mb-8 flex flex-col gap-4 rounded-lg border bg-card p-4 sm:flex-row sm:items-center">
         <div className="relative w-full sm:flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 transform text-muted-foreground" size={20} />
@@ -135,9 +149,9 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
 
       {isPaginated && totalPages > 1 && (
         <div className="mt-8 flex justify-center gap-2">
-          <Button onClick={() => setCurrentPage(p => Math.max(1, p - 1))} disabled={currentPage === 1}>Назад</Button>
+          <Button onClick={() => handlePageChange(Math.max(1, currentPage - 1))} disabled={currentPage === 1}>Назад</Button>
           <span className="flex items-center px-4 text-sm">Страница {currentPage} из {totalPages}</span>
-          <Button onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages}>Вперед</Button>
+          <Button onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))} disabled={currentPage === totalPages}>Вперед</Button>
         </div>
       )}
     </div>

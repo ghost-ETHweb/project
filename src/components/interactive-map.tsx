@@ -10,9 +10,9 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const mapData = [
-  { floor: 1, image: "https://storage.googleapis.com/studiostore/map.png", hint: "mall map floor 1" },
-  { floor: 2, image: "https://placehold.co/1200x800.png", hint: "mall map floor 2" },
-  { floor: 3, image: "https://placehold.co/1200x800.png", hint: "mall map floor 3" },
+  { floor: 1, type: "svg" },
+  { floor: 2, type: "image", image: "https://placehold.co/1200x800.png", hint: "mall map floor 2" },
+  { floor: 3, type: "image", image: "https://placehold.co/1200x800.png", hint: "mall map floor 3" },
 ]
 
 const legendCategories = [
@@ -37,6 +37,96 @@ const legendFacilities = [
     { icon: ArrowUpRight, text: "Лестница", color: "text-yellow-700" },
     { icon: ConciergeBell, text: "Служебные помещения", color: "text-amber-800" },
 ]
+
+const Floor1SvgMap = () => (
+    <svg viewBox="0 0 1200 848" className="w-full h-full object-contain" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <style>{`.shop-shape { fill: hsl(var(--muted)); stroke: hsl(var(--border)); stroke-width: 2; transition: fill 0.2s; cursor: pointer; } .shop-shape:hover { fill: hsl(var(--primary) / 0.2); } .shop-text { font-size: 14px; font-family: sans-serif; fill: hsl(var(--muted-foreground)); pointer-events: none; text-anchor: middle; }`}</style>
+        </defs>
+        
+        {/* Main mall outline */}
+        <path d="M50 50 H1150 V798 H50 Z" fill="hsl(var(--background))" stroke="hsl(var(--border))" strokeWidth="3" />
+
+        {/* Corridors */}
+        <path d="M150 150 H1050 V250 H150 Z" fill="hsl(var(--background))" />
+        <path d="M150 598 H1050 V698 H150 Z" fill="hsl(var(--background))" />
+        <path d="M575 250 V598" stroke="hsl(var(--background))" strokeWidth="100" fill="hsl(var(--background))" />
+
+        {/* Shops - Top Row */}
+        <g id="shop-14" className="shop-group">
+            <rect x="150" y="50" width="120" height="100" className="shop-shape" />
+            <text x="210" y="105" className="shop-text">14</text>
+        </g>
+        <g id="shop-2" className="shop-group">
+            <rect x="270" y="50" width="120" height="100" className="shop-shape" />
+            <text x="330" y="105" className="shop-text">2</text>
+        </g>
+        <g id="shop-19" className="shop-group">
+            <rect x="390" y="50" width="120" height="100" className="shop-shape" />
+            <text x="450" y="105" className="shop-text">19</text>
+        </g>
+        <g id="shop-3" className="shop-group">
+            <rect x="630" y="50" width="120" height="100" className="shop-shape" />
+            <text x="690" y="105" className="shop-text">3</text>
+        </g>
+        <g id="shop-23" className="shop-group">
+            <rect x="750" y="50" width="120" height="100" className="shop-shape" />
+            <text x="810" y="105" className="shop-text">23</text>
+        </g>
+        <g id="shop-10" className="shop-group">
+            <rect x="870" y="50" width="120" height="100" className="shop-shape" />
+            <text x="930" y="105" className="shop-text">10</text>
+        </g>
+
+        {/* Shops - Bottom Row */}
+        <g id="shop-21" className="shop-group">
+            <rect x="150" y="698" width="240" height="100" className="shop-shape" />
+            <text x="270" y="753" className="shop-text">21. DNS</text>
+        </g>
+        <g id="shop-1" className="shop-group">
+            <rect x="390" y="698" width="180" height="100" className="shop-shape" />
+            <text x="480" y="753" className="shop-text">1. Kari</text>
+        </g>
+        <g id="shop-4" className="shop-group">
+            <rect x="570" y="698" width="180" height="100" className="shop-shape" />
+            <text x="660" y="753" className="shop-text">4. Напротив</text>
+        </g>
+         <g id="shop-unassigned-1" className="shop-group">
+            <rect x="750" y="698" width="300" height="100" className="shop-shape" />
+            <text x="900" y="753" className="shop-text">Вход</text>
+        </g>
+
+        {/* Shops - Middle Area Left */}
+         <g id="shop-middle-left-1" className="shop-group">
+            <rect x="150" y="250" width="200" height="174" className="shop-shape" />
+             <text x="250" y="337" className="shop-text">WC</text>
+        </g>
+         <g id="shop-middle-left-2" className="shop-group">
+            <rect x="150" y="424" width="200" height="174" className="shop-shape" />
+             <text x="250" y="511" className="shop-text">Гардероб</text>
+        </g>
+
+         {/* Shops - Middle Area Right */}
+        <g id="shop-middle-right-1" className="shop-group">
+            <rect x="850" y="250" width="200" height="348" className="shop-shape" />
+             <text x="950" y="424" className="shop-text">Ресторанный дворик</text>
+        </g>
+
+        {/* Facilities */}
+        <g transform="translate(100, 424)">
+            <DoorOpen className="text-green-600" width="32" height="32" />
+            <text x="0" y="50" className="shop-text" textAnchor="middle">Выход</text>
+        </g>
+         <g transform="translate(1100, 424)">
+            <DoorOpen className="text-green-600" width="32" height="32" />
+            <text x="0" y="50" className="shop-text" textAnchor="middle">Выход</text>
+        </g>
+         <g transform="translate(500, 424)">
+            <ArrowUpRight className="text-yellow-700" width="32" height="32" />
+            <text x="0" y="50" className="shop-text" textAnchor="middle">Эскалатор</text>
+        </g>
+    </svg>
+)
 
 
 export function InteractiveMallMap() {
@@ -66,18 +156,22 @@ export function InteractiveMallMap() {
             </div>
         </div>
         
-        {mapData.map(({ floor, image, hint }) => (
+        {mapData.map(({ floor, type, image, hint }) => (
           <TabsContent key={floor} value={`floor-${floor}`} className="mt-4">
             <Card>
               <CardContent className="p-2 md:p-4">
                 <div className="relative aspect-[1200/848] w-full overflow-hidden rounded-lg border">
-                  <Image
-                    src={image}
-                    alt={`Карта этажа ${floor}`}
-                    fill
-                    className="object-contain"
-                    data-ai-hint={hint}
-                  />
+                  {type === 'svg' ? (
+                    <Floor1SvgMap />
+                  ) : image ? (
+                    <Image
+                      src={image}
+                      alt={`Карта этажа ${floor}`}
+                      fill
+                      className="object-contain"
+                      data-ai-hint={hint}
+                    />
+                  ) : null}
                   {/* Future: Add absolutely positioned shop markers here */}
                 </div>
               </CardContent>

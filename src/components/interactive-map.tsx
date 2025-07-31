@@ -41,7 +41,7 @@ const legendFacilities = [
 const Floor1SvgMap = () => (
     <svg viewBox="0 0 1200 800" className="w-full h-full object-contain" xmlns="http://www.w3.org/2000/svg">
         <defs>
-            <style>{`.shop-shape { fill: hsl(var(--muted)); stroke: hsl(var(--border)); stroke-width: 2; transition: fill 0.2s; cursor: pointer; } .shop-shape:hover { fill: hsl(var(--primary) / 0.2); } .shop-text { font-size: 14px; font-family: sans-serif; fill: hsl(var(--muted-foreground)); pointer-events: none; text-anchor: middle; }`}</style>
+            <style>{`.shop-shape { fill: hsl(var(--muted)); stroke: hsl(var(--border)); stroke-width: 2; transition: fill 0.2s; cursor: pointer; } .shop-shape:hover { fill: hsl(var(--primary) / 0.2); } .shop-text { font-size: 14px; font-family: sans-serif; fill: hsl(var(--muted-foreground)); pointer-events: none; text-anchor: middle; vertical-alignment: middle; dominant-baseline: middle; }`}</style>
         </defs>
         
         {/* Background */}
@@ -51,31 +51,44 @@ const Floor1SvgMap = () => (
         <g id="shops-left">
             {/* Big block at the bottom (60%) */}
             <path d="M50 330 H 250 V 750 H 50 Z" className="shop-shape" />
+            <text x="150" y="540" className="shop-text">5</text>
             {/* 4 smaller blocks on top (10% each) */}
             <path d="M50 260 H 250 V 330 H 50 Z" className="shop-shape" />
+            <text x="150" y="295" className="shop-text">4</text>
             <path d="M50 190 H 250 V 260 H 50 Z" className="shop-shape" />
+            <text x="150" y="225" className="shop-text">3</text>
             <path d="M50 120 H 250 V 190 H 50 Z" className="shop-shape" />
+            <text x="150" y="155" className="shop-text">2</text>
             <path d="M50 50 H 250 V 120 H 50 Z" className="shop-shape" />
+            <text x="150" y="85" className="shop-text">1</text>
         </g>
         
         <g id="shops-top-center">
              <path d="M450 50 H 650 V 150 H 450 Z" className="shop-shape" />
+             <text x="550" y="100" className="shop-text">6</text>
              <path d="M650 50 H 850 V 150 H 650 Z" className="shop-shape" />
+             <text x="750" y="100" className="shop-text">7</text>
         </g>
 
         <g id="shops-center">
-            <path d="M450 400 L 450 650 L 700 650 L 700 400 Z" className="shop-shape" />
             <path d="M450 150 L 450 400 L 700 400 L 700 150 Z" className="shop-shape" />
+            <text x="575" y="275" className="shop-text">8</text>
+            <path d="M450 400 L 450 650 L 700 650 L 700 400 Z" className="shop-shape" />
+            <text x="575" y="525" className="shop-text">9</text>
         </g>
 
         <g id="shops-right-center">
             <path d="M700 150 L 850 150 L 850 650 L 700 650 Z" className="shop-shape" />
+            <text x="775" y="400" className="shop-text">10</text>
         </g>
 
         <g id="shops-far-right">
              <path d="M850 50 L 1150 50 L 1150 350 L 850 350 Z" className="shop-shape" />
+             <text x="1000" y="200" className="shop-text">11</text>
              <path d="M850 350 L 1150 350 L 1150 650 L 850 650 Z" className="shop-shape" />
+             <text x="1000" y="500" className="shop-text">12</text>
              <path d="M1000 650 L 1150 650 L 1150 750 L 1000 750 Z" className="shop-shape" />
+             <text x="1075" y="700" className="shop-text">13</text>
         </g>
     </svg>
 )

@@ -58,13 +58,6 @@ const Floor1SvgMap = () => (
             <path d="M50 50 H 250 V 120 H 50 Z" className="shop-shape" />
         </g>
         
-        <g id="shops-bottom-center">
-            <path d="M250 650 H 450 V 750 H 250 Z" className="shop-shape" />
-            <path d="M450 650 H 650 V 750 H 450 Z" className="shop-shape" />
-            <path d="M650 650 H 850 V 750 H 650 Z" className="shop-shape" />
-            <path d="M850 650 H 1000 V 750 H 850 Z" className="shop-shape" />
-        </g>
-        
         <g id="shops-top-center">
              <path d="M450 50 H 650 V 150 H 450 Z" className="shop-shape" />
              <path d="M650 50 H 850 V 150 H 650 Z" className="shop-shape" />

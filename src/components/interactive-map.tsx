@@ -39,91 +39,54 @@ const legendFacilities = [
 ]
 
 const Floor1SvgMap = () => (
-    <svg viewBox="0 0 1200 848" className="w-full h-full object-contain" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 1200 800" className="w-full h-full object-contain" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <style>{`.shop-shape { fill: hsl(var(--muted)); stroke: hsl(var(--border)); stroke-width: 2; transition: fill 0.2s; cursor: pointer; } .shop-shape:hover { fill: hsl(var(--primary) / 0.2); } .shop-text { font-size: 14px; font-family: sans-serif; fill: hsl(var(--muted-foreground)); pointer-events: none; text-anchor: middle; }`}</style>
         </defs>
         
-        {/* Main mall outline */}
-        <path d="M50 50 H1150 V798 H50 Z" fill="hsl(var(--background))" stroke="hsl(var(--border))" strokeWidth="3" />
+        {/* Background */}
+        <rect width="1200" height="800" fill="hsl(var(--background))" />
 
-        {/* Corridors */}
-        <path d="M150 150 H1050 V250 H150 Z" fill="hsl(var(--background))" />
-        <path d="M150 598 H1050 V698 H150 Z" fill="hsl(var(--background))" />
-        <path d="M575 250 V598" stroke="hsl(var(--background))" strokeWidth="100" fill="hsl(var(--background))" />
-
-        {/* Shops - Top Row */}
-        <g id="shop-14" className="shop-group">
-            <rect x="150" y="50" width="120" height="100" className="shop-shape" />
-            <text x="210" y="105" className="shop-text">14</text>
+        {/* Shop Shapes */}
+        <g id="shops-left">
+            <path d="M50 200 L250 200 L250 700 L50 700 Z" className="shop-shape" />
+            <path d="M50 120 L250 120 L250 200 L50 200 Z" className="shop-shape" />
+            <path d="M50 40 L250 40 L250 120 L50 120 Z" className="shop-shape" />
         </g>
-        <g id="shop-2" className="shop-group">
-            <rect x="270" y="50" width="120" height="100" className="shop-shape" />
-            <text x="330" y="105" className="shop-text">2</text>
+        
+        <g id="shops-top-left-col">
+            <path d="M280 40 L430 40 L430 180 L280 180 Z" className="shop-shape" />
+            <path d="M280 180 L430 180 L430 320 L280 320 Z" className="shop-shape" />
+            <path d="M280 320 L430 320 L430 460 L280 460 Z" className="shop-shape" />
         </g>
-        <g id="shop-19" className="shop-group">
-            <rect x="390" y="50" width="120" height="100" className="shop-shape" />
-            <text x="450" y="105" className="shop-text">19</text>
-        </g>
-        <g id="shop-3" className="shop-group">
-            <rect x="630" y="50" width="120" height="100" className="shop-shape" />
-            <text x="690" y="105" className="shop-text">3</text>
-        </g>
-        <g id="shop-23" className="shop-group">
-            <rect x="750" y="50" width="120" height="100" className="shop-shape" />
-            <text x="810" y="105" className="shop-text">23</text>
-        </g>
-        <g id="shop-10" className="shop-group">
-            <rect x="870" y="50" width="120" height="100" className="shop-shape" />
-            <text x="930" y="105" className="shop-text">10</text>
+        
+        <g id="shops-bottom-left-col">
+            <path d="M280 500 L480 500 L480 620 L280 620 Z" className="shop-shape" />
+            <path d="M280 620 L480 620 L480 740 L280 740 Z" className="shop-shape" />
         </g>
 
-        {/* Shops - Bottom Row */}
-        <g id="shop-21" className="shop-group">
-            <rect x="150" y="698" width="240" height="100" className="shop-shape" />
-            <text x="270" y="753" className="shop-text">21. DNS</text>
-        </g>
-        <g id="shop-1" className="shop-group">
-            <rect x="390" y="698" width="180" height="100" className="shop-shape" />
-            <text x="480" y="753" className="shop-text">1. Kari</text>
-        </g>
-        <g id="shop-4" className="shop-group">
-            <rect x="570" y="698" width="180" height="100" className="shop-shape" />
-            <text x="660" y="753" className="shop-text">4. Напротив</text>
-        </g>
-         <g id="shop-unassigned-1" className="shop-group">
-            <rect x="750" y="698" width="300" height="100" className="shop-shape" />
-            <text x="900" y="753" className="shop-text">Вход</text>
+        <g id="shops-center-upper">
+            <path d="M430 340 L530 340 L530 460 L430 460 Z" className="shop-shape" />
+            <path d="M530 340 L630 340 L630 410 L530 410 Z" className="shop-shape" />
+            <path d="M530 410 L630 410 L630 480 L530 480 Z" className="shop-shape" />
+            <path d="M460 220 L630 220 L630 340 L460 340 Z" className="shop-shape" />
         </g>
 
-        {/* Shops - Middle Area Left */}
-         <g id="shop-middle-left-1" className="shop-group">
-            <rect x="150" y="250" width="200" height="174" className="shop-shape" />
-             <text x="250" y="337" className="shop-text">WC</text>
-        </g>
-         <g id="shop-middle-left-2" className="shop-group">
-            <rect x="150" y="424" width="200" height="174" className="shop-shape" />
-             <text x="250" y="511" className="shop-text">Гардероб</text>
+        <g id="shops-center-lower">
+            <path d="M480 500 L580 500 L580 620 L480 620 Z" className="shop-shape" />
+            <path d="M580 500 L750 500 L750 620 L580 620 Z" className="shop-shape" />
         </g>
 
-         {/* Shops - Middle Area Right */}
-        <g id="shop-middle-right-1" className="shop-group">
-            <rect x="850" y="250" width="200" height="348" className="shop-shape" />
-             <text x="950" y="424" className="shop-text">Ресторанный дворик</text>
+        <g id="shops-right-center">
+             <path d="M630 120 L950 120 L950 380 L800 380 L800 450 L630 450 Z" className="shop-shape" />
+             <path d="M780 500 L850 500 L850 620 L780 620 Z" className="shop-shape" />
+             <path d="M850 500 L920 500 L920 620 L850 620 Z" className="shop-shape" />
         </g>
-
-        {/* Facilities */}
-        <g transform="translate(100, 424)">
-            <DoorOpen className="text-green-600" width="32" height="32" />
-            <text x="0" y="50" className="shop-text" textAnchor="middle">Выход</text>
-        </g>
-         <g transform="translate(1100, 424)">
-            <DoorOpen className="text-green-600" width="32" height="32" />
-            <text x="0" y="50" className="shop-text" textAnchor="middle">Выход</text>
-        </g>
-         <g transform="translate(500, 424)">
-            <ArrowUpRight className="text-yellow-700" width="32" height="32" />
-            <text x="0" y="50" className="shop-text" textAnchor="middle">Эскалатор</text>
+        
+        <g id="shops-right">
+             <path d="M950 120 L1150 120 L1150 450 L950 450 Z" className="shop-shape" />
+             <path d="M950 500 L1150 500 L1150 720 L950 720 Z" className="shop-shape" />
+             <path d="M850 620 L950 620 L950 720 L850 720 Z" className="shop-shape" />
         </g>
     </svg>
 )
@@ -160,7 +123,7 @@ export function InteractiveMallMap() {
           <TabsContent key={floor} value={`floor-${floor}`} className="mt-4">
             <Card>
               <CardContent className="p-2 md:p-4">
-                <div className="relative aspect-[1200/848] w-full overflow-hidden rounded-lg border">
+                <div className="relative aspect-[1200/800] w-full overflow-hidden rounded-lg border">
                   {type === 'svg' ? (
                     <Floor1SvgMap />
                   ) : image ? (

@@ -49,44 +49,44 @@ const Floor1SvgMap = () => (
 
         {/* Shop Shapes */}
         <g id="shops-left">
-            <path d="M50 200 L250 200 L250 700 L50 700 Z" className="shop-shape" />
-            <path d="M50 120 L250 120 L250 200 L50 200 Z" className="shop-shape" />
-            <path d="M50 40 L250 40 L250 120 L50 120 Z" className="shop-shape" />
-        </g>
-        
-        <g id="shops-top-left-col">
-            <path d="M280 40 L430 40 L430 180 L280 180 Z" className="shop-shape" />
-            <path d="M280 180 L430 180 L430 320 L280 320 Z" className="shop-shape" />
-            <path d="M280 320 L430 320 L430 460 L280 460 Z" className="shop-shape" />
-        </g>
-        
-        <g id="shops-bottom-left-col">
-            <path d="M280 500 L480 500 L480 620 L280 620 Z" className="shop-shape" />
-            <path d="M280 620 L480 620 L480 740 L280 740 Z" className="shop-shape" />
+            <path d="M50 50 H 250 V 750 H 50 Z" className="shop-shape" />
         </g>
 
-        <g id="shops-center-upper">
-            <path d="M430 340 L530 340 L530 460 L430 460 Z" className="shop-shape" />
-            <path d="M530 340 L630 340 L630 410 L530 410 Z" className="shop-shape" />
-            <path d="M530 410 L630 410 L630 480 L530 480 Z" className="shop-shape" />
-            <path d="M460 220 L630 220 L630 340 L460 340 Z" className="shop-shape" />
+        <g id="shops-left-2nd-col">
+            <path d="M250 50 H 450 V 200 H 250 Z" className="shop-shape" />
+            <path d="M250 200 H 450 V 350 H 250 Z" className="shop-shape" />
+            <path d="M250 350 H 450 V 500 H 250 Z" className="shop-shape" />
+            <path d="M250 500 H 450 V 650 H 250 Z" className="shop-shape" />
         </g>
 
-        <g id="shops-center-lower">
-            <path d="M480 500 L580 500 L580 620 L480 620 Z" className="shop-shape" />
-            <path d="M580 500 L750 500 L750 620 L580 620 Z" className="shop-shape" />
+        <g id="shops-bottom-center">
+            <path d="M250 650 H 450 V 750 H 250 Z" className="shop-shape" />
+            <path d="M450 650 H 650 V 750 H 450 Z" className="shop-shape" />
+            <path d="M650 650 H 850 V 750 H 650 Z" className="shop-shape" />
+            <path d="M850 650 H 1000 V 750 H 850 Z" className="shop-shape" />
+        </g>
+        
+        <g id="shops-top-center">
+             <path d="M450 50 H 650 V 150 H 450 Z" className="shop-shape" />
+             <path d="M650 50 H 850 V 150 H 650 Z" className="shop-shape" />
+        </g>
+
+        <g id="shops-center">
+            <path d="M450 150 L 450 300 L 700 300 L 700 150 Z" className="shop-shape" />
+            <path d="M450 300 L 450 450 L 700 450 L 700 300 Z" className="shop-shape" />
+            <path d="M450 450 L 700 450 L 700 650 L 450 650 Z" className="shop-shape" />
         </g>
 
         <g id="shops-right-center">
-             <path d="M630 120 L950 120 L950 380 L800 380 L800 450 L630 450 Z" className="shop-shape" />
-             <path d="M780 500 L850 500 L850 620 L780 620 Z" className="shop-shape" />
-             <path d="M850 500 L920 500 L920 620 L850 620 Z" className="shop-shape" />
+            <path d="M700 150 L 850 150 L 850 300 L 700 300 Z" className="shop-shape" />
+            <path d="M700 300 L 850 300 L 850 450 L 700 450 Z" className="shop-shape" />
+            <path d="M700 450 L 850 450 L 850 650 L 700 650 Z" className="shop-shape" />
         </g>
-        
-        <g id="shops-right">
-             <path d="M950 120 L1150 120 L1150 450 L950 450 Z" className="shop-shape" />
-             <path d="M950 500 L1150 500 L1150 720 L950 720 Z" className="shop-shape" />
-             <path d="M850 620 L950 620 L950 720 L850 720 Z" className="shop-shape" />
+
+        <g id="shops-far-right">
+             <path d="M850 50 L 1150 50 L 1150 350 L 850 350 Z" className="shop-shape" />
+             <path d="M850 350 L 1150 350 L 1150 650 L 850 650 Z" className="shop-shape" />
+             <path d="M1000 650 L 1150 650 L 1150 750 L 1000 750 Z" className="shop-shape" />
         </g>
     </svg>
 )

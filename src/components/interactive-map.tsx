@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { useSearchParams } from 'next/navigation'
-import { Shirt, Footprints, Utensils, BookOpen, Gem, Baby, Home, Wrench, Gift, ShoppingBasket, Appliance, Sparkles, MapPin, FireExtinguisher, Hydrant, DoorOpen, Stairs, ConciergeBell, Users } from "lucide-react"
+import { Shirt, Footprints, Utensils, BookOpen, Gem, Baby, Home, Wrench, Gift, ShoppingBasket, CookingPot, Sparkles, MapPin, FireExtinguisher, DoorOpen, Stairs, ConciergeBell, Users } from "lucide-react"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Input } from "@/components/ui/input"
@@ -26,13 +26,12 @@ const legendCategories = [
     { icon: Wrench, text: "Инструмент", color: "text-red-500" },
     { icon: Gift, text: "Подарки, Цветы", color: "text-lime-500" },
     { icon: ShoppingBasket, text: "Эконом-магазин", color: "text-teal-500" },
-    { icon: Appliance, text: "Бытовая техника", color: "text-orange-500" },
+    { icon: CookingPot, text: "Бытовая техника", color: "text-orange-500" },
     { icon: Sparkles, text: "Нижнее белье", color: "text-emerald-500" },
 ]
 
 const legendFacilities = [
     { icon: FireExtinguisher, text: "Огнетушитель", color: "text-red-600" },
-    { icon: Hydrant, text: "Пожарный гидрант", color: "text-red-600" },
     { icon: DoorOpen, text: "Эвакуационный выход", color: "text-green-600" },
     { icon: Users, text: "Туалет", color: "text-gray-600" },
     { icon: Stairs, text: "Лестница", color: "text-yellow-700" },

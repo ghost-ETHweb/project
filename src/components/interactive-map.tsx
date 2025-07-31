@@ -64,26 +64,28 @@ const Floor1SvgMap = () => (
         </g>
         
         <g id="shops-center-left">
-            <path d="M450 190 H 650 V 260 H 450 Z" className="shop-shape" />
-            <text x="550" y="225" className="shop-text">8</text>
-            <path d="M450 120 H 650 V 190 H 450 Z" className="shop-shape" />
-            <text x="550" y="155" className="shop-text">7</text>
-            <path d="M450 50 H 650 V 120 H 450 Z" className="shop-shape" />
-            <text x="550" y="85" className="shop-text">6</text>
              <path d="M450 -20 H 650 V 50 H 450 Z" className="shop-shape" />
             <text x="550" y="15" className="shop-text">9</text>
+            <path d="M450 50 H 650 V 120 H 450 Z" className="shop-shape" />
+            <text x="550" y="85" className="shop-text">6</text>
+            <path d="M450 120 H 650 V 190 H 450 Z" className="shop-shape" />
+            <text x="550" y="155" className="shop-text">7</text>
+            <path d="M450 190 H 650 V 260 H 450 Z" className="shop-shape" />
+            <text x="550" y="225" className="shop-text">8</text>
         </g>
 
         <g id="shops-center">
-            {/* L-shaped Block - This will be empty space for block 10 */}
+            {/* L-shaped Block 10 */}
+            <path d="M450 260 H 650 V 420 H 550 V 580 H 450 Z" className="shop-shape" />
+            <text x="500" y="340" className="shop-text">10</text>
+
+            {/* Block 11 (bottom left) */}
+            <path d="M450 580 H 550 V 665 H 450 Z" className="shop-shape" />
+            <text x="500" y="622.5" className="shop-text">11</text>
             
-            {/* Block 11 (previously unnumbered bottom block) */}
-            <path d="M450 580 H 650 V 750 H 450 Z" className="shop-shape" />
-            <text x="550" y="665" className="shop-text">11</text>
-            
-             {/* Block 12 remains the same */}
-            <path d="M550 420 H 650 V 580 H 550 Z" className="shop-shape" />
-            <text x="600" y="500" className="shop-text">12</text>
+             {/* Block 12 (bottom right) */}
+            <path d="M550 420 H 650 V 750 H 550 Z" className="shop-shape" />
+            <text x="600" y="585" className="shop-text">12</text>
         </g>
 
         <g id="shops-right-center">

@@ -20,7 +20,7 @@ const eventsData = [
         description: "Приводите своих детей на увлекательный мастер-класс, где они научатся основам живописи.", 
         date: "2024-09-14", 
         time: "12:00 - 14:00", 
-        location: "Детская зона, 3 этаж",
+        location: "Детская зона, 2 этаж",
         image: { src: "https://placehold.co/600x400.png", hint: "kids painting" },
         category: "Для детей",
     },

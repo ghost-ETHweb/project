@@ -12,6 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const mapData = [
   { floor: 1, type: "svg" },
+  { floor: 2, type: "empty" },
 ]
 
 const legendCategories = [
@@ -158,6 +159,10 @@ export function InteractiveMallMap() {
                 <div className="relative aspect-[1200/800] w-full overflow-hidden rounded-lg border">
                   {type === 'svg' ? (
                     <Floor1SvgMap />
+                  ) : type === 'empty' ? (
+                     <div className="flex items-center justify-center h-full bg-muted">
+                        <p className="text-muted-foreground">Карта для этого этажа недоступна</p>
+                    </div>
                   ) : image ? (
                     <Image
                       src={image}

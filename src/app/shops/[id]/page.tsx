@@ -96,7 +96,7 @@ export default function ShopDetailPage({ params }: { params: { id: string } }) {
           )}
 
           <Button asChild size="lg">
-            <Link href={`/map?floor=${shop.floor}`}>Найти на карте</Link>
+            <Link href={`/map`}>Найти на карте</Link>
           </Button>
         </div>
       </div>

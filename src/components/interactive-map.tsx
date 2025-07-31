@@ -49,8 +49,16 @@ const Floor1SvgMap = () => (
 
         {/* Left Wing */}
         <g id="left-wing">
-            <rect x="50" y="50" width="150" height="700" className="shop-shape" />
-            <text x="125" y="400" className="shop-text">1</text>
+            <rect x="50" y="50" width="150" height="100" className="shop-shape" />
+            <text x="125" y="100" className="shop-text">1</text>
+            <rect x="50" y="150" width="150" height="100" className="shop-shape" />
+            <text x="125" y="200" className="shop-text">2</text>
+            <rect x="50" y="250" width="150" height="150" className="shop-shape" />
+            <text x="125" y="325" className="shop-text">3</text>
+            <rect x="50" y="400" width="150" height="150" className="shop-shape" />
+            <text x="125" y="475" className="shop-text">4</text>
+            <rect x="50" y="550" width="150" height="200" className="shop-shape" />
+            <text x="125" y="650" className="shop-text">5</text>
         </g>
         
         {/* Top Wing */}
@@ -67,12 +75,12 @@ const Floor1SvgMap = () => (
 
         {/* Center Area */}
         <g id="center-area">
-            <rect x="250" y="250" width="150" height="150" className="shop-shape" />
+            <path d="M 250 250 L 400 250 L 400 400 L 400 550 L 250 550 L 250 400 L 350 400 L 350 250 Z" className="shop-shape" />
             <text x="325" y="325" className="shop-text">10</text>
-            <rect x="250" y="400" width="150" height="150" className="shop-shape" />
-            <text x="325" y="475" className="shop-text">11</text>
-            <rect x="400" y="250" width="150" height="300" className="shop-shape" />
-            <text x="475" y="400" className="shop-text">12</text>
+            <rect x="400" y="250" width="150" height="150" className="shop-shape" />
+            <text x="475" y="325" className="shop-text">12</text>
+            <rect x="250" y="550" width="150" height="150" className="shop-shape" />
+            <text x="325" y="625" className="shop-text">11</text>
         </g>
 
         {/* Right Area */}
@@ -98,18 +106,16 @@ const Floor1SvgMap = () => (
 
         {/* Bottom Area */}
         <g id="bottom-area">
-            <rect x="250" y="600" width="150" height="150" className="shop-shape" />
-            <text x="325" y="675" className="shop-text">21</text>
-            <rect x="400" y="600" width="150" height="150" className="shop-shape" />
-            <text x="475" y="675" className="shop-text">22</text>
-            <rect x="550" y="600" width="150" height="150" className="shop-shape" />
-            <text x="625" y="675" className="shop-text">23</text>
-            <rect x="700" y="600" width="150" height="150" className="shop-shape" />
-            <text x="775" y="675" className="shop-text">24</text>
-            <rect x="850" y="600" width="150" height="150" className="shop-shape" />
-            <text x="925" y="675" className="shop-text">25</text>
-            <rect x="1000" y="600" width="150" height="150" className="shop-shape" />
-            <text x="1075" y="675" className="shop-text">26</text>
+            <rect x="450" y="600" width="150" height="150" className="shop-shape" />
+            <text x="525" y="675" className="shop-text">21</text>
+            <rect x="600" y="600" width="150" height="150" className="shop-shape" />
+            <text x="675" y="675" className="shop-text">22</text>
+            <rect x="750" y="600" width="150" height="150" className="shop-shape" />
+            <text x="825" y="675" className="shop-text">23</text>
+            <rect x="900" y="600" width="150" height="150" className="shop-shape" />
+            <text x="975" y="675" className="shop-text">24</text>
+            <rect x="1050" y="600" width="100" height="150" className="shop-shape" />
+            <text x="1100" y="675" className="shop-text">25</text>
         </g>
     </svg>
 )

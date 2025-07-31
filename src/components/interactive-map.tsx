@@ -50,15 +50,9 @@ const Floor1SvgMap = () => (
         {/* Shop Shapes */}
         <g id="shops-left">
             <path d="M50 50 H 250 V 750 H 50 Z" className="shop-shape" />
+             <path d="M250 50 H 450 V 400 H 250 Z" className="shop-shape" />
         </g>
-
-        <g id="shops-left-2nd-col">
-            <path d="M250 50 H 450 V 200 H 250 Z" className="shop-shape" />
-            <path d="M250 200 H 450 V 350 H 250 Z" className="shop-shape" />
-            <path d="M250 350 H 450 V 500 H 250 Z" className="shop-shape" />
-            <path d="M250 500 H 450 V 650 H 250 Z" className="shop-shape" />
-        </g>
-
+        
         <g id="shops-bottom-center">
             <path d="M250 650 H 450 V 750 H 250 Z" className="shop-shape" />
             <path d="M450 650 H 650 V 750 H 450 Z" className="shop-shape" />
@@ -72,15 +66,12 @@ const Floor1SvgMap = () => (
         </g>
 
         <g id="shops-center">
-            <path d="M450 150 L 450 300 L 700 300 L 700 150 Z" className="shop-shape" />
-            <path d="M450 300 L 450 450 L 700 450 L 700 300 Z" className="shop-shape" />
-            <path d="M450 450 L 700 450 L 700 650 L 450 650 Z" className="shop-shape" />
+            <path d="M450 400 L 450 650 L 700 650 L 700 400 Z" className="shop-shape" />
+            <path d="M450 150 L 450 400 L 700 400 L 700 150 Z" className="shop-shape" />
         </g>
 
         <g id="shops-right-center">
-            <path d="M700 150 L 850 150 L 850 300 L 700 300 Z" className="shop-shape" />
-            <path d="M700 300 L 850 300 L 850 450 L 700 450 Z" className="shop-shape" />
-            <path d="M700 450 L 850 450 L 850 650 L 700 650 Z" className="shop-shape" />
+            <path d="M700 150 L 850 150 L 850 650 L 700 650 Z" className="shop-shape" />
         </g>
 
         <g id="shops-far-right">

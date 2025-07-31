@@ -54,6 +54,12 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
     // Reset to page 1 when filters change
     setCurrentPage(1);
   }, [searchQuery, category, floor, sort]);
+  
+  useEffect(() => {
+    if (isPaginated && directoryRef.current) {
+        directoryRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [currentPage, isPaginated]);
 
   const paginatedShops = useMemo(() => {
     if (!isPaginated) return filteredShops;
@@ -65,9 +71,6 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
   
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
-    if (directoryRef.current) {
-        directoryRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
   }
 
   return (

@@ -72,31 +72,35 @@ const Floor1SvgMap = () => (
             <path d="M450 120 H 650 V 190 H 450 Z" className="shop-shape" />
             <text x="550" y="155" className="shop-text">6</text>
             <path d="M450 50 H 650 V 120 H 450 Z" className="shop-shape" />
-            <text x="550" y="85" className="shop-text">5</text>
+            <text x="550" y="85" className="shop-text">9</text>
         </g>
 
         <g id="shops-center">
             {/* L-shaped Block 10 */}
             <path d="M450 330 H 650 V 455 H 570 V 580 H 450 Z" className="shop-shape" />
-            <text x="550" y="392.5" className="shop-text">10</text>
+            <text x="510" y="455" className="shop-text">10</text>
             
             {/* Block 11 */}
-            <path d="M570 455 H 650 V 580 H 570 Z" className="shop-shape" />
-            <text x="610" y="517.5" className="shop-text">11</text>
+            <path d="M570 455 H 650 V 517.5 H 570 Z" className="shop-shape" />
+            <text x="610" y="486.25" className="shop-text">11</text>
+            
+             {/* Block 12 */}
+            <path d="M570 517.5 H 650 V 580 H 570 Z" className="shop-shape" />
+            <text x="610" y="548.75" className="shop-text">12</text>
         </g>
 
         <g id="shops-right-center">
             <path d="M700 150 L 850 150 L 850 650 L 700 650 Z" className="shop-shape" />
-            <text x="775" y="400" className="shop-text">12</text>
+            <text x="775" y="400" className="shop-text">13</text>
         </g>
 
         <g id="shops-far-right">
              <path d="M850 50 L 1150 50 L 1150 350 L 850 350 Z" className="shop-shape" />
-             <text x="1000" y="200" className="shop-text">13</text>
+             <text x="1000" y="200" className="shop-text">14</text>
              <path d="M850 350 L 1150 350 L 1150 650 L 850 650 Z" className="shop-shape" />
-             <text x="1000" y="500" className="shop-text">14</text>
+             <text x="1000" y="500" className="shop-text">15</text>
              <path d="M1000 650 L 1150 650 L 1150 750 L 1000 750 Z" className="shop-shape" />
-             <text x="1075" y="700" className="shop-text">15</text>
+             <text x="1075" y="700" className="shop-text">16</text>
         </g>
     </svg>
 )

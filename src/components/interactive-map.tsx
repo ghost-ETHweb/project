@@ -49,88 +49,67 @@ const Floor1SvgMap = () => (
 
         {/* Left Wing */}
         <g id="left-wing">
-            <rect x="50" y="50" width="150" height="70" className="shop-shape" />
-            <text x="125" y="85" className="shop-text">5</text>
-            <rect x="50" y="120" width="150" height="70" className="shop-shape" />
-            <text x="125" y="155" className="shop-text">4</text>
-            <rect x="50" y="190" width="150" height="70" className="shop-shape" />
-            <text x="125" y="225" className="shop-text">3</text>
-            <rect x="50" y="260" width="150" height="70" className="shop-shape" />
-            <text x="125" y="295" className="shop-text">2</text>
-            <rect x="50" y="330" width="150" height="250" className="shop-shape" />
-            <text x="125" y="455" className="shop-text">1</text>
+            <rect x="50" y="50" width="150" height="700" className="shop-shape" />
+            <text x="125" y="400" className="shop-text">1</text>
         </g>
         
-        {/* Top-Center Wing */}
-        <g id="top-center-wing">
-            <rect x="250" y="50" width="150" height="70" className="shop-shape" />
-            <text x="325" y="85" className="shop-text">6</text>
-            <rect x="250" y="120" width="150" height="70" className="shop-shape" />
-            <text x="325" y="155" className="shop-text">7</text>
-            <rect x="250" y="190" width="150" height="70" className="shop-shape" />
-            <text x="325" y="225" className="shop-text">8</text>
-            <rect x="250" y="260" width="150" height="120" className="shop-shape" />
-            <text x="325" y="320" className="shop-text">9</text>
+        {/* Top Wing */}
+        <g id="top-wing">
+            <rect x="250" y="50" width="150" height="150" className="shop-shape" />
+            <text x="325" y="125" className="shop-text">6</text>
+            <rect x="400" y="50" width="150" height="150" className="shop-shape" />
+            <text x="475" y="125" className="shop-text">7</text>
+            <rect x="550" y="50" width="150" height="150" className="shop-shape" />
+            <text x="625" y="125" className="shop-text">8</text>
+            <rect x="700" y="50" width="150" height="150" className="shop-shape" />
+            <text x="775" y="125" className="shop-text">9</text>
         </g>
 
-        {/* Center-Left Area */}
-        <g id="center-left-area">
-            <path d="M420 280 H 570 V 380 H 420 Z" className="shop-shape" />
-            <text x="495" y="330" className="shop-text">10</text>
-            <path d="M420 380 H 495 V 450 H 420 Z" className="shop-shape" />
-            <text x="457.5" y="415" className="shop-text">11</text>
-            <path d="M495 380 H 570 V 450 H 495 Z" className="shop-shape" />
-            <text x="532.5" y="415" className="shop-text">12</text>
-            <path d="M570 280 H 630 V 450 H 570 Z" className="shop-shape" />
-            <text x="600" y="365" className="shop-text small-text">16</text>
-        </g>
-        
-        {/* Center-Middle Area */}
-        <g id="center-middle-area">
-             <path d="M630 280 H 880 V 450 H 630 Z" className="shop-shape" />
-             <text x="755" y="365" className="shop-text">17</text>
+        {/* Center Area */}
+        <g id="center-area">
+            <rect x="250" y="250" width="150" height="150" className="shop-shape" />
+            <text x="325" y="325" className="shop-text">10</text>
+            <rect x="250" y="400" width="150" height="150" className="shop-shape" />
+            <text x="325" y="475" className="shop-text">11</text>
+            <rect x="400" y="250" width="150" height="300" className="shop-shape" />
+            <text x="475" y="400" className="shop-text">12</text>
         </g>
 
-        {/* Center-Right Area */}
-        <g id="center-right-area">
-            <path d="M880 280 H 1150 V 350 H 980 V 450 H 880 Z" className="shop-shape" />
-            <text x="980" y="315" className="shop-text">24</text>
-            <path d="M980 350 H 1150 V 550 H 980 Z" className="shop-shape" />
-            <text x="1065" y="450" className="shop-text">23</text>
+        {/* Right Area */}
+        <g id="right-area">
+            <rect x="600" y="250" width="150" height="150" className="shop-shape" />
+            <text x="675" y="325" className="shop-text">13</text>
+            <rect x="750" y="250" width="150" height="150" className="shop-shape" />
+            <text x="825" y="325" className="shop-text">14</text>
+            <rect x="900" y="250" width="150" height="150" className="shop-shape" />
+            <text x="975" y="325" className="shop-text">15</text>
+            <rect x="1050" y="250" width="100" height="150" className="shop-shape" />
+            <text x="1100" y="325" className="shop-text">16</text>
+
+            <rect x="600" y="400" width="150" height="150" className="shop-shape" />
+            <text x="675" y="475" className="shop-text">17</text>
+            <rect x="750" y="400" width="150" height="150" className="shop-shape" />
+            <text x="825" y="475" className="shop-text">18</text>
+            <rect x="900" y="400" width="150" height="150" className="shop-shape" />
+            <text x="975" y="475" className="shop-text">19</text>
+            <rect x="1050" y="400" width="100" height="150" className="shop-shape" />
+            <text x="1100" y="475" className="shop-text">20</text>
         </g>
 
-        {/* Bottom-Left Area */}
-        <g id="bottom-left-area">
-            <rect x="420" y="550" width="150" height="100" className="shop-shape" />
-            <text x="495" y="600" className="shop-text">13</text>
-            <rect x="420" y="650" width="75" height="100" className="shop-shape" />
-            <text x="457.5" y="700" className="shop-text">14</text>
-            <rect x="495" y="650" width="150" height="100" className="shop-shape" />
-            <text x="570" y="700" className="shop-text">15</text>
-            <rect x="570" y="550" width="75" height="100" className="shop-shape" />
-            <text x="607.5" y="600" className="shop-text">18</text>
-        </g>
-
-        {/* Bottom-Center Area */}
-        <g id="bottom-center-area">
-            <rect x="645" y="550" width="150" height="200" className="shop-shape" />
-            <text x="720" y="650" className="shop-text">19</text>
-        </g>
-        
-        {/* Bottom-Right Area */}
-        <g id="bottom-right-area">
-            <rect x="795" y="550" width="60" height="200" className="shop-shape" />
-            <text x="825" y="650" className="shop-text">20</text>
-            <rect x="855" y="550" width="60" height="200" className="shop-shape" />
-            <text x="885" y="650" className="shop-text">21</text>
-            <path d="M915 550 H 975 V 610 H 945 V 580 H 915 Z" className="shop-shape" />
-            <text x="945" y="565" className="shop-text small-text">M</text>
-            <path d="M915 610 H 975 V 700 H 915 Z" className="shop-shape" />
-            <text x="945" y="655" className="shop-text">26</text>
-            <rect x="975" y="550" width="100" height="200" className="shop-shape" />
-            <text x="1025" y="650" className="shop-text">22</text>
-            <path d="M1075 550 H 1150 V 750 H 1075 Z" className="shop-shape" />
-            <text x="1112.5" y="650" className="shop-text">25</text>
+        {/* Bottom Area */}
+        <g id="bottom-area">
+            <rect x="250" y="600" width="150" height="150" className="shop-shape" />
+            <text x="325" y="675" className="shop-text">21</text>
+            <rect x="400" y="600" width="150" height="150" className="shop-shape" />
+            <text x="475" y="675" className="shop-text">22</text>
+            <rect x="550" y="600" width="150" height="150" className="shop-shape" />
+            <text x="625" y="675" className="shop-text">23</text>
+            <rect x="700" y="600" width="150" height="150" className="shop-shape" />
+            <text x="775" y="675" className="shop-text">24</text>
+            <rect x="850" y="600" width="150" height="150" className="shop-shape" />
+            <text x="925" y="675" className="shop-text">25</text>
+            <rect x="1000" y="600" width="150" height="150" className="shop-shape" />
+            <text x="1075" y="675" className="shop-text">26</text>
         </g>
     </svg>
 )

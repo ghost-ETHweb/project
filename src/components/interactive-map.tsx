@@ -80,8 +80,8 @@ const Floor1SvgMap = () => (
             <text x="515" y="365" className="shop-text">10</text>
             
             {/* Block 11 */}
-            <path d="M450 420 H 550 V 580 H 450 Z" className="shop-shape" />
-            <text x="500" y="500" className="shop-text">11</text>
+            <path d="M450 420 H 550 V 500 H 450 Z" className="shop-shape" />
+            <text x="500" y="460" className="shop-text">11</text>
             
              {/* Block 12 */}
             <path d="M550 420 H 650 V 580 H 550 Z" className="shop-shape" />

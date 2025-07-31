@@ -51,42 +51,42 @@ const Floor1SvgMap = () => (
         {/* Shop Shapes */}
         <g id="shops-left">
             {/* Big block at the bottom (60%) */}
-            <path d="M50 330 H 250 V 750 H 50 Z" className="shop-shape" />
-            <text x="150" y="540" className="shop-text">5</text>
+            <path d="M50 260 H 250 V 750 H 50 Z" className="shop-shape" />
+            <text x="150" y="505" className="shop-text">5</text>
             {/* 4 smaller blocks on top (10% each) */}
-            <path d="M50 260 H 250 V 330 H 50 Z" className="shop-shape" />
-            <text x="150" y="295" className="shop-text">4</text>
             <path d="M50 190 H 250 V 260 H 50 Z" className="shop-shape" />
-            <text x="150" y="225" className="shop-text">3</text>
+            <text x="150" y="225" className="shop-text">4</text>
             <path d="M50 120 H 250 V 190 H 50 Z" className="shop-shape" />
-            <text x="150" y="155" className="shop-text">2</text>
+            <text x="150" y="155" className="shop-text">3</text>
             <path d="M50 50 H 250 V 120 H 50 Z" className="shop-shape" />
-            <text x="150" y="85" className="shop-text">1</text>
+            <text x="150" y="85" className="shop-text">2</text>
+            <path d="M50 -20 H 250 V 50 H 50 Z" className="shop-shape" />
+             <text x="150" y="15" className="shop-text">1</text>
         </g>
         
         <g id="shops-center-left">
-            <path d="M450 260 H 650 V 330 H 450 Z" className="shop-shape" />
-            <text x="550" y="295" className="shop-text">8</text>
             <path d="M450 190 H 650 V 260 H 450 Z" className="shop-shape" />
-            <text x="550" y="225" className="shop-text">7</text>
+            <text x="550" y="225" className="shop-text">8</text>
             <path d="M450 120 H 650 V 190 H 450 Z" className="shop-shape" />
-            <text x="550" y="155" className="shop-text">6</text>
+            <text x="550" y="155" className="shop-text">7</text>
             <path d="M450 50 H 650 V 120 H 450 Z" className="shop-shape" />
-            <text x="550" y="85" className="shop-text">9</text>
+            <text x="550" y="85" className="shop-text">6</text>
+             <path d="M450 -20 H 650 V 50 H 450 Z" className="shop-shape" />
+            <text x="550" y="15" className="shop-text">9</text>
         </g>
 
         <g id="shops-center">
             {/* L-shaped Block 10 */}
-            <path d="M450 330 H 570 V 580 H 450 V 330 Z M 450 330 H 650 V 455 H 570 V 330 H 450 Z" className="shop-shape" />
-            <text x="550" y="490" className="shop-text">10</text>
+            <path d="M450 260 H 570 V 580 H 450 Z M 450 260 H 650 V 385 H 570 Z" className="shop-shape" />
+            <text x="550" y="482.5" className="shop-text">10</text>
             
             {/* Block 11 */}
-            <path d="M570 517.5 H 650 V 580 H 570 Z" className="shop-shape" />
-            <text x="610" y="548.75" className="shop-text">11</text>
+            <path d="M570 482.5 H 650 V 580 H 570 Z" className="shop-shape" />
+            <text x="610" y="531.25" className="shop-text">11</text>
             
              {/* Block 12 */}
-            <path d="M570 455 H 650 V 517.5 H 570 Z" className="shop-shape" />
-            <text x="610" y="486.25" className="shop-text">12</text>
+            <path d="M570 385 H 650 V 482.5 H 570 Z" className="shop-shape" />
+            <text x="610" y="433.75" className="shop-text">12</text>
         </g>
 
         <g id="shops-right-center">

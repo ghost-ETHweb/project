@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { useSearchParams } from 'next/navigation'
-import { Shirt, Footprints, Utensils, BookOpen, Gem, Baby, Home, Wrench, Gift, ShoppingBasket, CookingPot, Sparkles, MapPin, FireExtinguisher, DoorOpen, Stairs, ConciergeBell, Users } from "lucide-react"
+import { Shirt, Footprints, Utensils, BookOpen, Gem, Baby, Home, Wrench, Gift, ShoppingBasket, CookingPot, Sparkles, MapPin, FireExtinguisher, DoorOpen, ArrowUpRight, ConciergeBell, Users } from "lucide-react"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Input } from "@/components/ui/input"
@@ -34,7 +34,7 @@ const legendFacilities = [
     { icon: FireExtinguisher, text: "Огнетушитель", color: "text-red-600" },
     { icon: DoorOpen, text: "Эвакуационный выход", color: "text-green-600" },
     { icon: Users, text: "Туалет", color: "text-gray-600" },
-    { icon: Stairs, text: "Лестница", color: "text-yellow-700" },
+    { icon: ArrowUpRight, text: "Лестница", color: "text-yellow-700" },
     { icon: ConciergeBell, text: "Служебные помещения", color: "text-amber-800" },
 ]
 

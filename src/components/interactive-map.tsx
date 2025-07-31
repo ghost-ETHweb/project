@@ -41,66 +41,104 @@ const legendFacilities = [
 const Floor1SvgMap = () => (
     <svg viewBox="0 0 1200 800" className="w-full h-full object-contain" xmlns="http://www.w3.org/2000/svg">
         <defs>
-            <style>{`.shop-shape { fill: hsl(var(--muted)); stroke: hsl(var(--border)); stroke-width: 2; transition: fill 0.2s; cursor: pointer; } .shop-shape:hover { fill: hsl(var(--primary) / 0.2); } .shop-text { font-size: 14px; font-family: sans-serif; fill: hsl(var(--muted-foreground)); pointer-events: none; text-anchor: middle; vertical-alignment: middle; dominant-baseline: middle; }`}</style>
+            <style>{`.shop-shape { fill: hsl(var(--muted)); stroke: hsl(var(--border)); stroke-width: 2; transition: fill 0.2s; cursor: pointer; } .shop-shape:hover { fill: hsl(var(--primary) / 0.2); } .shop-text { font-size: 16px; font-weight: bold; font-family: sans-serif; fill: hsl(var(--muted-foreground)); pointer-events: none; text-anchor: middle; dominant-baseline: central; } .small-text { font-size: 12px; }`}</style>
         </defs>
         
         {/* Background */}
         <rect width="1200" height="800" fill="hsl(var(--background))" />
 
-        {/* Shop Shapes */}
-        <g id="shops-left">
-            {/* Big block at the bottom (60%) */}
-            <path d="M50 260 H 250 V 750 H 50 Z" className="shop-shape" />
-            <text x="150" y="505" className="shop-text">5</text>
-            {/* 4 smaller blocks on top (10% each) */}
-            <path d="M50 190 H 250 V 260 H 50 Z" className="shop-shape" />
-            <text x="150" y="225" className="shop-text">4</text>
-            <path d="M50 120 H 250 V 190 H 50 Z" className="shop-shape" />
-            <text x="150" y="155" className="shop-text">3</text>
-            <path d="M50 50 H 250 V 120 H 50 Z" className="shop-shape" />
-            <text x="150" y="85" className="shop-text">2</text>
-            <path d="M50 -20 H 250 V 50 H 50 Z" className="shop-shape" />
-             <text x="150" y="15" className="shop-text">1</text>
+        {/* Top Row */}
+        <g id="shops-top-row">
+            {/* Block 10 */}
+            <path d="M50 50 H 200 V 250 H 150 V 150 H 50 Z" className="shop-shape" style={{fill: '#a2d6a4'}} />
+            <text x="80" y="80" className="shop-text">10</text>
+            
+            {/* Block 11 */}
+            <path d="M50 150 H 150 V 250 H 50 Z" className="shop-shape" style={{fill: '#fcd837'}} />
+            <text x="100" y="200" className="shop-text">11</text>
+            
+            {/* Block 12 */}
+            <path d="M150 100 H 270 V 250 H 150 Z" className="shop-shape" style={{fill: '#a2d6a4'}} />
+            <text x="210" y="175" className="shop-text">12</text>
+            
+            {/* Block 16 */}
+            <path d="M270 100 H 390 V 200 H 270 Z" className="shop-shape" style={{fill: '#662d91'}} />
+            <text x="330" y="130" className="shop-text">16</text>
+            <path d="M270 200 H 330 V 250 H 270 Z" className="shop-shape" style={{fill: '#4d206d'}} />
+            
+            {/* Block 17 */}
+            <path d="M390 50 H 680 V 250 H 390 Z" className="shop-shape" style={{fill: '#d883b9'}} />
+            <text x="535" y="150" className="shop-text">17</text>
+            
+            {/* WC */}
+            <path d="M580 200 H 650 V 250 H 580 Z" className="shop-shape" style={{fill: '#999999'}} />
+            <text x="600" y="225" className="shop-text small-text">WC</text>
+            <text x="630" y="225" className="shop-text small-text">Ж</text>
+            
+            {/* Block 24 */}
+            <path d="M680 50 H 880 V 200 H 680 Z" className="shop-shape" style={{fill: '#ed1c24'}} />
+            <text x="780" y="125" className="shop-text">24</text>
+
+            {/* Block 23 */}
+            <path d="M800 200 H 1150 V 450 H 800 Z" className="shop-shape" style={{fill: '#f7931e'}} />
+            <text x="975" y="325" className="shop-text">23</text>
         </g>
         
-        <g id="shops-center-left">
-             <path d="M450 -20 H 650 V 50 H 450 Z" className="shop-shape" />
-            <text x="550" y="15" className="shop-text">9</text>
-            <path d="M450 50 H 650 V 120 H 450 Z" className="shop-shape" />
-            <text x="550" y="85" className="shop-text">6</text>
-            <path d="M450 120 H 650 V 190 H 450 Z" className="shop-shape" />
-            <text x="550" y="155" className="shop-text">7</text>
-            <path d="M450 190 H 650 V 260 H 450 Z" className="shop-shape" />
-            <text x="550" y="225" className="shop-text">8</text>
-        </g>
-
-        <g id="shops-center">
-            {/* L-shaped Block 10 */}
-            <path d="M450 260 H 650 V 340 H 520 V 600 H 450 Z" className="shop-shape" />
-            <text x="500" y="300" className="shop-text">10</text>
+        {/* Bottom Row */}
+        <g id="shops-bottom-row">
+             {/* Block 13 */}
+            <path d="M50 450 H 250 V 550 H 50 Z" className="shop-shape" style={{fill: '#a2d6a4'}} />
+            <text x="150" y="500" className="shop-text">13</text>
             
-            {/* Block 11 (bottom left) */}
-            <path d="M450 600 H 520 V 750 H 450 Z" className="shop-shape" />
-            <text x="485" y="675" className="shop-text">11</text>
+            {/* Block 14 */}
+            <path d="M50 550 H 150 V 650 H 50 Z" className="shop-shape" style={{fill: '#39b54a'}} />
+            <text x="100" y="600" className="shop-text">14</text>
             
-            {/* Block 12 (bottom right) */}
-            <path d="M520 600 H 650 V 750 H 520 Z" className="shop-shape" />
-            <text x="585" y="675" className="shop-text">12</text>
-        </g>
+            {/* Block 15 */}
+            <path d="M50 650 H 250 V 750 H 50 Z" className="shop-shape" style={{fill: '#f2bad5'}} />
+            <text x="150" y="700" className="shop-text">15</text>
+            
+            {/* Block 18 */}
+            <path d="M250 450 H 380 V 580 H 250 Z" className="shop-shape" style={{fill: '#39b54a'}} />
+            <text x="315" y="515" className="shop-text">18</text>
 
-        <g id="shops-right-center">
-            <path d="M700 150 L 850 150 L 850 650 L 700 650 Z" className="shop-shape" />
-            <text x="775" y="400" className="shop-text">13</text>
-        </g>
+            {/* Block 19 */}
+            <path d="M250 580 H 450 V 750 H 250 Z" className="shop-shape" style={{fill: '#00a99d'}} />
+            <text x="350" y="665" className="shop-text">19</text>
+            
+            {/* Block 20 */}
+            <path d="M480 450 H 540 V 750 H 480 Z" className="shop-shape" style={{fill: '#8dc63f'}} />
+            <text x="510" y="600" className="shop-text">20</text>
+            
+            {/* Block 21 */}
+            <path d="M540 450 H 600 V 750 H 540 Z" className="shop-shape" style={{fill: '#a2d6a4'}} />
+            <text x="570" y="600" className="shop-text">21</text>
+            
+             {/* Block M */}
+            <path d="M600 450 H 680 V 520 H 600 Z" className="shop-shape" style={{fill: '#a67c52'}} />
+            <text x="640" y="485" className="shop-text">M</text>
+            
+            {/* Block 26 with stairs */}
+            <g id="stairs-26">
+                <path d="M600 520 H 680 V 620 H 600 Z" className="shop-shape" style={{fill: '#cccccc'}}/>
+                <text x="640" y="550" className="shop-text">26</text>
+                <line x1="605" y1="525" x2="675" y2="615" stroke="hsl(var(--muted-foreground))" strokeWidth="1"/>
+                <line x1="605" y1="535" x2="665" y2="615" stroke="hsl(var(--muted-foreground))" strokeWidth="1"/>
+                <line x1="605" y1="545" x2="655" y2="615" stroke="hsl(var(--muted-foreground))" strokeWidth="1"/>
+                <line x1="605" y1="555" x2="645" y2="615" stroke="hsl(var(--muted-foreground))" strokeWidth="1"/>
+                <line x1="605" y1="565" x2="635" y2="615" stroke="hsl(var(--muted-foreground))" strokeWidth="1"/>
+                <line x1="605" y1="575" x2="625" y2="615" stroke="hsl(var(--muted-foreground))" strokeWidth="1"/>
+                <line x1="605" y1="585" x2="615" y2="615" stroke="hsl(var(--muted-foreground))" strokeWidth="1"/>
+            </g>
 
-        <g id="shops-far-right">
-             <path d="M850 50 L 1150 50 L 1150 350 L 850 350 Z" className="shop-shape" />
-             <text x="1000" y="200" className="shop-text">14</text>
-             <path d="M850 350 L 1150 350 L 1150 650 L 850 650 Z" className="shop-shape" />
-             <text x="1000" y="500" className="shop-text">15</text>
-             <path d="M1000 650 L 1150 650 L 1150 750 L 1000 750 Z" className="shop-shape" />
-             <text x="1075" y="700" className="shop-text">16</text>
+            {/* Block 22 */}
+            <path d="M680 450 H 850 V 750 H 680 Z" className="shop-shape" style={{fill: '#662d91'}} />
+            <text x="765" y="600" className="shop-text">22</text>
+            
+            {/* Bottom right blocks */}
+            <path d="M950 680 H 1150 V 750 H 950 Z" className="shop-shape" style={{fill: '#a67c52'}} />
         </g>
+        
     </svg>
 )
 

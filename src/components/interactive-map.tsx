@@ -49,13 +49,13 @@ const Floor1SvgMap = () => (
 
         {/* Shop Shapes */}
         <g id="shops-left">
-            {/* Big block at the bottom */}
-            <path d="M50 450 H 250 V 750 H 50 Z" className="shop-shape" />
-            {/* 4 smaller blocks on top */}
-            <path d="M50 350 H 250 V 450 H 50 Z" className="shop-shape" />
-            <path d="M50 250 H 250 V 350 H 50 Z" className="shop-shape" />
-            <path d="M50 150 H 250 V 250 H 50 Z" className="shop-shape" />
-            <path d="M50 50 H 250 V 150 H 50 Z" className="shop-shape" />
+            {/* Big block at the bottom (60%) */}
+            <path d="M50 330 H 250 V 750 H 50 Z" className="shop-shape" />
+            {/* 4 smaller blocks on top (10% each) */}
+            <path d="M50 260 H 250 V 330 H 50 Z" className="shop-shape" />
+            <path d="M50 190 H 250 V 260 H 50 Z" className="shop-shape" />
+            <path d="M50 120 H 250 V 190 H 50 Z" className="shop-shape" />
+            <path d="M50 50 H 250 V 120 H 50 Z" className="shop-shape" />
         </g>
         
         <g id="shops-bottom-center">

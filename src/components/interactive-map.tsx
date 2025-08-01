@@ -41,84 +41,73 @@ const legendFacilities = [
 ]
 
 const Floor1SvgMap = () => (
-    <svg viewBox="0 0 1200 800" className="w-full h-full object-contain" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 1200 650" className="w-full h-full object-contain" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <style>{`.shop-shape { fill: hsl(var(--muted)); stroke: hsl(var(--border)); stroke-width: 2; transition: fill 0.2s; cursor: pointer; } .shop-shape:hover { fill: hsl(var(--primary) / 0.2); } .shop-text { font-size: 20px; font-weight: bold; font-family: sans-serif; fill: hsl(var(--muted-foreground)); pointer-events: none; text-anchor: middle; dominant-baseline: central; } .small-text { font-size: 16px; }`}</style>
         </defs>
         
-        <rect width="1200" height="800" fill="hsl(var(--background))" />
+        <rect width="1200" height="650" fill="hsl(var(--background))" />
         
         <g id="shops-and-walkways">
-            {/* Left Column */}
-            <rect x="50" y="50" width="200" height="125" className="shop-shape" />
-            <text x="150" y="112.5" className="shop-text">1</text>
-
-            <rect x="50" y="175" width="200" height="125" className="shop-shape" />
-            <text x="150" y="237.5" className="shop-text">2</text>
-
-            <rect x="50" y="300" width="200" height="125" className="shop-shape" />
-            <text x="150" y="362.5" className="shop-text">3</text>
-
-            <rect x="50" y="425" width="200" height="125" className="shop-shape" />
-            <text x="150" y="487.5" className="shop-text">4</text>
-
-            <rect x="50" y="550" width="200" height="125" className="shop-shape" />
-            <text x="150" y="612.5" className="shop-text">5</text>
-        
-            {/* Second Column */}
-            <rect x="290" y="50" width="160" height="125" className="shop-shape" />
-            <text x="370" y="112.5" className="shop-text">6</text>
-
-            <rect x="290" y="175" width="160" height="125" className="shop-shape" />
-            <text x="370" y="237.5" className="shop-text">7</text>
-
-            <rect x="290" y="300" width="160" height="125" className="shop-shape" />
-            <text x="370" y="362.5" className="shop-text">8</text>
+            {/* Top-left vertical blocks */}
+            <rect x="50" y="50" width="100" height="100" className="shop-shape" />
+            <text x="100" y="100" className="shop-text">1</text>
+            <rect x="50" y="150" width="100" height="100" className="shop-shape" />
+            <text x="100" y="200" className="shop-text">2</text>
+            <rect x="50" y="250" width="100" height="100" className="shop-shape" />
+            <text x="100" y="300" className="shop-text">3</text>
+            <rect x="50" y="350" width="100" height="100" className="shop-shape" />
+            <text x="100" y="400" className="shop-text">4</text>
             
-            <rect x="290" y="425" width="80" height="250" className="shop-shape" />
-            <text x="330" y="550" className="shop-text">21</text>
+            {/* Top-left horizontal blocks */}
+            <rect x="200" y="50" width="150" height="50" className="shop-shape" />
+            <text x="275" y="75" className="shop-text">5</text>
+            <rect x="200" y="100" width="150" height="50" className="shop-shape" />
+            <text x="275" y="125" className="shop-text">6</text>
+            <rect x="200" y="150" width="150" height="50" className="shop-shape" />
+            <text x="275" y="175" className="shop-text">7</text>
+            <rect x="200" y="200" width="150" height="50" className="shop-shape" />
+            <text x="275" y="225" className="shop-text">8</text>
 
-            <rect x="370" y="550" width="80" height="125" className="shop-shape" />
-            <text x="410" y="612.5" className="shop-text">9</text>
+            {/* Middle section */}
+            <rect x="200" y="300" width="100" height="100" className="shop-shape" />
+            <text x="250" y="350" className="shop-text">9</text>
+            <rect x="300" y="300" width="100" height="100" className="shop-shape" />
+            <text x="350" y="350" className="shop-text">10</text>
+            <path d="M 450 300 H 550 V 350 H 500 V 400 H 450 Z" className="shop-shape" />
+            <text x="495" y="350" className="shop-text">11</text>
+            <rect x="550" y="300" width="200" height="100" className="shop-shape" />
+            <text x="650" y="350" className="shop-text">12</text>
+             <rect x="750" y="300" width="300" height="100" className="shop-shape" />
+            <text x="900" y="350" className="shop-text">13</text>
 
-            {/* Third/Fourth Column (Merged) */}
-            <path d="M 490 50 L 650 50 L 650 210 L 490 210 Z" className="shop-shape" />
-            <text x="570" y="130" className="shop-text">10</text>
-            
-            <path d="M 490 210 L 650 210 L 650 370 L 490 370 Z" className="shop-shape" />
-            <text x="570" y="290" className="shop-text">11</text>
+            {/* Bottom row */}
+            <rect x="200" y="450" width="100" height="100" className="shop-shape" />
+            <text x="250" y="500" className="shop-text">14</text>
+            <path d="M 300 450 H 400 V 500 H 350 V 550 H 300 Z" className="shop-shape" />
+            <text x="340" y="500" className="shop-text">15</text>
+            <rect x="400" y="450" width="100" height="100" className="shop-shape" />
+            <text x="450" y="500" className="shop-text">16</text>
+            <rect x="500" y="450" width="100" height="100" className="shop-shape" />
+            <text x="550" y="500" className="shop-text">17</text>
+            <rect x="600" y="450" width="100" height="100" className="shop-shape" />
+            <text x="650" y="500" className="shop-text">18</text>
+            <path d="M 700 450 H 800 V 500 H 750 V 550 H 700 Z" className="shop-shape" />
+            <text x="740" y="500" className="shop-text">19</text>
+            <rect x="800" y="450" width="100" height="100" className="shop-shape" />
+            <text x="850" y="500" className="shop-text">20</text>
+             <rect x="900" y="450" width="150" height="100" className="shop-shape" />
+            <text x="975" y="500" className="shop-text">21</text>
 
-            <path d="M 490 370 L 650 370 L 650 530 L 490 530 Z" className="shop-shape" />
-            <text x="570" y="450" className="shop-text">12</text>
+            {/* Right side */}
+            <path d="M 1050 300 V 550 H 1100 V 450 H 1150 V 300 Z" className="shop-shape" />
+            <text x="1100" y="375" className="shop-text">22</text>
 
-            <path d="M 490 530 L 810 530 L 810 690 L 490 690 Z" className="shop-shape" />
-            <text x="650" y="610" className="shop-text">13</text>
-            
-            {/* Fifth/Sixth Column */}
-            <path d="M 650 50 L 810 50 L 810 210 L 650 210 Z" className="shop-shape" />
-            <text x="730" y="130" className="shop-text">17</text>
+            <rect x="1100" y="450" width="50" height="50" className="shop-shape" />
+            <text x="1125" y="475" className="shop-text">23</text>
 
-            <path d="M 650 210 L 810 210 L 810 370 L 650 370 Z" className="shop-shape" />
-            <text x="730" y="290" className="shop-text">18</text>
-            
-            <path d="M 650 370 L 730 370 L 730 530 L 650 530 Z" className="shop-shape" />
-            <text x="690" y="450" className="shop-text">19</text>
-            
-            <path d="M 730 370 L 810 370 L 810 530 L 730 530 Z" className="shop-shape" />
-            <text x="770" y="450" className="shop-text">20</text>
-
-            {/* Right Column */}
-            <rect x="850" y="50" width="300" height="200" className="shop-shape" />
-            <text x="1000" y="150" className="shop-text">22</text>
-            
-            <rect x="850" y="250" width="100" height="440" className="shop-shape" />
-            <text x="900" y="470" className="shop-text">16</text>
-
-            <rect x="950" y="250" width="200" height="200" className="shop-shape" />
-            <text x="1050" y="350" className="shop-text">23</text>
-            
-            <rect x="950" y="450" width="200" height="240" className="shop-shape" />
-            <text x="1050" y="570" className="shop-text">14</text>
+            <rect x="1100" y="500" width="50" height="50" className="shop-shape" />
+            <text x="1125" y="525" className="shop-text">24</text>
         </g>
     </svg>
 )
@@ -154,7 +143,7 @@ export function InteractiveMallMap() {
           <TabsContent key={floor} value={`floor-${floor}`} className="mt-4">
             <Card>
               <CardContent className="p-2 md:p-4">
-                <div className="relative aspect-[1200/800] w-full overflow-hidden rounded-lg border">
+                <div className="relative aspect-[1200/650] w-full overflow-hidden rounded-lg border">
                   {type === 'svg' && <Floor1SvgMap /> }
                 </div>
               </CardContent>

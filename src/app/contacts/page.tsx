@@ -56,14 +56,6 @@ export default function ContactsPage() {
           </Card>
         </div>
         
-        <div className="mt-16 rounded-lg overflow-hidden border">
-            <div className="aspect-video bg-muted flex items-center justify-center">
-                 <p className="text-muted-foreground text-center p-4">
-                    Заполнитель для интеграции карты. <br/> Здесь будет отображаться полностью интерактивная карта (например, Google Maps).
-                 </p>
-            </div>
-        </div>
-
       </div>
     </div>
   )

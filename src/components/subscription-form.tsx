@@ -31,7 +31,7 @@ import { Label } from "./ui/label"
 const formSchema = z.object({
   name: z.string().min(2, { message: "Имя должно содержать не менее 2 символов." }),
   email: z.string().email({ message: "Пожалуйста, введите действительный email." }),
-  phone: z.string().optional(),
+  phone: z.string().min(10, { message: "Телефон должен содержать не менее 10 символов." }),
   consent: z.boolean().refine((val) => val === true, {
     message: "Вы должны согласиться на обработку персональных данных.",
   }),
@@ -106,7 +106,7 @@ export function SubscriptionForm() {
               name="phone"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Телефон (необязательно)</FormLabel>
+                  <FormLabel>Телефон</FormLabel>
                   <FormControl>
                     <Input type="tel" placeholder="+7 (999) 999-99-99" {...field} />
                   </FormControl>

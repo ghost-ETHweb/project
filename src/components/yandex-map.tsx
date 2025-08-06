@@ -2,7 +2,7 @@
 
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps"
 
-const TIKHVIN_COORDS = [59.6418, 33.5313];
+const TIKHVIN_COORDS = [59.6489, 33.5186];
 
 export function YandexMap() {
     const apiKey = process.env.NEXT_PUBLIC_YANDEX_MAPS_API_KEY;
@@ -25,8 +25,8 @@ export function YandexMap() {
                 <Placemark 
                     geometry={TIKHVIN_COORDS} 
                     properties={{
-                        balloonContentHeader: "ТЦ Галерея",
-                        balloonContentBody: "1-й микрорайон, 22А, Тихвин",
+                        balloonContentHeader: "ТЦ Галерея Навигатор",
+                        balloonContentBody: "ул. Карла Маркса, 50, Тихвин",
                     }}
                     options={{
                         preset: 'islands#redShoppingIcon'

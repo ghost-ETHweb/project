@@ -43,7 +43,7 @@ export function Footer() {
               Свяжитесь с нами
             </h3>
             <ul className="mt-4 space-y-2 text-sm">
-              <li>1-й микрорайон, 22А, г. Тихвин</li>
+              <li>ул. Карла Маркса, 50, г. Тихвин</li>
               <li>Телефон: <a href="tel:89990642355" className="hover:text-primary hover:underline">8-999-064-23-55</a></li>
               <li>Email: <a href="mailto:buh@timolo.ru" className="hover:text-primary hover:underline">buh@timolo.ru</a></li>
             </ul>

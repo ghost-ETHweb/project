@@ -24,7 +24,7 @@ export default function ContactsPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground">
-              <p>1-й микрорайон, 22А</p>
+              <p>ул. Карла Маркса, 50</p>
               <p>г. Тихвин, 187555</p>
               <p>Российская Федерация</p>
             </CardContent>

@@ -24,8 +24,8 @@ export default function ContactsPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground">
-              <p>Торговый проспект, 123</p>
-              <p>Коммерц-Сити, 12345</p>
+              <p>1-й микрорайон, 22А</p>
+              <p>г. Тихвин, 187555</p>
               <p>Российская Федерация</p>
             </CardContent>
           </Card>
@@ -37,8 +37,8 @@ export default function ContactsPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground space-y-2">
-              <p><strong>Общие вопросы:</strong> (123) 456-7890</p>
-              <p><strong>Email:</strong> <a href="mailto:info@gallerynavigator.com" className="text-primary hover:underline">info@gallerynavigator.com</a></p>
+              <p><strong>Общие вопросы:</strong> 8-999-064-23-55</p>
+              <p><strong>Email:</strong> <a href="mailto:buh@timolo.ru" className="text-primary hover:underline">buh@timolo.ru</a></p>
             </CardContent>
           </Card>
           <Card>

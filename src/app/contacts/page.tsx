@@ -37,9 +37,9 @@ export default function ContactsPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground space-y-2">
-              <p><strong>Общие вопросы:</strong> 8-999-064-23-55</p>
+              <p><strong>Общие вопросы:</strong> (123) 456-7890</p>
               <p><strong>Аренда:</strong> (123) 456-7891</p>
-              <p><strong>Email:</strong> <a href="mailto:buh@timolo.ru" className="text-primary hover:underline">buh@timolo.ru</a></p>
+              <p><strong>Email:</strong> <a href="mailto:info@gallerynavigator.com" className="text-primary hover:underline">info@gallerynavigator.com</a></p>
             </CardContent>
           </Card>
           <Card>
@@ -55,6 +55,13 @@ export default function ContactsPage() {
               <p>Часы работы могут меняться в праздничные дни.</p>
             </CardContent>
           </Card>
+        </div>
+
+        <div className="mt-16">
+          <h2 className="text-center font-headline text-2xl font-semibold mb-6">Как нас найти</h2>
+          <div className="relative aspect-video w-full overflow-hidden rounded-lg border">
+            <Image src="https://placehold.co/1200x600.png" alt="Карта расположения торгового центра" fill className="object-cover" data-ai-hint="city map" />
+          </div>
         </div>
         
       </div>

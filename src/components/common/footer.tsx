@@ -44,8 +44,8 @@ export function Footer() {
             </h3>
             <ul className="mt-4 space-y-2 text-sm">
               <li>Торговый проспект, 123, Коммерц-Сити, 12345</li>
-              <li>Телефон: 8-999-064-23-55</li>
-              <li>Email: buh@timolo.ru</li>
+              <li>Телефон: (123) 456-7890</li>
+              <li>Email: info@gallerynavigator.com</li>
             </ul>
             <div className="mt-6 flex space-x-4">
               <Link href="#" className="hover:text-primary"><Facebook className="h-5 w-5" /></Link>

@@ -70,6 +70,11 @@ export default function Home() {
             Откройте для себя наши магазины
             </h2>
             <ShopDirectory isPaginated={false} />
+             <div className="text-center mt-12">
+                <Button asChild size="lg">
+                    <Link href="/shops">Смотреть все магазины <ArrowRight className="ml-2" /></Link>
+                </Button>
+            </div>
         </div>
       </section>
 

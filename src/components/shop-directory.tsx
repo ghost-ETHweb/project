@@ -62,7 +62,7 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
   }, [currentPage, isPaginated]);
 
   const paginatedShops = useMemo(() => {
-    if (!isPaginated) return filteredShops;
+    if (!isPaginated) return filteredShops.slice(0, 6);
     const startIndex = (currentPage - 1) * shopsPerPage;
     return filteredShops.slice(startIndex, startIndex + shopsPerPage);
   }, [filteredShops, currentPage, isPaginated]);

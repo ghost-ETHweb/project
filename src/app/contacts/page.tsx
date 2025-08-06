@@ -38,7 +38,6 @@ export default function ContactsPage() {
             </CardHeader>
             <CardContent className="text-muted-foreground space-y-2">
               <p><strong>Общие вопросы:</strong> (123) 456-7890</p>
-              <p><strong>Аренда:</strong> (123) 456-7891</p>
               <p><strong>Email:</strong> <a href="mailto:info@gallerynavigator.com" className="text-primary hover:underline">info@gallerynavigator.com</a></p>
             </CardContent>
           </Card>

@@ -80,7 +80,6 @@ export default function PartnersPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground space-y-2">
-              <p><strong>Телефон:</strong> (123) 456-7891</p>
               <p><strong>Email:</strong> leasing@gallerynav.com</p>
               <p><strong>Часы работы:</strong> Пн-Пт, 9:00 - 17:00</p>
             </CardContent>

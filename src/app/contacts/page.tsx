@@ -36,9 +36,9 @@ export default function ContactsPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground space-y-2">
-              <p><strong>Общие вопросы:</strong> (123) 456-7890</p>
+              <p><strong>Общие вопросы:</strong> 8-999-064-23-55</p>
               <p><strong>Аренда:</strong> (123) 456-7891</p>
-              <p><strong>Email:</strong> <a href="mailto:info@gallerynav.com" className="text-primary hover:underline">info@gallerynav.com</a></p>
+              <p><strong>Email:</strong> <a href="mailto:buh@timolo.ru" className="text-primary hover:underline">buh@timolo.ru</a></p>
             </CardContent>
           </Card>
           <Card>

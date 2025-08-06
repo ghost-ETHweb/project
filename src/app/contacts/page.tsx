@@ -60,7 +60,7 @@ export default function ContactsPage() {
           <h2 className="text-center font-headline text-2xl font-semibold mb-6">Как нас найти</h2>
           <div className="relative aspect-video w-full overflow-hidden rounded-lg border">
             <iframe
-                src="https://yandex.ru/map-widget/v1/?um=constructor%3A3d268a445f134a621d17d5904838f58a3641ce757c6310243d182e6d644813f8&amp;source=constructor"
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A99432657d425b0784265d629a882a4773c3a44253018898380389335a939464e&amp;source=constructor"
                 width="100%"
                 height="100%"
                 frameBorder="0"

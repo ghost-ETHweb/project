@@ -118,11 +118,12 @@ export function SubscriptionForm() {
               control={form.control}
               name="consent"
               render={({ field }) => (
-                <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 shadow-sm">
+                <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
                    <FormControl>
                     <Checkbox
                       checked={field.value}
                       onCheckedChange={field.onChange}
+                      id="consent"
                     />
                   </FormControl>
                   <div className="space-y-1 leading-none">
@@ -135,7 +136,7 @@ export function SubscriptionForm() {
               )}
             />
             <DialogFooter>
-              <Button type="submit">Отправить</Button>
+              <Button type="submit" className="w-full">Отправить</Button>
             </DialogFooter>
           </form>
         </Form>

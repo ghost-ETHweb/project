@@ -57,14 +57,6 @@ export default function ContactsPage() {
           </Card>
         </div>
         
-        <div className="mt-16">
-          <h2 className="text-center font-headline text-2xl font-semibold mb-6">Мы на карте</h2>
-          <Card className="overflow-hidden">
-            <div className="relative h-96 w-full">
-              <Image src="https://placehold.co/1200x400.png" alt="Map" fill className="object-cover" data-ai-hint="map location" />
-            </div>
-          </Card>
-        </div>
       </div>
     </div>
   )

@@ -81,7 +81,7 @@ export default function PartnersPage() {
             </CardHeader>
             <CardContent className="text-muted-foreground space-y-2">
               <p><strong>Email:</strong> leasing@gallerynav.com</p>
-              <p><strong>Часы работы:</strong> Пн-Пт, 9:00 - 17:00</p>
+              <p><strong>Часы работы:</strong> Ежедневно, 10:00 - 21:00</p>
             </CardContent>
           </Card>
         </div>

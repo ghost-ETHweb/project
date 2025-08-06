@@ -49,8 +49,7 @@ export default function ContactsPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground">
-              <p><strong>Понедельник - Суббота:</strong> 10:00 - 21:00</p>
-              <p><strong>Воскресенье:</strong> 11:00 - 19:00</p>
+              <p><strong>Ежедневно:</strong> 10:00 - 21:00</p>
               <p>Часы работы могут меняться в праздничные дни.</p>
             </CardContent>
           </Card>

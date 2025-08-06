@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { ShoppingBag, Facebook, Twitter, Instagram, Mail } from "lucide-react";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
+import { ShoppingBag, Facebook, Twitter, Instagram } from "lucide-react";
+import { SubscriptionForm } from "../subscription-form";
 
 export function Footer() {
   return (
@@ -50,10 +49,9 @@ export function Footer() {
               Подпишитесь на рассылку
             </h3>
              <p className="mt-4 text-sm">Будьте в курсе последних новостей, акций и событий.</p>
-            <form className="mt-4 flex flex-col sm:flex-row gap-2">
-                <Input type="email" placeholder="Ваш email" className="bg-background"/>
-                <Button type="submit">Подписаться</Button>
-            </form>
+             <div className="mt-4">
+                <SubscriptionForm />
+             </div>
           </div>
         </div>
         <div className="mt-8 border-t border-border pt-8 text-center text-sm">

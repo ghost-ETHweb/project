@@ -1,5 +1,19 @@
 
-export const shopsData = [
+export interface Shop {
+  id: number;
+  name: string;
+  category: string;
+  floor: number;
+  logo: string;
+  hint: string;
+  description: string;
+  images: string[];
+  promotions: string[];
+  workingHours: string;
+  phone: string;
+}
+
+export const shopsData: Shop[] = [
   { id: 1, name: "Kari", category: "Обувь", floor: 1, logo: "/images/shops/default-logo.png", hint: "shoe logo", description: "Модная и доступная обувь для всей семьи. Откройте для себя нашу новую коллекцию.", images: ["/images/shops/default-image.png", "/images/shops/default-image.png"], promotions: ["Скидка 20% на новые поступления"], workingHours: "10:00 - 21:00", phone: "(123) 555-1010" },
   { id: 2, name: "ANITA", category: "Одежда", floor: 1, logo: "/images/shops/default-logo.png", hint: "fashion logo", description: "Стильная женская одежда на любой случай. Откройте для себя последние тренды.", images: ["/images/shops/default-image.png"], promotions: [], workingHours: "10:00 - 21:00", phone: "(123) 555-2020" },
   { id: 4, name: "НАПРОТИФ", category: "Одежда", floor: 1, logo: "/images/shops/default-logo.png", hint: "clothing store", description: "Магазин современной одежды для мужчин и женщин. Всегда актуальные коллекции.", images: ["/images/shops/default-image.png", "/images/shops/default-image.png"], promotions: ["Подарок при покупке от 50$"], workingHours: "10:00 - 21:00", phone: "(123) 555-4040" },

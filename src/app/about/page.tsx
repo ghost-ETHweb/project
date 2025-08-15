@@ -1,3 +1,4 @@
+
 import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Building, Award, Users } from "lucide-react"
@@ -18,7 +19,7 @@ export default function AboutPage() {
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="relative aspect-video w-full overflow-hidden rounded-lg">
                 <Image
-                    src="https://placehold.co/600x400.png"
+                    src="/images/pages/about-interior.png"
                     alt="Интерьер торгового центра"
                     fill
                     className="object-cover"

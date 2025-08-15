@@ -1,3 +1,4 @@
+
 "use client"
 
 import Link from "next/link"
@@ -19,7 +20,7 @@ const sliderItems = [
     title: "Грандиозная летняя распродажа",
     description: "Скидки до 70% на ваши любимые бренды. Не пропустите!",
     image: {
-      src: "https://placehold.co/1600x600.png",
+      src: "/images/slider/1.png",
       hint: "fashion sale",
     },
     buttons: [
@@ -32,7 +33,7 @@ const sliderItems = [
     title: "Открылся новый флагманский магазин",
     description: "Откройте для себя последние тренды на грандиозном открытии Aura.",
     image: {
-      src: "https://placehold.co/1600x600.png",
+      src: "/images/slider/2.png",
       hint: "luxury store",
     },
     buttons: [
@@ -54,7 +55,7 @@ const sliderItems = [
     title: "Новая коллекция уже здесь",
     description: "Познакомьтесь с последними новинками сезона.",
     image: {
-      src: "https://placehold.co/1600x600.png",
+      src: "/images/slider/3.png",
       hint: "new collection",
     },
     buttons: [
@@ -66,7 +67,7 @@ const sliderItems = [
     title: "Гастрономический фестиваль",
     description: "Насладитесь лучшими блюдами от наших ресторанов.",
     image: {
-      src: "https://placehold.co/1600x600.png",
+      src: "/images/slider/4.png",
       hint: "food festival",
     },
     buttons: [

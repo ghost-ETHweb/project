@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, Clock, MapPin } from "lucide-react"
@@ -11,7 +12,7 @@ const eventsData = [
         date: "2024-09-05", 
         time: "19:00 - 21:00", 
         location: "Центральный атриум, 1 этаж",
-        image: { src: "https://placehold.co/600x400.png", hint: "jazz music" },
+        image: { src: "/images/events/1.png", hint: "jazz music" },
         category: "Музыка",
     },
     { 
@@ -21,7 +22,7 @@ const eventsData = [
         date: "2024-09-14", 
         time: "12:00 - 14:00", 
         location: "Детская зона, 2 этаж",
-        image: { src: "https://placehold.co/600x400.png", hint: "kids painting" },
+        image: { src: "/images/events/2.png", hint: "kids painting" },
         category: "Для детей",
     },
     { 
@@ -31,7 +32,7 @@ const eventsData = [
         date: "2024-09-20", 
         time: "10:00 - 21:00", 
         location: "Галерея 'Арт-Пространство', 2 этаж",
-        image: { src: "https://placehold.co/600x400.png", hint: "art gallery" },
+        image: { src: "/images/events/3.png", hint: "art gallery" },
         category: "Искусство",
     },
      { 
@@ -41,7 +42,7 @@ const eventsData = [
         date: "2024-09-21", 
         time: "10:00 - 16:00", 
         location: "Открытая площадка у входа А",
-        image: { src: "https://placehold.co/600x400.png", hint: "farmers market" },
+        image: { src: "/images/events/4.png", hint: "farmers market" },
         category: "Ярмарка",
     },
 ];

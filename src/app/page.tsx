@@ -1,3 +1,4 @@
+
 import HeroSlider from "@/components/hero-slider";
 import { ShopDirectory } from "@/components/shop-directory";
 import { Button } from "@/components/ui/button";
@@ -14,7 +15,7 @@ const featuredEvents = [
         description: "Откройте для себя последние тренды в новом флагмане Aura.", 
         date: "2024-09-01", 
         location: "Aura Fashion, 1 этаж",
-        image: { src: "https://placehold.co/600x400.png", hint: "luxury store opening" },
+        image: { src: "/images/pages/featured-event-1.png", hint: "luxury store opening" },
         category: "Магазины",
     },
     { 
@@ -23,7 +24,7 @@ const featuredEvents = [
         description: "Приводите своих детей на увлекательный мастер-класс.", 
         date: "2024-09-14", 
         location: "Детская зона",
-        image: { src: "https://placehold.co/600x400.png", hint: "kids painting" },
+        image: { src: "/images/pages/featured-event-2.png", hint: "kids painting" },
         category: "Для детей",
     },
 ];
@@ -43,7 +44,7 @@ export default function Home() {
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="relative aspect-video w-full overflow-hidden rounded-lg">
                 <Image
-                    src="https://placehold.co/600x400.png"
+                    src="/images/pages/about-interior.png"
                     alt="Интерьер торгового центра"
                     fill
                     className="object-cover"

@@ -1,7 +1,8 @@
 
-import { shopsData } from "@/lib/shops";
+import { shopsData, type Shop } from "@/lib/shops";
 import { notFound } from "next/navigation";
-import ShopDetailClient from "./shop-detail-client";
+import ShopDetailClient from "@/components/shop-detail-client";
+
 
 export function generateStaticParams() {
   return shopsData.map((shop) => ({
@@ -16,5 +17,7 @@ export default function ShopDetailPage({ params }: { params: { id:string } }) {
     notFound();
   }
 
-  return <ShopDetailClient shop={shop} />;
+  return (
+   <ShopDetailClient shop={shop} />
+  );
 }

@@ -1,4 +1,7 @@
 
+"use client"
+
+import { useState } from "react";
 import { shopsData } from "@/lib/shops";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -7,7 +10,8 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, MapPin, Tag, Clock, Phone } from "lucide-react";
+import { ArrowLeft, MapPin, Tag, Clock, Phone, Expand } from "lucide-react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 export function generateStaticParams() {
   return shopsData.map((shop) => ({
@@ -17,6 +21,8 @@ export function generateStaticParams() {
 
 export default function ShopDetailPage({ params }: { params: { id: string } }) {
   const shop = shopsData.find((s) => s.id.toString() === params.id);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
 
   if (!shop) {
     notFound();
@@ -35,9 +41,12 @@ export default function ShopDetailPage({ params }: { params: { id: string } }) {
             <Carousel className="w-full rounded-lg overflow-hidden border" opts={{ loop: true }}>
                 <CarouselContent>
                 {shop.images.map((img, i) => (
-                    <CarouselItem key={i}>
-                        <div className="aspect-video relative">
+                    <CarouselItem key={i} className="cursor-pointer" onClick={() => setSelectedImage(img)}>
+                        <div className="aspect-video relative group">
                          <Image src={img} alt={`Фото ${shop.name} ${i + 1}`} fill className="object-cover" />
+                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <Expand className="h-10 w-10 text-white" />
+                         </div>
                         </div>
                     </CarouselItem>
                 ))}
@@ -100,6 +109,15 @@ export default function ShopDetailPage({ params }: { params: { id: string } }) {
           </Button>
         </div>
       </div>
+       <Dialog open={!!selectedImage} onOpenChange={(isOpen) => !isOpen && setSelectedImage(null)}>
+        <DialogContent className="max-w-4xl p-0 border-0 bg-transparent">
+          {selectedImage && (
+            <div className="relative aspect-video">
+                <Image src={selectedImage} alt="Просмотр изображения" fill className="object-contain" />
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

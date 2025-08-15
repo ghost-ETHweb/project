@@ -127,10 +127,10 @@ export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
                 <Card className="flex h-full flex-col overflow-hidden rounded-lg shadow-sm transition-all duration-300 hover:scale-[1.03] hover:shadow-lg">
                     <div className="relative aspect-video w-full">
                         <Image
-                        src={shop.images[0]}
+                        src={shop.logo}
                         alt={shop.name}
                         fill
-                        className="object-cover"
+                        className="object-contain p-4"
                         />
                     </div>
                     <CardContent className="flex flex-col p-4 flex-grow">

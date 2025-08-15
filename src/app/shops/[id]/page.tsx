@@ -67,8 +67,8 @@ export default function ShopDetailPage({ params }: { params: { id: string } }) {
             <Image
               src={shop.logo}
               alt={`Логотип ${shop.name}`}
-              width={80}
-              height={80}
+              width={120}
+              height={120}
               className="rounded-xl border-2 object-contain p-1 bg-background"
               data-ai-hint={shop.hint}
             />

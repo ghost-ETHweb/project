@@ -20,7 +20,7 @@ const sliderItems = [
     title: "Грандиозная летняя распродажа",
     description: "Скидки до 70% на ваши любимые бренды. Не пропустите!",
     image: {
-      src: "/images/slider/1.png",
+      src: "/images/slider/1.jpg",
       hint: "fashion sale",
     },
     buttons: [
@@ -33,7 +33,7 @@ const sliderItems = [
     title: "Открылся новый флагманский магазин",
     description: "Откройте для себя последние тренды на грандиозном открытии Aura.",
     image: {
-      src: "/images/slider/2.png",
+      src: "/images/slider/2.jpg",
       hint: "luxury store",
     },
     buttons: [
@@ -42,20 +42,11 @@ const sliderItems = [
     ],
   },
   {
-    type: "video",
-    title: "День в Галерее",
-    description: "Ощутите яркую атмосферу нашего торгового центра.",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=0&loop=1&playlist=dQw4w9WgXcQ",
-    buttons: [
-      { href: "/events", label: "Предстоящие события" },
-    ],
-  },
-  {
     type: "image",
     title: "Новая коллекция уже здесь",
     description: "Познакомьтесь с последними новинками сезона.",
     image: {
-      src: "/images/slider/3.png",
+      src: "/images/slider/3.jpg",
       hint: "new collection",
     },
     buttons: [
@@ -67,7 +58,7 @@ const sliderItems = [
     title: "Гастрономический фестиваль",
     description: "Насладитесь лучшими блюдами от наших ресторанов.",
     image: {
-      src: "/images/slider/4.png",
+      src: "/images/slider/4.jpg",
       hint: "food festival",
     },
     buttons: [
@@ -97,17 +88,6 @@ export default function HeroSlider() {
                   data-ai-hint={item.image.hint}
                   priority={index === 0}
                 />
-              )}
-              {item.type === "video" && item.videoUrl && (
-                 <div className="absolute inset-0 overflow-hidden">
-                    <iframe
-                        src={item.videoUrl}
-                        frameBorder="0"
-                        allow="autoplay; encrypted-media"
-                        allowFullScreen
-                        className="h-full w-full object-cover pointer-events-none scale-[1.3]"
-                    ></iframe>
-                </div>
               )}
               <div className="container relative z-20 mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-4 text-center text-white sm:px-6 lg:px-8">
                 <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">

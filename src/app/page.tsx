@@ -44,7 +44,7 @@ export default function Home() {
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="relative aspect-video w-full overflow-hidden rounded-lg">
                 <Image
-                    src="/images/pages/about-interior.png"
+                    src="/images/pages/about/1.jpg"
                     alt="Интерьер торгового центра"
                     fill
                     className="object-cover"

@@ -32,7 +32,7 @@ export default function ShopDetailPage({ params }: { params: { id: string } }) {
       </Button>
       <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
         <div>
-            <Carousel className="w-full rounded-lg overflow-hidden border">
+            <Carousel className="w-full rounded-lg overflow-hidden border" opts={{ loop: true }}>
                 <CarouselContent>
                 {shop.images.map((img, i) => (
                     <CarouselItem key={i}>

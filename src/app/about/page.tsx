@@ -19,7 +19,7 @@ export default function AboutPage() {
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="relative aspect-video w-full overflow-hidden rounded-lg">
                 <Image
-                    src="https://placehold.co/800x600.png"
+                    src="/images/pages/about/1.jpg"
                     alt="Интерьер торгового центра"
                     fill
                     className="object-cover"

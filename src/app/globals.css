@@ -26,6 +26,28 @@
     --radius: 1rem;
   }
 
+  .dark {
+    --background: 222 38% 9%;
+    --foreground: 42 28% 95%;
+    --card: 222 31% 13%;
+    --card-foreground: 42 28% 95%;
+    --popover: 222 31% 13%;
+    --popover-foreground: 42 28% 95%;
+    --primary: 42 28% 92%;
+    --primary-foreground: 222 38% 12%;
+    --secondary: 222 24% 17%;
+    --secondary-foreground: 42 28% 95%;
+    --muted: 222 23% 17%;
+    --muted-foreground: 220 12% 68%;
+    --accent: 21 72% 54%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 64% 52%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 18% 24%;
+    --input: 222 18% 28%;
+    --ring: 42 28% 82%;
+  }
+
   * {
     @apply border-border;
   }
@@ -36,6 +58,9 @@
 
   body {
     @apply bg-background text-foreground;
+    transition:
+      background-color 180ms ease,
+      color 180ms ease;
   }
 
   ::selection {

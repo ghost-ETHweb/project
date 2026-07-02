@@ -4,6 +4,7 @@ import { Montserrat, Open_Sans } from "next/font/google"
 import "./globals.css"
 import { Footer } from "@/components/common/footer"
 import { Header } from "@/components/common/header"
+import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
 import { cn } from "@/lib/utils"
 
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | ТЦ «Галерея»",
   },
   description:
-    "Торговый центр «Галерея» в Тихвине: магазины, карта, часы работы и контакты. Ежедневно с 10:00 до 21:00.",
+    "Торговый центр «Галерея» в Тихвине: магазины, часы работы и контакты. Ежедневно с 10:00 до 21:00.",
   openGraph: {
     title: "ТЦ «Галерея» — Тихвин",
     description: "Магазины, услуги и кафе в одном знакомом месте.",
@@ -42,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ru">
+    <html lang="ru" suppressHydrationWarning>
       <body
         className={cn(
           "min-h-screen bg-background font-body text-foreground antialiased",
@@ -50,12 +51,14 @@ export default function RootLayout({
           openSans.variable
         )}
       >
-        <div className="relative flex min-h-screen flex-col">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
-        <Toaster />
+        <ThemeProvider>
+          <div className="relative flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   )

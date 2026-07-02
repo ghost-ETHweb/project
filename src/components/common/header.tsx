@@ -6,10 +6,10 @@ import { MapPin, Menu } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 const navLinks = [
   { href: "/shops", label: "Магазины" },
-  { href: "/map", label: "Карта ТЦ" },
   { href: "/about", label: "О центре" },
   { href: "/partners", label: "Арендаторам" },
   { href: "/contacts", label: "Контакты" },
@@ -56,6 +56,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <Button asChild className="hidden rounded-full md:inline-flex">
             <Link href="/contacts">
               <MapPin className="mr-2 h-4 w-4" />

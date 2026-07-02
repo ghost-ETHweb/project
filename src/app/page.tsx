@@ -23,11 +23,11 @@ const visitorLinks = [
     description: "По названию, категории или этажу",
   },
   {
-    href: "/map",
-    icon: MapPinned,
-    eyebrow: "Навигация",
-    title: "Карта центра",
-    description: "Быстро сориентируйтесь на месте",
+    href: "/contacts",
+    icon: Clock3,
+    eyebrow: "Режим работы",
+    title: "Открыты ежедневно",
+    description: "С 10:00 до 21:00 без выходных",
   },
   {
     href: "/contacts",
@@ -185,7 +185,7 @@ export default function Home() {
       </section>
 
       <section className="container mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-        <div className="overflow-hidden rounded-[2rem] bg-primary text-primary-foreground">
+        <div className="overflow-hidden rounded-[2rem] border bg-card text-card-foreground shadow-sm">
           <div className="grid lg:grid-cols-2">
             <div className="relative min-h-[320px] lg:min-h-[480px]">
               <Image
@@ -197,13 +197,13 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-14">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-foreground/65">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
                 Планируйте визит
               </p>
               <h2 className="mt-4 font-headline text-3xl font-bold tracking-tight sm:text-4xl">
                 Открыты каждый день с 10:00 до 21:00
               </h2>
-              <div className="mt-7 space-y-4 text-primary-foreground/75">
+              <div className="mt-7 space-y-4 text-muted-foreground">
                 <div className="flex items-center gap-3">
                   <Clock3 className="h-5 w-5 text-accent" />
                   <span>Без выходных</span>
@@ -229,7 +229,7 @@ export default function Home() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="rounded-full border-white/25 bg-transparent text-white hover:bg-white/10 hover:text-white"
+                  className="rounded-full"
                 >
                   <a href="tel:89990642355">
                     <Phone className="mr-2 h-4 w-4" />

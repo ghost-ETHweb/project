@@ -1,13 +1,12 @@
-
 "use client"
 
-import { useState, useMemo, useRef, useEffect } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import {
-  Card,
-  CardContent,
-} from "@/components/ui/card"
+import { ArrowUpRight, Search } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import {
   Select,
@@ -16,145 +15,207 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { Button } from "@/components/ui/button"
-import { Search } from "lucide-react"
-import { shopsData, categories, floors } from "@/lib/shops"
+import { categories, floors, shopsData } from "@/lib/shops"
 
 interface ShopDirectoryProps {
-  isPaginated?: boolean;
+  isPaginated?: boolean
 }
 
-export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [category, setCategory] = useState("Все");
-  const [floor, setFloor] = useState("Все");
-  const [sort, setSort] = useState("asc");
-  const [currentPage, setCurrentPage] = useState(1);
-  const shopsPerPage = 6;
-  const directoryRef = useRef<HTMLDivElement>(null);
+const shopsPerPage = 6
 
+export function ShopDirectory({ isPaginated = true }: ShopDirectoryProps) {
+  const [searchQuery, setSearchQuery] = useState("")
+  const [category, setCategory] = useState("Все")
+  const [floor, setFloor] = useState("Все")
+  const [sort, setSort] = useState("asc")
+  const [currentPage, setCurrentPage] = useState(1)
+  const directoryRef = useRef<HTMLDivElement>(null)
 
   const filteredShops = useMemo(() => {
-    let filtered = shopsData
+    const normalizedQuery = searchQuery.trim().toLocaleLowerCase("ru")
+    const filtered = shopsData
       .filter((shop) =>
-        shop.name.toLowerCase().includes(searchQuery.toLowerCase())
+        shop.name.toLocaleLowerCase("ru").includes(normalizedQuery)
       )
       .filter((shop) => category === "Все" || shop.category === category)
-      .filter((shop) => floor === "Все" || shop.floor.toString() === floor);
+      .filter((shop) => floor === "Все" || shop.floor.toString() === floor)
 
-    if (sort === "asc") {
-      filtered.sort((a, b) => a.name.localeCompare(b.name));
-    } else {
-      filtered.sort((a, b) => b.name.localeCompare(a.name));
-    }
-    return filtered;
-  }, [searchQuery, category, floor, sort]);
-  
+    return filtered.sort((a, b) =>
+      sort === "asc"
+        ? a.name.localeCompare(b.name, "ru")
+        : b.name.localeCompare(a.name, "ru")
+    )
+  }, [searchQuery, category, floor, sort])
+
   useEffect(() => {
-    // Reset to page 1 when filters change
-    setCurrentPage(1);
-  }, [searchQuery, category, floor, sort]);
-  
-  useEffect(() => {
-    if (isPaginated && directoryRef.current) {
-        directoryRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [currentPage, isPaginated]);
+    setCurrentPage(1)
+  }, [searchQuery, category, floor, sort])
 
-  const paginatedShops = useMemo(() => {
-    if (!isPaginated) return filteredShops.slice(0, 6);
-    const startIndex = (currentPage - 1) * shopsPerPage;
-    return filteredShops.slice(startIndex, startIndex + shopsPerPage);
-  }, [filteredShops, currentPage, isPaginated]);
+  const visibleShops = useMemo(() => {
+    if (!isPaginated) return filteredShops.slice(0, shopsPerPage)
+    const startIndex = (currentPage - 1) * shopsPerPage
+    return filteredShops.slice(startIndex, startIndex + shopsPerPage)
+  }, [filteredShops, currentPage, isPaginated])
 
-  const totalPages = Math.ceil(filteredShops.length / shopsPerPage);
-  
+  const totalPages = Math.ceil(filteredShops.length / shopsPerPage)
+
   const handlePageChange = (page: number) => {
-    setCurrentPage(page);
+    setCurrentPage(page)
+    window.requestAnimationFrame(() => {
+      directoryRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+    })
   }
 
   return (
-    <div ref={directoryRef}>
-      <div className="mb-8 flex flex-col gap-4 rounded-lg border bg-card p-4 sm:flex-row sm:items-center">
-        <div className="relative w-full sm:flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 transform text-muted-foreground" size={20} />
-          <Input
-            placeholder="Поиск по названию магазина..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10"
-          />
+    <div ref={directoryRef} className="scroll-mt-24">
+      <div className="mb-8 rounded-2xl border bg-card p-4 shadow-sm sm:p-5">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
+          <div className="relative w-full lg:flex-1">
+            <Search
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground"
+              size={19}
+              aria-hidden="true"
+            />
+            <Input
+              aria-label="Поиск магазина"
+              placeholder="Название магазина"
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              className="h-11 rounded-xl bg-background pl-11"
+            />
+          </div>
+          <div className="grid gap-3 sm:grid-cols-3 lg:flex">
+            <Select value={category} onValueChange={setCategory}>
+              <SelectTrigger
+                className="h-11 w-full rounded-xl bg-background lg:w-[210px]"
+                aria-label="Категория магазина"
+              >
+                <SelectValue placeholder="Категория" />
+              </SelectTrigger>
+              <SelectContent>
+                {categories.map((item) => (
+                  <SelectItem key={item} value={item}>
+                    {item}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Select value={floor} onValueChange={setFloor}>
+              <SelectTrigger
+                className="h-11 w-full rounded-xl bg-background lg:w-[135px]"
+                aria-label="Этаж"
+              >
+                <SelectValue placeholder="Этаж" />
+              </SelectTrigger>
+              <SelectContent>
+                {floors.map((item) => (
+                  <SelectItem key={item} value={item}>
+                    {item === "Все" ? "Все этажи" : `${item} этаж`}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Select value={sort} onValueChange={setSort}>
+              <SelectTrigger
+                className="h-11 w-full rounded-xl bg-background lg:w-[125px]"
+                aria-label="Сортировка"
+              >
+                <SelectValue placeholder="Сортировка" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="asc">А — Я</SelectItem>
+                <SelectItem value="desc">Я — А</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 sm:flex-row sm:gap-2">
-          <Select value={category} onValueChange={setCategory}>
-            <SelectTrigger className="w-full sm:w-[180px]">
-              <SelectValue placeholder="Категория" />
-            </SelectTrigger>
-            <SelectContent>
-              {categories.map((c) => (
-                <SelectItem key={c} value={c}>{c}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-          <Select value={floor} onValueChange={setFloor}>
-            <SelectTrigger className="w-full sm:w-[120px]">
-              <SelectValue placeholder="Этаж" />
-            </SelectTrigger>
-            <SelectContent>
-              {floors.map((f) => (
-                <SelectItem key={f} value={f}>
-                  {f === "Все" ? "Все этажи" : `Этаж ${f}`}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-          <Select value={sort} onValueChange={setSort}>
-            <SelectTrigger className="w-full sm:w-[120px]">
-              <SelectValue placeholder="Сортировка" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="asc">А-Я</SelectItem>
-              <SelectItem value="desc">Я-А</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
+        <p className="mt-4 text-xs text-muted-foreground">
+          Найдено: {filteredShops.length}
+        </p>
       </div>
 
-      {paginatedShops.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {paginatedShops.map((shop) => (
-             <Link key={shop.id} href={`/shops/${shop.id}`} className="group">
-                <Card className="flex h-full flex-col overflow-hidden rounded-lg shadow-sm transition-all duration-300 hover:scale-[1.03] hover:shadow-lg">
-                    <div className="relative aspect-video w-full">
-                        <Image
+      {visibleShops.length > 0 ? (
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {visibleShops.map((shop) => {
+            const hasLogo = !shop.logo.includes("default-logo")
+
+            return (
+              <Link
+                key={shop.id}
+                href={`/shops/${shop.id}`}
+                className="group rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              >
+                <Card className="flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-none transition duration-300 group-hover:-translate-y-1 group-hover:border-primary/25 group-hover:shadow-xl group-hover:shadow-primary/5">
+                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-secondary/55">
+                    {hasLogo ? (
+                      <Image
                         src={shop.logo}
-                        alt={shop.name}
+                        alt={`Логотип магазина ${shop.name}`}
                         fill
-                        className="object-contain p-4"
-                        />
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-contain p-6 transition-transform duration-300 group-hover:scale-[1.03]"
+                      />
+                    ) : (
+                      <div className="flex h-full items-center justify-center">
+                        <span className="font-headline text-4xl font-bold tracking-tight text-primary/75">
+                          {shop.name.slice(0, 2).toUpperCase()}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  <CardContent className="flex flex-1 items-end justify-between gap-5 p-5">
+                    <div>
+                      <h3 className="font-headline text-lg font-semibold text-foreground">
+                        {shop.name}
+                      </h3>
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        {shop.category} · {shop.floor} этаж
+                      </p>
                     </div>
-                    <CardContent className="flex flex-col p-4 flex-grow">
-                        <div className="flex-grow">
-                            <h3 className="font-headline text-lg font-semibold text-foreground">{shop.name}</h3>
-                            <p className="text-sm text-muted-foreground mt-1">{shop.category}</p>
-                        </div>
-                        <Button variant="outline" size="sm" className="w-fit mt-4 pointer-events-none">Этаж {shop.floor}</Button>
-                    </CardContent>
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-muted-foreground transition group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground">
+                      <ArrowUpRight className="h-4 w-4" />
+                    </span>
+                  </CardContent>
                 </Card>
-            </Link>
-          ))}
+              </Link>
+            )
+          })}
         </div>
       ) : (
-        <div className="flex h-64 flex-col items-center justify-center rounded-lg border-2 border-dashed border-muted p-12 text-center">
-            <p className="text-muted-foreground">Магазины, соответствующие вашим критериям, не найдены.</p>
+        <div className="flex min-h-64 flex-col items-center justify-center rounded-2xl border border-dashed bg-card p-8 text-center">
+          <Search className="h-8 w-8 text-muted-foreground/45" />
+          <p className="mt-4 font-headline text-lg font-semibold">
+            Ничего не нашли
+          </p>
+          <p className="mt-2 max-w-md text-sm text-muted-foreground">
+            Попробуйте изменить запрос, категорию или этаж.
+          </p>
         </div>
       )}
 
       {isPaginated && totalPages > 1 && (
-        <div className="mt-8 flex justify-center gap-2">
-          <Button onClick={() => handlePageChange(Math.max(1, currentPage - 1))} disabled={currentPage === 1}>Назад</Button>
-          <span className="flex items-center px-4 text-sm">Страница {currentPage} из {totalPages}</span>
-          <Button onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))} disabled={currentPage === totalPages}>Вперед</Button>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <Button
+            variant="outline"
+            className="rounded-full"
+            onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
+            disabled={currentPage === 1}
+          >
+            Назад
+          </Button>
+          <span className="px-2 text-sm text-muted-foreground">
+            {currentPage} / {totalPages}
+          </span>
+          <Button
+            variant="outline"
+            className="rounded-full"
+            onClick={() =>
+              handlePageChange(Math.min(totalPages, currentPage + 1))
+            }
+            disabled={currentPage === totalPages}
+          >
+            Вперёд
+          </Button>
         </div>
       )}
     </div>

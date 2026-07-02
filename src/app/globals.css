@@ -4,74 +4,47 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --background: 42 30% 97%;
+    --foreground: 222 34% 14%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 222 34% 14%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 180 100% 25%;
-    --primary-foreground: 180 100% 95%;
-    --secondary: 240 5% 96%;
-    --secondary-foreground: 240 5% 9%;
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 45%;
-    --accent: 16 100% 66%;
+    --popover-foreground: 222 34% 14%;
+    --primary: 222 52% 23%;
+    --primary-foreground: 42 33% 97%;
+    --secondary: 39 28% 92%;
+    --secondary-foreground: 222 34% 14%;
+    --muted: 39 22% 92%;
+    --muted-foreground: 220 11% 43%;
+    --accent: 21 66% 49%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 180 100% 25%;
-    --radius: 0.5rem;
+    --border: 37 18% 83%;
+    --input: 37 18% 83%;
+    --ring: 222 52% 23%;
+    --radius: 1rem;
   }
 
-  .dark {
-    --background: 222 47% 11%;
-    --foreground: 0 0% 98%;
-    --card: 222 47% 11%;
-    --card-foreground: 0 0% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 180 100% 35%;
-    --primary-foreground: 180 100% 95%;
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 16 100% 66%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 217 33% 27%;
-    --input: 217 33% 27%;
-    --ring: 180 100% 35%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  ::selection {
+    background: hsl(var(--accent) / 0.24);
   }
 }
 
 @layer utilities {
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-  .transform-style-3d {
-    transform-style: preserve-3d;
-  }
-  .backface-hidden {
-    backface-visibility: hidden;
-  }
-  .rotate-y-180 {
-    transform: rotateY(180deg);
-  }
-  .group-hover\:rotate-y-180:hover {
-      transform: rotateY(180deg);
+  .text-balance {
+    text-wrap: balance;
   }
 }

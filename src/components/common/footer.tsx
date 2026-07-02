@@ -1,67 +1,91 @@
-import Link from "next/link";
-import { ShoppingBag, Facebook, Twitter, Instagram } from "lucide-react";
-import { SubscriptionForm } from "../subscription-form";
+import Link from "next/link"
+import { Clock3, Mail, MapPin, Phone } from "lucide-react"
+
+const footerLinks = [
+  { href: "/shops", label: "Магазины" },
+  { href: "/map", label: "Карта ТЦ" },
+  { href: "/about", label: "О центре" },
+  { href: "/partners", label: "Арендаторам" },
+  { href: "/contacts", label: "Контакты" },
+]
 
 export function Footer() {
   return (
-    <footer className="bg-muted text-muted-foreground">
-      <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
-          <div className="space-y-4 lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2">
-              <ShoppingBag className="h-8 w-8 text-primary" />
-              <span className="font-headline text-xl font-semibold text-primary">
-                Галерея Навигатор
+    <footer className="bg-foreground text-background">
+      <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.25fr_0.75fr_1fr]">
+          <div>
+            <Link href="/" className="inline-flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-background font-headline text-sm font-bold text-foreground">
+                Г
+              </span>
+              <span>
+                <span className="block font-headline text-lg font-bold tracking-[0.12em]">
+                  ГАЛЕРЕЯ
+                </span>
+                <span className="block text-[10px] uppercase tracking-[0.22em] text-background/55">
+                  Торговый центр · Тихвин
+                </span>
               </span>
             </Link>
-            <p className="text-sm">
-              Лучшее место для шопинга, ужинов и развлечений. Откройте для себя мировые бренды и незабываемые моменты.
+            <p className="mt-5 max-w-md text-sm leading-6 text-background/60">
+              Магазины, услуги и кафе в центре Тихвина. Всё нужное — рядом.
             </p>
-            <div className="flex space-x-4">
-              <Link href="#" className="hover:text-primary"><Facebook className="h-5 w-5" /></Link>
-              <Link href="#" className="hover:text-primary"><Twitter className="h-5 w-5" /></Link>
-              <Link href="#" className="hover:text-primary"><Instagram className="h-5 w-5" /></Link>
+          </div>
+
+          <div>
+            <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-background/45">
+              Разделы
+            </h2>
+            <nav className="mt-5 grid grid-cols-2 gap-x-5 gap-y-3 md:grid-cols-1">
+              {footerLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-background/70 transition hover:text-background"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          <div>
+            <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-background/45">
+              Контакты
+            </h2>
+            <div className="mt-5 space-y-4 text-sm text-background/70">
+              <p className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                <span>г. Тихвин, ул. Карла Маркса, 50</span>
+              </p>
+              <p className="flex items-center gap-3">
+                <Clock3 className="h-4 w-4 shrink-0 text-accent" />
+                <span>Ежедневно, 10:00–21:00</span>
+              </p>
+              <a
+                href="tel:89990642355"
+                className="flex items-center gap-3 transition hover:text-background"
+              >
+                <Phone className="h-4 w-4 shrink-0 text-accent" />
+                8 999 064-23-55
+              </a>
+              <a
+                href="mailto:buh@timolo.ru"
+                className="flex items-center gap-3 transition hover:text-background"
+              >
+                <Mail className="h-4 w-4 shrink-0 text-accent" />
+                buh@timolo.ru
+              </a>
             </div>
-          </div>
-          <div>
-            <h3 className="font-headline text-sm font-semibold uppercase tracking-wider text-foreground">
-              Навигация
-            </h3>
-            <ul className="mt-4 space-y-2">
-              <li><Link href="/shops" className="text-sm hover:text-primary">Магазины</Link></li>
-              <li><Link href="/map" className="text-sm hover:text-primary">Карта ТЦ</Link></li>
-              <li><Link href="/promotions" className="text-sm hover:text-primary">Акции</Link></li>
-              <li><Link href="/events" className="text-sm hover:text-primary">События</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-headline text-sm font-semibold uppercase tracking-wider text-foreground">
-              Информация
-            </h3>
-            <ul className="mt-4 space-y-2">
-               <li><Link href="/about" className="text-sm hover:text-primary">О нас</Link></li>
-              <li><Link href="/partners" className="text-sm hover:text-primary">Для партнеров</Link></li>
-              <li><Link href="/contacts" className="text-sm hover:text-primary">Контакты</Link></li>
-            </ul>
-          </div>
-          <div className="md:col-span-2 lg:col-span-1">
-            <h3 className="font-headline text-sm font-semibold uppercase tracking-wider text-foreground">
-              Подпишитесь на рассылку
-            </h3>
-             <p className="mt-4 text-sm">Будьте в курсе последних новостей, акций и событий.</p>
-             <div className="mt-4">
-                <SubscriptionForm />
-             </div>
           </div>
         </div>
-        <div className="mt-8 border-t border-border pt-8 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} Галерея Навигатор. Все права защищены.</p>
-          <div className="mt-4 space-y-2 text-sm">
-              <p>ул. Карла Маркса, 50, г. Тихвин</p>
-              <p>Телефон: <a href="tel:89990642355" className="hover:text-primary hover:underline">8-999-064-23-55</a> | Email: <a href="mailto:buh@timolo.ru" className="hover:text-primary hover:underline">buh@timolo.ru</a></p>
-            </div>
+
+        <div className="mt-12 flex flex-col gap-3 border-t border-background/10 pt-6 text-xs text-background/40 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} ТЦ «Галерея»</p>
+          <p>Информация о режиме работы магазинов может отличаться.</p>
         </div>
       </div>
     </footer>
-  );
+  )
 }
